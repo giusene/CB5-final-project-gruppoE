@@ -1,5 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap");
 
+:root {
+  --page-padding: 1rem;
+}
+
 * {
   box-sizing: border-box;
   padding: 0;
