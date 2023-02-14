@@ -1,0 +1,46 @@
+.main {
+  border: 1px solid red;
+  padding: var(--page-padding);
+
+  ul {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .coin_row {
+    border: 1px solid blue;
+    width: 100%;
+    padding: 0.7rem 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .icon_wrapper {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      img {
+        width: 30px;
+        height: 30px;
+      }
+    }
+
+    .coin_name {
+      width: 140px;
+
+      h3 {
+        font-size: 1rem;
+      }
+      p {
+        font-size: 0.9rem;
+        color: rgb(115, 115, 115);
+      }
+    }
+
+    .price {
+      width: 100px;
+      text-align: left;
+    }
+  }
+}
