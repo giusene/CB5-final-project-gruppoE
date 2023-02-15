@@ -1,0 +1,49 @@
+isLogged: true
+userInfo: {
+        name: "giuseppe",
+        surname: "senettone",
+        coins: [{
+            id: 12
+            coinName: "Bitcoin",
+            qta: 0,35 
+        }],
+        nft: [],
+        datiCarta: {
+            num: 34234343424,
+            scadenza: 12313,
+            cvv: 312
+        }
+    }
+usersList: [
+    {
+        email: "giu.sene@gmail.com,
+        name: "giuseppe",
+        surname: "senettone",
+        coins: [{
+            id: 12
+            coinName: "Bitcoin",
+            qta: 0,35 
+        },{
+            id: 10
+            coinName: "Etherium",
+            qta: 0,566
+        }],
+        nft: [],
+        datiCarta: {
+            num: 34234343424,
+            scadenza: 12313,
+            cvv: 312,
+        }
+    },
+    {
+        name: "Marco",
+        surname: "senettone",
+        coins: [],
+        nft: [],
+        datiCarta: {
+            num: 34234343424,
+            scadenza: 12313,
+            cvv: 312
+        }
+    }
+]
