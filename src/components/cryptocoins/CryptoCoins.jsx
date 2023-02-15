@@ -11,7 +11,7 @@ const CryptoCoins = ({ data }) => {
             <div className={styles.icon_wrapper}>
               <img src={coin.item.large} alt={coin.item.name} />
               <div className={styles.coin_name}>
-                <h3> {coin.item.name}</h3>
+                <h4>{coin.item.name}</h4>
                 <p>{coin.item.symbol}</p>
               </div>
             </div>

@@ -3,7 +3,6 @@ import styles from "@/styles/Home.module.scss";
 import CryptoCoins from "@/components/cryptocoins/CryptoCoins";
 
 export default function Home({ coins }) {
-  console.log(coins);
   return (
     <>
       <Head>

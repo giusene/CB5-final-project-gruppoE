@@ -8,5 +8,5 @@
  * /nfts/list -> all NFTs
  * /nfts/{id} -> single NFT
  *
- * @link  https://api.coingecko.com/api/v3/
+ * @link  https://api.coingecko.com/api/v3
  */
