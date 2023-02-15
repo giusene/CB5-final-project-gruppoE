@@ -3,10 +3,14 @@ import { BiUserCircle } from "react-icons/bi";
 import { useState, useEffect } from "react";
 import { useRouter } from "next/router";
 import { navbarLinks } from "@/utils/navbarLinks";
+import { useContext } from "react";
+import { AppCtx } from "@/store/state";
 
 const Header = () => {
   const [currentLabel, setCurrentLabel] = useState("");
   const router = useRouter();
+  const value = useContext(AppCtx);
+
 
   useEffect(() => {
     // Al cambio di pagina, aggiorna l'etichetta corrente
@@ -23,6 +27,8 @@ const Header = () => {
       <p>{currentLabel}</p>
       <i>
         <BiUserCircle />
+        <h3>{value.state.users[1].name}</h3>
+
       </i>
     </div>
   );
