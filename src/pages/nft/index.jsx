@@ -1,11 +1,11 @@
-import NftList from "@/components/nft-list/NftList";
+import NftList from "@/components/nftList/NftList";
 
-const Nft = ({ nft }) => {
-  // console.log(nft);
+const Nft = ({ data }) => {
+  console.log(data);
 
   return (
     <div>
-      <NftList data={nft} />
+      <NftList data={data} />
     </div>
   );
 };
@@ -14,12 +14,23 @@ export default Nft;
 
 /* FETCH */
 export async function getStaticProps() {
-  const res = await fetch(`https://api.coingecko.com/api/v3/nfts/list?per_page=20`);
-  const nft = await res.json();
+  const options = {
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: process.env.API_KEY,
+    },
+  };
+
+  const res = await fetch(
+    `https://api.nftport.xyz/v0/nfts/0xbc4ca0eda7647a8ab7c2061c2e118a18a936f13d?chain=ethereum&page_number=1&page_size=10&include=all&refresh_metadata=false`,
+    options
+  );
+  const data = await res.json();
 
   return {
     props: {
-      nft,
+      data,
     },
   };
 }
