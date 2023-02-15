@@ -11,9 +11,7 @@ const Header = () => {
   const router = useRouter();
   const value = useContext(AppCtx);
 
-
   useEffect(() => {
-    // Al cambio di pagina, aggiorna l'etichetta corrente
     const currentPath = router.asPath;
     const currentLink = navbarLinks.filter(
       (link) => link.route === currentPath
@@ -23,13 +21,13 @@ const Header = () => {
 
   return (
     <div className={styles.main}>
-      <div className={styles.logo}></div>
-      <p>{currentLabel}</p>
-      <i>
-        <BiUserCircle />
-        <h3>{value.state.users[1].name}</h3>
-
-      </i>
+      <h1>{currentLabel.toUpperCase()}</h1>
+      <div className={styles.auth_data}>
+        <i>
+          <BiUserCircle />
+        </i>
+        <p>{value.state.users[1].name}</p>
+      </div>
     </div>
   );
 };
