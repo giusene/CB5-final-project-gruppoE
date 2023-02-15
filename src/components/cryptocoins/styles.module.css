@@ -1,0 +1,40 @@
+.main {
+  border: 1px solid red;
+  padding: var(--page-padding);
+}
+.main ul {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.main .coin_row {
+  border: 1px solid blue;
+  width: 100%;
+  padding: 0.7rem 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.main .coin_row .icon_wrapper {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.main .coin_row .icon_wrapper img {
+  width: 30px;
+  height: 30px;
+}
+.main .coin_row .coin_name {
+  width: 140px;
+}
+.main .coin_row .coin_name h3 {
+  font-size: 1rem;
+}
+.main .coin_row .coin_name p {
+  font-size: 0.9rem;
+  color: rgb(115, 115, 115);
+}
+.main .coin_row .price {
+  width: 100px;
+  text-align: left;
+}/*# sourceMappingURL=styles.module.css.map */
