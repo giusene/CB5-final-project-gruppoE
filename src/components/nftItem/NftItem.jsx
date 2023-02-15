@@ -13,9 +13,11 @@ tokenID: data.token_id
 
   return (
     <div className={styles.main}>
-      <h4> {contract.name}</h4>
       <img src={data.cached_file_url} alt={contract.name} />
-      <p>#{data.token_id}</p>
+      <div className={styles.details}>
+        <h4>{contract.name}</h4>
+        <p>#{data.token_id}</p>
+      </div>
     </div>
   );
 };

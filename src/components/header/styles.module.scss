@@ -3,16 +3,30 @@
   padding: 1rem;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 1px solid black;
+  background: linear-gradient(
+    180deg,
+    rgba(32, 26, 40, 1) 0%,
+    rgba(37, 35, 50, 1) 49%,
+    #302e40 100%
+  );
+  color: white;
 
-  .logo {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    background-color: aquamarine;
+  h1 {
+    letter-spacing: 0.2rem;
+    color: var(--details-main-color);
+    text-shadow: 0 0 5px rgba($color: #ea4b87, $alpha: 0.6);
   }
 
-  i {
-    font-size: 2.5rem;
+  .auth_data {
+    i {
+      font-size: 2.5rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    p {
+      font-size: 0.7rem;
+    }
   }
 }

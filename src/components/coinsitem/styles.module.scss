@@ -1,38 +1,79 @@
 .main {
-  border: 1px solid blue;
   width: 100%;
-  padding: 0.7rem 0.5rem;
+  padding: 1rem;
+  border-radius: 0.8rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  background: linear-gradient(
+    180deg,
+    rgba(56, 54, 78, 1) 0%,
+    rgba(64, 61, 91, 1) 52%,
+    rgba(56, 54, 78, 1) 100%
+  );
+  color: white;
 
   .icon_wrapper {
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 1rem;
 
     img {
-      width: 30px;
-      height: 30px;
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
     }
   }
 
   .coin_name {
     width: 140px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
 
-    h4 {
+    .name {
+      color: white;
       font-size: 1rem;
     }
 
-    p {
+    .symbol {
       font-size: 0.9rem;
-      color: rgb(115, 115, 115);
+      color: rgba(165, 165, 165, 0.74);
       text-transform: uppercase;
     }
   }
 
   .price {
-    width: 100px;
-    text-align: left;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+
+    gap: 0.2rem;
+
+    p {
+      font-size: 0.8rem;
+    }
+
+    button {
+      padding: 0.5rem 1.2rem;
+      border: none;
+      border-radius: 1rem;
+      font-weight: 600;
+      background-color: var(--details-main-color);
+      color: white;
+      letter-spacing: 0.1rem;
+      cursor: pointer;
+      transition: all 0.35s ease-out;
+
+      &:hover {
+        box-shadow: 0 0 10px rgba($color: #ea4b87, $alpha: 0.5);
+      }
+    }
+  }
+
+  i {
+    display: flex;
+    font-size: 1.4rem;
+    cursor: pointer;
   }
 }
