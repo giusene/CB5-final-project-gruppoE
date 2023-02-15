@@ -11,13 +11,10 @@ const Header = () => {
   const router = useRouter();
   const value = useContext(AppCtx);
 
-
   useEffect(() => {
     // Al cambio di pagina, aggiorna l'etichetta corrente
     const currentPath = router.asPath;
-    const currentLink = navbarLinks.filter(
-      (link) => link.route === currentPath
-    )[0];
+    const currentLink = navbarLinks.filter((link) => link.route === currentPath)[0];
     setCurrentLabel(currentLink.label);
   }, [router.asPath]);
 
@@ -28,7 +25,6 @@ const Header = () => {
       <i>
         <BiUserCircle />
         <h3>{value.state.users[1].name}</h3>
-
       </i>
     </div>
   );
