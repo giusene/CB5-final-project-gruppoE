@@ -1,17 +1,12 @@
-/* const BASE_URL = "https://api.coingecko.com/api/v3/";
-
-const GET = async (endpoint) => {
-  try {
-    const res = await fetch(`${BASE_URL}/${endpoint}`);
-    const data = await res.json();
-    if (res.status >= 400) {
-      throw new Error("Can't establish a connection!");
-    }
-
-    return data;
-  } catch (err) {
-    return { status: false };
-  }
-};
-
-export { GET }; */
+/**
+ * Javascript api handle
+ *
+ * Coingecko endpoints:
+ *
+ * /search/trending	-> trending coins
+ * /coins/markets -> all coins list
+ * /nfts/list -> all NFTs
+ * /nfts/{id} -> single NFT
+ *
+ * @link  https://api.coingecko.com/api/v3/
+ */
