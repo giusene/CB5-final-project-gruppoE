@@ -1,6 +1,24 @@
 .main {
-  display: flex;
-  flex-direction: column;
   padding: var(--page-padding);
-  gap: 1.5rem;
+  .coins_container {
+    height: calc(80vh - var(--navbar-height));
+    overflow-y: scroll;
+    padding: 5px 4px;
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+
+    &::-webkit-scrollbar {
+      background-color: transparent;
+      width: 8px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: rgba(64, 61, 91, 1);
+    }
+
+    @media only screen and (min-width: 768px) {
+      height: calc(85vh - var(--navbar-height));
+    }
+  }
 }
