@@ -13,12 +13,14 @@ const CoinsItem = ({ data }) => {
           <p className={styles.symbol}>{symbol}</p>
         </div>
       </div>
-      <div className={styles.price}>
+      <div className={styles.button_wrapper}>
         <button>BUY</button>
-        <i>
-          <AiOutlineStar />
-        </i>
-        <p>{market_cap_rank} USD</p>
+        <div className={styles.price}>
+          <i>
+            <AiOutlineStar />
+          </i>
+          <p>{market_cap_rank} USD</p>
+        </div>
       </div>
     </div>
   );

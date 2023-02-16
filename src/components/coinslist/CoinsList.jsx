@@ -4,9 +4,11 @@ import CoinsItem from "../coinsitem/CoinsItem";
 const CoinsList = ({ coins }) => {
   return (
     <div className={styles.main}>
-      {coins.map((coin, index) => (
-        <CoinsItem key={index} data={coin} />
-      ))}
+      <div className={styles.coins_container}>
+        {coins.map((coin, index) => (
+          <CoinsItem key={index} data={coin} />
+        ))}
+      </div>
     </div>
   );
 };
