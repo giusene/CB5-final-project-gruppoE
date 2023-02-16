@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import { useRouter } from "next/router";
 import { navbarLinks } from "@/utils/navbarLinks";
 import { useContext } from "react";
-import { AppCtx } from "@/store/state";
+import { AppCtx } from "@/store/context";
 
 const Header = () => {
   const [currentLabel, setCurrentLabel] = useState("");
@@ -26,7 +26,6 @@ const Header = () => {
         <i>
           <BiUserCircle />
         </i>
-        <p>{value.state.users[1].name}</p>
       </div>
     </div>
   );
