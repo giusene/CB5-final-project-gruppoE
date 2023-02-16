@@ -1,0 +1,93 @@
+.main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: scale(0.7);
+
+  .card {
+    width: 500px;
+    height: 300px;
+    color: white;
+    cursor: pointer;
+
+    .card_inner {
+      width: 100%;
+      height: 100%;
+      position: relative;
+    }
+
+    .card_front {
+      width: 100%;
+      height: 100%;
+      background-image: linear-gradient(45deg, #270131a2, #5f0463);
+      position: absolute;
+      top: 0;
+      left: 0;
+      padding: 1rem 1.5rem;
+      border-radius: 15px;
+      overflow: hidden;
+      z-index: 100;
+
+      .map_card {
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        opacity: 0.25;
+        filter: grayscale(0.3);
+        object-fit: contain;
+        object-position: top;
+        z-index: -1;
+      }
+
+      .row {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        img {
+          width: 60px;
+          height: 55px;
+          object-fit: contain;
+        }
+        img:nth-child(2) {
+          width: 80px;
+          height: 100%;
+        }
+      }
+
+      .card_number {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-top: 4rem;
+
+        p {
+          font-size: 2rem;
+        }
+      }
+
+      .card_holder {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-top: 2.5rem;
+
+        p {
+          font-size: 0.8rem;
+        }
+      }
+
+      .card_name {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-top: 1.3rem;
+
+        p {
+          font-size: 1.4rem;
+        }
+      }
+    }
+  }
+}
