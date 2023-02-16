@@ -1,15 +1,21 @@
 import styles from "./styles.module.scss";
 import { BiUserCircle } from "react-icons/bi";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import { useRouter } from "next/router";
 import { navbarLinks } from "@/utils/navbarLinks";
-import { useContext } from "react";
 import { AppCtx } from "@/store/context";
+import { loginActions } from "@/store/actions";
 
 const Header = () => {
+  const { state, dispatch } = useContext(AppCtx);
   const [currentLabel, setCurrentLabel] = useState("");
   const router = useRouter();
-  const {state} = useContext(AppCtx);
+
+  const logoutHandler = () => {
+    dispatch({
+      type: loginActions.LOGOUT_USER,
+    });
+  };
 
   useEffect(() => {
     const currentPath = router.asPath;
@@ -23,6 +29,7 @@ const Header = () => {
     <div className={styles.main}>
       <h1>{currentLabel.toUpperCase()}</h1>
       <div className={styles.auth_data}>
+        {state.isLogged && <button onClick={logoutHandler}>Logout</button>}
         <i>
           <BiUserCircle />
         </i>

@@ -17,7 +17,8 @@ const appReducer = (state, action) => {
         isLogged: true,
       };
     } else {
-      return state, console.log("username o password non validi");
+      console.log("username o password non validi");
+      return state;
     }
   }
 
