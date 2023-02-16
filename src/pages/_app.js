@@ -1,7 +1,7 @@
 import "@/styles/globals.css";
 import MainLayout from "@/layout/MainLayout";
 import { useReducer } from "react";
-import { mainReducer } from "@/store/reducer";
+import mainReducer from "@/store/reducer";
 import { initialState } from "@/store/state";
 import { AppCtx } from "@/store/context";
 

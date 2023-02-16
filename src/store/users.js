@@ -3,7 +3,7 @@ const users = [
     id: 1,
     name: "Pietro",
     surname: "Di Stefano",
-    userName: "pietro23",
+    username: "pietro23",
     email: "pietrodistefano@gmail.com",
     password: "coding",
     assets: {
@@ -19,7 +19,7 @@ const users = [
     id: 2,
     name: "Cesare",
     surname: "Tomasello",
-    userName: "cesare28",
+    username: "cesare28",
     email: "cesaretomasello@gmail.com",
     password: "coding",
     assets: {
@@ -35,7 +35,7 @@ const users = [
     id: 3,
     name: "Sebastiano",
     surname: "Occhipinti",
-    userName: "sebastiano24",
+    username: "sebastiano24",
     email: "sebastianoochhipinti@gmail.com",
     password: "coding",
     assets: {
@@ -51,7 +51,7 @@ const users = [
     id: 4,
     name: "Marco",
     surname: "Rivera",
-    userName: "marco29",
+    username: "marco29",
     email: "marcorivera@gmail.com",
     password: "coding",
     assets: {
@@ -67,7 +67,7 @@ const users = [
     id: 5,
     name: "Chiara",
     surname: "Maggio",
-    userName: "magichiara",
+    username: "magichiara",
     email: "chiaramaggio@gmail.com",
     password: "coding",
     assets: {
@@ -81,7 +81,7 @@ const users = [
     id: 6,
     name: "Giuseppe",
     surname: "Senettone",
-    userName: "Senex30",
+    username: "Senex30",
     email: "giuseppesenettone@gmail.com",
     password: "coding",
     assets: {

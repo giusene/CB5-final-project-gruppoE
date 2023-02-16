@@ -2,7 +2,7 @@ import users from "./users";
 
 const initialState = {
   users: users,
-  currentUser: null,
+  currentUser: '',
   currentBalance: 0,
   currentCreditCard: null,
   cart: [],
