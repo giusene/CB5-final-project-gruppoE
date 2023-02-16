@@ -5,10 +5,15 @@
   transform: scale(0.7);
 
   .card {
-    width: 500px;
+    min-width: 500px;
     height: 300px;
+    transform: scale(70%);
     color: white;
     cursor: pointer;
+
+    @media only screen and (min-width: 1280px) {
+      transform: scale(100%);
+    }
 
     .card_inner {
       width: 100%;

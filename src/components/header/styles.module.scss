@@ -18,6 +18,13 @@
   }
 
   .auth_data {
+    display: flex;
+    gap: 20px;
+
+    button {
+      padding: 5px 10px;
+    }
+
     i {
       font-size: 2.5rem;
       display: flex;

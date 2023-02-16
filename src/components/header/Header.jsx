@@ -30,10 +30,12 @@ const Header = () => {
       <h1>{currentLabel.toUpperCase()}</h1>
       <div className={styles.auth_data}>
         {state.isLogged && <button onClick={logoutHandler}>Logout</button>}
-        <i>
-          <BiUserCircle />
-        </i>
-        <h2>{state.currentUser.name}</h2>
+        <>
+          <i>
+            <BiUserCircle />
+          </i>
+          <h2>{state.currentUser.name}</h2>
+        </>
       </div>
     </div>
   );
