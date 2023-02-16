@@ -2,10 +2,11 @@ import users from "./users";
 
 const initialState = {
   users: users,
-  currentUser: '',
+  currentUser: "",
   currentBalance: 0,
   currentCreditCard: null,
   cart: [],
+  isLogged: false,
 };
 
 export { initialState };

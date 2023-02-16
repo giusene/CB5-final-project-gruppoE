@@ -18,7 +18,6 @@ const appReducer = (state, action) => {
         isLogged: true,
       };
     } else {
-      ("username o password non validi");
       return state;
     }
   }
@@ -27,10 +26,10 @@ const appReducer = (state, action) => {
     localStorage.removeItem("currentUser");
     return {
       ...state,
-      /*     currentUser: "",
+      currentUser: "",
       currentBalance: 0,
       currentCreditCard: null,
-      cart: [], */
+      cart: [],
       isLogged: false,
     };
   }
