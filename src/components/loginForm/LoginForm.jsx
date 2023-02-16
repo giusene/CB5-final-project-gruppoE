@@ -8,7 +8,7 @@ const LoginForm = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
-  const submitHandler = e => {
+  const submitHandler = (e) => {
     e.preventDefault();
     dispatch({
       type: loginActions.LOGIN_USER,
@@ -18,34 +18,39 @@ const LoginForm = () => {
 
   return (
     <div className={styles.main}>
-      <div className={styles.login_nav}>
-        <div className={`${styles.login_nav__item} ${styles.active}`}>
-          <a href="#">SIGNIN</a>
+      <div className={styles.wrapper}>
+        <div className={styles.login_nav}>
+          <div className={`${styles.login_nav__item} ${styles.active}`}>
+            <a href="#">SIGNIN</a>
+          </div>
+          <div>
+            <a href="#">SIGNUP</a>
+          </div>
         </div>
-        <div className={styles.login_nav__item}>
-          <a href="#">SIGNUP</a>
-        </div>
+
+        <form onSubmit={submitHandler}>
+          <input
+            className={styles.login_input}
+            type="text"
+            name="username"
+            onInput={(e) => setUsername(e.target.value)}
+            placeholder="USERNAME"
+            required
+          />
+
+          <input
+            className={styles.login_input}
+            type="password"
+            name="password"
+            onInput={(e) => setPassword(e.target.value)}
+            placeholder="PASSWORD"
+            required
+          />
+          <div className={styles.btn}>
+            <button type="submit">SIGN IN</button>
+          </div>
+        </form>
       </div>
-
-      <form onSubmit={submitHandler}>
-        <input
-          className={styles.login_input}
-          type="text"
-          name="username"
-          onInput={e => setUsername(e.target.value)}
-          required
-        />
-
-        <input
-          className={styles.login_input}
-          type="password"
-          name="password"
-          onInput={e => setPassword(e.target.value)}
-          required
-        />
-
-        <button type="submit">SIGN IN</button>
-      </form>
     </div>
   );
 };
