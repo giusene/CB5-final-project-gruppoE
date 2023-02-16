@@ -1,0 +1,19 @@
+.main {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  gap: 70px;
+  .chart {
+    display: flex;
+    flex-direction: column;
+    width: 700px;
+    height: 700px;
+  }
+  .purchase_coins {
+    display: flex;
+  }
+  h1 {
+    margin-top: 10px;
+    color: var(--details-main-color);
+  }
+}

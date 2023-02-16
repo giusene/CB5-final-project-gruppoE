@@ -1,16 +1,25 @@
 import styles from "./styles.module.scss";
 import { navbarLinks } from "@/utils/navbarLinks";
 import Link from "next/link";
+import { useState } from "react";
 
 const Navbar = () => {
+  const [activeId, setActiveId] = useState(1);
+
   return (
     <div className={styles.main}>
       {navbarLinks.map((link) => (
         <Link key={link.id} href={link.route}>
-          <div className={styles.link}>
-            <i>{link.icon}</i>
-            {/* <p>{link.label}</p> */}
-          </div>
+          <i
+            onClick={() => setActiveId(link.id)}
+            className={
+              activeId === link.id
+                ? `${styles.icon} ${styles.icon_active}`
+                : `${styles.icon}`
+            }
+          >
+            {link.icon}
+          </i>
         </Link>
       ))}
     </div>

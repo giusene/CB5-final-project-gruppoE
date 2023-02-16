@@ -1,6 +1,6 @@
-import styles from "./styles.module.scss";
 import Header from "@/components/header/Header";
 import Navbar from "@/components/navbar/Navbar";
+import styles from "./styles.module.scss";
 
 const MainLayout = ({ children }) => {
   return (
@@ -11,5 +11,4 @@ const MainLayout = ({ children }) => {
     </div>
   );
 };
-
 export default MainLayout;
