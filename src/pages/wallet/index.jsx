@@ -20,8 +20,11 @@ function Wallet() {
     datasets: [
       {
         label: "Saldo",
-        data: [1000, 1200, 1300, 1500, 1800, 2000, 2200, 2400, 2600, 2800, 3000, 3200],
-        borderColor: "purple",
+        data: [
+          1000, 1200, 1300, 1500, 1800, 2000, 2200, 2400, 2600, 2800, 3000,
+          3200,
+        ],
+        borderColor: "whitesmoke",
         fill: false,
       },
     ],
@@ -29,8 +32,8 @@ function Wallet() {
   const options = {
     plugins: {
       title: {
-        display: true,
-        text: "Chart.js Stacked Line/Bar Chart",
+        display: false,
+        text: "Stacked Line/Bar Chart",
       },
     },
 
