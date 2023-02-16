@@ -9,7 +9,7 @@ import { AppCtx } from "@/store/context";
 const Header = () => {
   const [currentLabel, setCurrentLabel] = useState("");
   const router = useRouter();
-  const value = useContext(AppCtx);
+  const {state} = useContext(AppCtx);
 
   useEffect(() => {
     const currentPath = router.asPath;
@@ -26,6 +26,7 @@ const Header = () => {
         <i>
           <BiUserCircle />
         </i>
+        <h2>{state.currentUser.name}</h2>
       </div>
     </div>
   );
