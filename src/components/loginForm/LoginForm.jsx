@@ -18,6 +18,7 @@ const LoginForm = () => {
 
   return (
     <div className={styles.main}>
+
       <div className={styles.login_nav}>
         <div className={`${styles.login_nav__item} ${styles.active}`}>
           <a href="#">SIGNIN</a>
@@ -26,8 +27,8 @@ const LoginForm = () => {
           <a href="#">SIGNUP</a>
         </div>
       </div>
-
-      <form onSubmit={submitHandler}>
+      
+<form onSubmit={submitHandler}>
         <input
           className={styles.login_input}
           type="text"
@@ -46,6 +47,9 @@ const LoginForm = () => {
 
         <button type="submit">SIGN IN</button>
       </form>
+      </div>
+
+      
     </div>
   );
 };
