@@ -17,6 +17,7 @@
   .icon_wrapper {
     display: flex;
     align-items: center;
+    width: 35%;
     gap: 1rem;
 
     img {
@@ -44,28 +45,51 @@
     }
   }
 
+  .price {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    p {
+      font-size: 0.8rem;
+      text-align: center;
+    }
+
+    @media only screen and (min-width: 768px) {
+      width: 300px;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      gap: 3rem;
+
+      p {
+        font-size: 1rem;
+        letter-spacing: 0.0625rem;
+      }
+
+      div {
+        display: flex;
+        align-items: center;
+        width: 50%;
+      }
+    }
+
+    .price_up {
+      color: #02da26;
+    }
+
+    .price_down {
+      color: #fb3835;
+    }
+  }
+
   .button_wrapper {
+    width: 25%;
     display: flex;
     align-items: center;
     justify-content: flex-start;
     gap: 0.5rem;
-
-    .price {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-
-      @media only screen and (min-width: 768px) {
-        display: flex;
-        flex-direction: row;
-        gap: 0.5rem;
-      }
-    }
-
-    p {
-      font-size: 0.6rem;
-      text-align: center;
-    }
 
     button {
       padding: 0.5rem 1.2rem;

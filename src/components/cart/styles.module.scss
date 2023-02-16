@@ -1,0 +1,92 @@
+.main {
+  display: none;
+}
+
+@media only screen and (min-width: 768px) {
+  .main {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: var(--page-padding);
+
+    .cart_container {
+      width: 400px;
+      height: 550px;
+      background-color: rgb(40, 40, 40);
+      border: 2px solid rgba(171, 171, 171, 0.734);
+      border-radius: 8px;
+      padding: 1rem 1rem;
+      color: white;
+
+      .cart_body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 3rem;
+        margin-top: 3rem;
+
+        .balance {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 70%;
+
+          p {
+            font-size: 2.5rem;
+          }
+
+          input {
+            width: 200px;
+            height: 80px;
+            background: transparent;
+            border: none;
+            border-bottom: 2px solid var(--details-secondary-color);
+            font-size: 3rem;
+            color: white;
+            outline: none;
+            text-align: center;
+
+            &::-webkit-outer-spin-button,
+            &::-webkit-inner-spin-button {
+              -webkit-appearance: none;
+              margin: 0;
+            }
+          }
+        }
+
+        .products {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+
+          width: 70%;
+          height: 130px;
+
+          p {
+            border: 2px solid rgba(171, 171, 171, 0.734);
+            height: 50%;
+            padding: 1.3rem;
+          }
+        }
+
+        button {
+          color: #f7f7f7;
+          font-size: 1rem;
+          font-family: "Montserrat", sans-serif;
+          text-transform: uppercase;
+          letter-spacing: 1px;
+          padding: 0.75rem;
+          border-radius: 2rem;
+          width: 70%;
+          background-color: rgba(174, 4, 190, 0.701);
+          border: none;
+          cursor: pointer;
+
+          &:hover {
+            background-color: rgb(174, 4, 190);
+          }
+        }
+      }
+    }
+  }
+}
