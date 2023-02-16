@@ -58,11 +58,7 @@ const LoginForm = () => {
             </div>
 
             <div className={styles.submit}>
-              <input
-                className={styles.login_submit}
-                value="SIGN IN"
-                type="submit"
-              />
+              <input className={styles.login_submit} value="SIGN IN" type="submit" />
 
               <a href="#" className={styles.login_forgot}>
                 Forgot Password?
