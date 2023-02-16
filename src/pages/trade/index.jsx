@@ -1,9 +1,13 @@
+import Cart from "@/components/cart/Cart";
 import CoinsList from "@/components/coinslist/CoinsList";
+
+import styles from "@/styles/trade.module.scss";
 
 const Trade = ({ coins }) => {
   return (
-    <div>
+    <div className={styles.main}>
       <CoinsList coins={coins} />
+      <Cart />
     </div>
   );
 };
