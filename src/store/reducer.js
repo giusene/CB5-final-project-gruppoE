@@ -1,22 +1,39 @@
-import { actions } from "./actions";
-const mainReducer= (state,action) =>{
-    switch(action.type){
-        case actions.SELECT_USER:
-            return{
-                ...state,
-                currentUser: state.users.includes()
+import { loginActions } from "./actions";
 
-                
-            }
-        default: 
-        return state;
+const appReducer = (state, action) => {
+  if (action.type === loginActions.LOGIN_USER) {
+    const user = state.users.find(
+      (user) =>
+        user.username === action.payload.username &&
+        user.password === action.payload.password
+    );
+    if (user) {
+      localStorage.setItem("currentUser", JSON.stringify(user));
+      return {
+        ...state,
+        currentUser: user,
+        currentBalance: user.balance || 0,
+        currentCreditCard: user.creditCard,
+        cart: user.cart || [],
+        isLogged: true,
+      };
+    } else {
+      ("username o password non validi");
+      return state;
+    }
+  }
 
-     }
-}
+  if (action.type === loginActions.LOGOUT_USER) {
+    localStorage.removeItem("currentUser");
+    return {
+      ...state,
+      /*     currentUser: "",
+      currentBalance: 0,
+      currentCreditCard: null,
+      cart: [], */
+      isLogged: false,
+    };
+  }
+};
 
-export default mainReducer;
-
-// user => 
-//                     user.userName === action.payload && 
-//                     user.password === action.payload ? 
-//                     'ciao': 'utente non trovato')
+export default appReducer;

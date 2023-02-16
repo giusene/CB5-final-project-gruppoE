@@ -6,11 +6,11 @@ import Login from "@/pages/login";
 const MainLayout = ({ children }) => {
   return (
     <div className={styles.main}>
-      {/* <Login> */}
-      <Header />
-      <Navbar />
-      {children}
-      {/* </Login> */}
+      <Login>
+        <Header />
+        <Navbar />
+        {children}
+      </Login>
     </div>
   );
 };

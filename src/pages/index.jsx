@@ -1,11 +1,8 @@
 import Head from "next/head";
 import styles from "@/styles/Home.module.scss";
 import CryptoCoins from "@/components/cryptocoins/CryptoCoins";
-import { useState } from "react";
-import LoginForm from "@/components/loginForm/LoginForm";
 
 export default function Home({ coins }) {
-  const [login, setLogin] = useState(true);
   return (
     <>
       <Head>
@@ -15,7 +12,6 @@ export default function Home({ coins }) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className={styles.main}>
-        <LoginForm />
         <CryptoCoins data={coins} />
       </main>
     </>
