@@ -4,8 +4,7 @@ const appReducer = (state, action) => {
   if (action.type === loginActions.LOGIN_USER) {
     const user = state.users.find(
       (user) =>
-        user.username === action.payload.username &&
-        user.password === action.payload.password
+        user.username === action.payload.username && user.password === action.payload.password
     );
     if (user) {
       localStorage.setItem("currentUser", JSON.stringify(user));
@@ -18,8 +17,7 @@ const appReducer = (state, action) => {
         isLogged: true,
       };
     } else {
-      ("username o password non validi");
-      return state;
+      return state, console.log("username o password non validi");
     }
   }
 
@@ -27,10 +25,10 @@ const appReducer = (state, action) => {
     localStorage.removeItem("currentUser");
     return {
       ...state,
-      /*     currentUser: "",
+      currentUser: "",
       currentBalance: 0,
       currentCreditCard: null,
-      cart: [], */
+      cart: [],
       isLogged: false,
     };
   }
