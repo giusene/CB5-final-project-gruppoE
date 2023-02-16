@@ -8,7 +8,7 @@ const LoginForm = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
-  const submitHandler = e => {
+  const submitHandler = (e) => {
     e.preventDefault();
     dispatch({
       type: loginActions.LOGIN_USER,
@@ -32,7 +32,7 @@ const LoginForm = () => {
           className={styles.login_input}
           type="text"
           name="username"
-          onInput={e => setUsername(e.target.value)}
+          onInput={(e) => setUsername(e.target.value)}
           required
         />
 
@@ -40,7 +40,7 @@ const LoginForm = () => {
           className={styles.login_input}
           type="password"
           name="password"
-          onInput={e => setPassword(e.target.value)}
+          onInput={(e) => setPassword(e.target.value)}
           required
         />
 
