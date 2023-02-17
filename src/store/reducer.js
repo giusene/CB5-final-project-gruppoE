@@ -2,6 +2,7 @@ import { loginActions, cartActions } from "./actions";
 
 const appReducer = (state, action) => {
   switch (action.type) {
+    // LOGIN
     case loginActions.LOGIN_USER:
       const user = state.users.find(
         (user) =>
@@ -21,7 +22,7 @@ const appReducer = (state, action) => {
       } else {
         return state;
       }
-
+    // LOGOUT
     case loginActions.LOGOUT_USER:
       localStorage.removeItem("currentUser");
       return {
@@ -32,7 +33,25 @@ const appReducer = (state, action) => {
         cart: [],
         isLogged: false,
       };
-
+    // ADD TO CART
+    case cartActions.ADD_TO_CART:
+      const updateCart = [...state.cart, action.payload];
+      localStorage.setItem("cart", JSON.stringify(updateCart));
+      return { ...state, cart: updateCart };
+    // REMOVE FROM CART
+    case cartActions.REMOVE_FROM_CART:
+      const filteredCart = state.cart.filter(
+        (item) => item.id !== action.payload.id
+      );
+      localStorage.setItem("cart", JSON.stringify(filteredCart));
+      return { ...state, cart: filteredCart };
+    // CLEAR CART
+    case cartActions.CLEAR_CART:
+      localStorage.removeItem("cart");
+      return {
+        ...state,
+        cart: [],
+      };
     default:
       return state;
   }
