@@ -3,11 +3,16 @@
   display: flex;
   justify-content: space-evenly;
 
-  .list{
+  .list {
     display: flex;
     flex-direction: column;
     gap: 4rem;
-    
+  }
 
+  .modal_container {
+    width: 40%;
+    height: 75vh;
+    display: flex;
+    justify-content: center;
   }
 }

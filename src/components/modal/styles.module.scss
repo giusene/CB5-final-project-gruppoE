@@ -1,18 +1,49 @@
+.main {
+  background-color: rgb(68, 64, 64);
+  border-radius: 12px;
+  width: 40%;
+  height: 75vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 8px 16px;
+  gap: 20px;
+  position: fixed;
 
-.main{
-    background-color: rgb(68, 64, 64);
-    border-radius: 12px;
-    width: 40%;
-    height: 75vh;
+  button {
+    position: absolute;
+    left: 25px;
+    background-color: transparent;
+    border: none;
+    font-weight: bold;
+    font-size: 30px;
+    cursor: pointer;
+    transition: all 0.25s;
+
+    &:hover {
+      color: #ea4b87;
+    }
+  }
+
+  h3 {
+    margin-top: 50px;
+  }
+
+  img {
+    width: 200px;
+    color: --details-main-color;
+  }
+
+  .attributes {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    padding: 8px 16px;
-    gap: 20px;    
-    img{
-        width: 200px;
-        color: --details-main-color;
+    gap: 5px;
+    height: 200px;
+    width: 280px;
+    margin-top: 30px;
+
+    p {
+      font-weight: bold;
     }
-
-
+  }
 }

@@ -11,11 +11,11 @@ mint-date: data.mint_date
 tokenID: data.token_id
 */
   return (
-    <div className={styles.main} onClick={() =>HandleModal(data,item.cached_file_url)}>
+    <div className={styles.main} onClick={() => HandleModal(data, item)}>
       <img src={item.cached_file_url} alt={data.contract.name} />
       <div className={styles.details}>
         <h4>{data.contract.name}</h4>
-        <p>#{item.token_id}</p>
+        <p># {item.token_id}</p>
       </div>
     </div>
   );
