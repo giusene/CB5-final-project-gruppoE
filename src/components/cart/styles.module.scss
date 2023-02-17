@@ -57,12 +57,11 @@
         height: 180px;
 
         .crypto {
-          padding: 0.5rem;
-          border: 2px solid yellow;
+          padding: 0.8rem;
           height: 50%;
           display: flex;
           align-items: center;
-          gap: 1rem;
+          gap: 1.8rem;
 
           .crypto_details {
             display: flex;
@@ -70,13 +69,15 @@
             align-items: center;
 
             img {
-              width: 30px;
-              height: 30px;
+              width: 40px;
+              height: 40px;
             }
           }
         }
 
         .eur {
+          border-top: 0.5px solid rgba(211, 211, 211, 0.555);
+          padding: 0.8rem;
           height: 50%;
           display: flex;
           align-items: center;
@@ -92,35 +93,21 @@
 
   .btns {
     display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
+    gap: 1.2rem;
 
-    div {
-      display: flex;
-      gap: 1rem;
-
-      button {
-        border-radius: 1rem;
-        border: none;
-        width: 140px;
-        padding: 0.4rem 0.8rem;
-        color: white;
-        cursor: pointer;
-        background-color: var(--details-main-color);
-      }
-    }
-
-    .buy_btn {
+    button {
+      border-radius: 1.2rem;
       border: none;
+      width: 140px;
+      padding: 0.6rem 0.1rem;
       color: white;
-      background-color: var(--details-main-color);
-      width: 300px;
-      padding: 0.8rem 0;
-      font-weight: 600;
-      font-size: 1.2rem;
-      letter-spacing: 0.2rem;
-      border-radius: 2rem;
       cursor: pointer;
+      background-color: var(--details-main-color);
+      transition: all 0.35s ease-out;
+
+      &:hover {
+        box-shadow: 0 0 15px rgba($color: #ea4b87, $alpha: 0.5);
+      }
     }
   }
 }

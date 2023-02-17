@@ -4,11 +4,10 @@ import styles from "@/styles/trade.module.scss";
 import { useState } from "react";
 
 const Trade = ({ coins }) => {
-  const [selectedCoin, setSelectedCoin] = useState("");
   return (
     <div className={styles.main}>
-      <CoinsList coins={coins} setSelectedCoin={setSelectedCoin} />
-      <Cart selectedCoin={selectedCoin} />
+      <CoinsList coins={coins} />
+      <Cart />
     </div>
   );
 };

@@ -6,7 +6,8 @@ const appReducer = (state, action) => {
     case loginActions.LOGIN_USER:
       const user = state.users.find(
         (user) =>
-          user.username === action.payload.username && user.password === action.payload.password
+          user.username === action.payload.username &&
+          user.password === action.payload.password
       );
       if (user) {
         localStorage.setItem("currentUser", JSON.stringify(user));
@@ -49,14 +50,13 @@ const appReducer = (state, action) => {
 
     // ADD TO CART
     case cartActions.ADD_TO_CART:
-      const updateCart = [...state.cart, action.payload];
-      localStorage.setItem("cart", JSON.stringify(updateCart));
-      return { ...state, cart: updateCart };
-    // REMOVE FROM CART
+      localStorage.setItem("cart", JSON.stringify(action.payload));
+      return { ...state, cart: action.payload };
+    /*     // REMOVE FROM CART
     case cartActions.REMOVE_FROM_CART:
       const filteredCart = state.cart.filter((item) => item.id !== action.payload.id);
       localStorage.setItem("cart", JSON.stringify(filteredCart));
-      return { ...state, cart: filteredCart };
+      return { ...state, cart: filteredCart }; */
     // CLEAR CART
     case cartActions.CLEAR_CART:
       localStorage.removeItem("cart");

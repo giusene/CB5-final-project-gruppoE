@@ -6,7 +6,7 @@ import { cartActions, favoriteActions } from "@/store/actions";
 import { AppCtx } from "@/store/context";
 import { useContext } from "react";
 
-const CoinsItem = ({ data, setSelectedCoin }) => {
+const CoinsItem = ({ data }) => {
   const {
     state: { favorite },
     dispatch,
@@ -20,7 +20,6 @@ const CoinsItem = ({ data, setSelectedCoin }) => {
       type: cartActions.ADD_TO_CART,
       payload: data,
     });
-    setSelectedCoin(data);
   };
 
   return (
