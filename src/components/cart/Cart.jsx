@@ -1,8 +1,18 @@
 import styles from "./styles.module.scss";
 import { BiEuro } from "react-icons/bi";
+import { AppCtx } from "@/store/context";
+import { useContext } from "react";
+import { cartActions } from "@/store/actions";
 
-const Cart = ({ selectedCoin }) => {
-  const { image, name } = selectedCoin;
+const Cart = () => {
+  const { state, dispatch } = useContext(AppCtx);
+
+  const clearCartHandler = () => {
+    dispatch({
+      type: cartActions.CLEAR_CART,
+    });
+  };
+
   return (
     <div className={styles.main}>
       <div className={styles.cart_container}>
@@ -13,19 +23,20 @@ const Cart = ({ selectedCoin }) => {
             <BiEuro />
           </i>
         </form>
+
         <div className={styles.change_wrapper}>
           <div className={styles.crypto}>
             <div className={styles.label}>
               <p>Buy</p>
             </div>
-            {!selectedCoin ? (
+            {state.cart.length == 0 ? (
               <div>
                 <p>Your Coin</p>
               </div>
             ) : (
               <div className={styles.crypto_details}>
-                <img src={image} alt={name} />
-                <p>{name}</p>
+                <img src={state.cart.image} alt={state.cart.name} />
+                <p>{state.cart.name}</p>
               </div>
             )}
           </div>
@@ -40,12 +51,8 @@ const Cart = ({ selectedCoin }) => {
           </div>
         </div>
         <div className={styles.btns}>
-          <div>
-            <button>REMOVE CRYPTO</button>
-            <button>CLEAR CART</button>
-          </div>
-
-          <button className={styles.buy_btn}>BUY</button>
+          <button onClick={() => clearCartHandler()}>CLEAR</button>
+          <button>BUY</button>
         </div>
       </div>
     </div>
