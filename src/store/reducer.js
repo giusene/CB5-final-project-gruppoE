@@ -1,4 +1,4 @@
-import { loginActions, cartActions } from "./actions";
+import { loginActions, cartActions, favoriteActions } from "./actions";
 
 const appReducer = (state, action) => {
   switch (action.type) {
@@ -6,8 +6,7 @@ const appReducer = (state, action) => {
     case loginActions.LOGIN_USER:
       const user = state.users.find(
         (user) =>
-          user.username === action.payload.username &&
-          user.password === action.payload.password
+          user.username === action.payload.username && user.password === action.payload.password
       );
       if (user) {
         localStorage.setItem("currentUser", JSON.stringify(user));
@@ -33,6 +32,21 @@ const appReducer = (state, action) => {
         cart: [],
         isLogged: false,
       };
+
+    // FAVORITE COINS
+    case favoriteActions.ADD_FAVORITE:
+      return {
+        ...state,
+        favorite: [...state.favorite, { ...action.payload }],
+      };
+
+    case favoriteActions.REMOVE_FAVORITE:
+      console.log(action.payload);
+      return {
+        ...state,
+        favorite: state.favorite.filter((fav) => fav.id !== action.payload.id),
+      };
+
     // ADD TO CART
     case cartActions.ADD_TO_CART:
       const updateCart = [...state.cart, action.payload];
@@ -40,9 +54,7 @@ const appReducer = (state, action) => {
       return { ...state, cart: updateCart };
     // REMOVE FROM CART
     case cartActions.REMOVE_FROM_CART:
-      const filteredCart = state.cart.filter(
-        (item) => item.id !== action.payload.id
-      );
+      const filteredCart = state.cart.filter((item) => item.id !== action.payload.id);
       localStorage.setItem("cart", JSON.stringify(filteredCart));
       return { ...state, cart: filteredCart };
     // CLEAR CART
