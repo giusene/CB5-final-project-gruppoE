@@ -1,7 +1,13 @@
 .main {
   padding: var(--page-padding);
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 4rem;
+  justify-content: space-evenly;
+
+  .list{
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+    
+
+  }
 }
