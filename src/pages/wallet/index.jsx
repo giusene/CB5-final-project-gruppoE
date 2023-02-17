@@ -26,7 +26,6 @@ function Wallet() {
           3200,
         ],
 
-
         borderColor: "purple",
 
         fill: false,
