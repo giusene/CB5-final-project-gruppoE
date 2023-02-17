@@ -6,6 +6,7 @@ const initialState = {
   currentBalance: 0,
   currentCreditCard: null,
   cart: [],
+  favorite: [],
   isLogged: false,
 };
 

@@ -1,6 +1,7 @@
 import Head from "next/head";
 import styles from "@/styles/Home.module.scss";
 import CryptoCoins from "@/components/cryptocoins/CryptoCoins";
+import FavoriteCoins from "@/components/favoriteCoins/FavoriteCoins";
 
 export default function Home({ coins }) {
   return (
@@ -13,6 +14,7 @@ export default function Home({ coins }) {
       </Head>
       <main className={styles.main}>
         <CryptoCoins data={coins} />
+        <FavoriteCoins />
       </main>
     </>
   );
