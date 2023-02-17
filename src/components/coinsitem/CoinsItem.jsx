@@ -6,19 +6,21 @@ import { cartActions, favoriteActions } from "@/store/actions";
 import { AppCtx } from "@/store/context";
 import { useContext } from "react";
 
-const CoinsItem = ({ data }) => {
+const CoinsItem = ({ data, setSelectedCoin }) => {
   const {
     state: { favorite },
     dispatch,
   } = useContext(AppCtx);
 
-  const { image, name, symbol, current_price, price_change_percentage_24h } = data;
+  const { image, name, symbol, current_price, price_change_percentage_24h } =
+    data;
 
   const addToCartHandler = () => {
     dispatch({
       type: cartActions.ADD_TO_CART,
       payload: data,
     });
+    setSelectedCoin(data);
   };
 
   return (
@@ -37,10 +39,16 @@ const CoinsItem = ({ data }) => {
         <div>
           <p
             className={`${styles.price_change} ${
-              price_change_percentage_24h < 0 ? styles.price_down : styles.price_up
+              price_change_percentage_24h < 0
+                ? styles.price_down
+                : styles.price_up
             }`}
           >
-            {price_change_percentage_24h < 0 ? <FiTrendingDown /> : <FiTrendingUp />}
+            {price_change_percentage_24h < 0 ? (
+              <FiTrendingDown />
+            ) : (
+              <FiTrendingUp />
+            )}
             <span> </span>
             {price_change_percentage_24h}
           </p>
@@ -53,13 +61,20 @@ const CoinsItem = ({ data }) => {
         {favorite.find((fav) => fav.id === data.id) ? (
           <i>
             <AiFillStar
-              onClick={() => dispatch({ type: favoriteActions.REMOVE_FAVORITE, payload: data })}
+              onClick={() =>
+                dispatch({
+                  type: favoriteActions.REMOVE_FAVORITE,
+                  payload: data,
+                })
+              }
             />
           </i>
         ) : (
           <i>
             <AiOutlineStar
-              onClick={() => dispatch({ type: favoriteActions.ADD_FAVORITE, payload: data })}
+              onClick={() =>
+                dispatch({ type: favoriteActions.ADD_FAVORITE, payload: data })
+              }
             />
           </i>
         )}
