@@ -52,56 +52,75 @@
       .change_wrapper {
         border: 0.5px solid rgba(211, 211, 211, 0.555);
         width: 300px;
-        height: 120px;
         display: flex;
         flex-direction: column;
+        height: 180px;
 
-        div {
-          height: 50%;
+        .crypto {
           padding: 0.5rem;
+          border: 2px solid yellow;
+          height: 50%;
+          display: flex;
+          align-items: center;
+          gap: 1rem;
+
+          .crypto_details {
+            display: flex;
+            gap: 0.5rem;
+            align-items: center;
+
+            img {
+              width: 30px;
+              height: 30px;
+            }
+          }
+        }
+
+        .eur {
+          height: 50%;
           display: flex;
           align-items: center;
           gap: 1rem;
         }
+      }
 
-        .change {
-          border-top: 0.5px solid rgba(211, 211, 211, 0.555);
-        }
+      .change {
+        border-top: 0.5px solid rgba(211, 211, 211, 0.555);
+      }
+    }
+  }
+
+  .btns {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+
+    div {
+      display: flex;
+      gap: 1rem;
+
+      button {
+        border-radius: 1rem;
+        border: none;
+        width: 140px;
+        padding: 0.4rem 0.8rem;
+        color: white;
+        cursor: pointer;
+        background-color: var(--details-main-color);
       }
     }
 
-    .btns {
-      display: flex;
-      flex-direction: column;
-      gap: 1.5rem;
-
-      div {
-        display: flex;
-        gap: 1rem;
-
-        button {
-          border-radius: 1rem;
-          border: none;
-          width: 140px;
-          padding: 0.4rem 0.8rem;
-          color: white;
-          cursor: pointer;
-          background-color: var(--details-main-color);
-        }
-      }
-
-      .buy_btn {
-        border: none;
-        color: white;
-        background-color: var(--details-main-color);
-        width: 300px;
-        padding: 0.8rem 0;
-        font-weight: 600;
-        font-size: 1.2rem;
-        letter-spacing: 0.2rem;
-        border-radius: 2rem;
-        cursor: pointer;
-      }
+    .buy_btn {
+      border: none;
+      color: white;
+      background-color: var(--details-main-color);
+      width: 300px;
+      padding: 0.8rem 0;
+      font-weight: 600;
+      font-size: 1.2rem;
+      letter-spacing: 0.2rem;
+      border-radius: 2rem;
+      cursor: pointer;
     }
   }
 }
