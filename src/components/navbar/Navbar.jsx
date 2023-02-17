@@ -1,6 +1,7 @@
 import styles from "./styles.module.scss";
 import { navbarLinks } from "@/utils/navbarLinks";
 import Link from "next/link";
+
 import { useState } from "react";
 
 const Navbar = () => {
@@ -14,8 +15,8 @@ const Navbar = () => {
             onClick={() => setActiveId(link.id)}
             className={
               activeId === link.id
-                ? `${styles.icon} ${styles.icon_active}`
-                : `${styles.icon}`
+                ? `${styles.icon} ${link.id === 3 ? styles.icon_big : ""} ${styles.icon_active}`
+                : `${styles.icon} ${link.id === 3 ? styles.icon_big : ""}`
             }
           >
             {link.icon}

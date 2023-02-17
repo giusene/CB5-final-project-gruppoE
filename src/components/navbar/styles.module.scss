@@ -21,16 +21,69 @@
   a {
     color: black;
     text-decoration: none;
+
+    .icon {
+      width: 70px;
+      height: 50px;
+      border-radius: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all 0.35s ease-out;
+
+      &:hover {
+        background-color: #ea4b88df;
+
+        border-radius: 30px;
+      }
+    }
   }
 
-  .icon {
-    font-size: 1.5rem;
-    display: flex;
-    color: var(--details-main-color);
-    cursor: pointer;
+  .icon_big {
+    svg {
+      font-size: 3.5rem;
+    }
   }
 
-  .icon_active {
-    font-size: 1.7rem;
+  svg {
+    color: rgba(165, 165, 165, 0.74);
+    font-size: 2rem;
+  }
+}
+
+.icon_active {
+  background-color: var(--details-main-color);
+  border-radius: 30px;
+  transition: all 0.15s ease-out;
+
+  svg {
+    color: rgb(235, 234, 234);
+    animation: jello-horizontal 0.5s both;
+  }
+}
+
+/* ANIMATION */
+@keyframes jello-horizontal {
+  0% {
+    transform: scale3d(1, 1, 1);
+  }
+  30% {
+    transform: scale3d(1.15, 0.75, 1);
+  }
+  40% {
+    transform: scale3d(0.75, 1.15, 1);
+  }
+  50% {
+    transform: scale3d(1.15, 0.85, 1);
+  }
+  65% {
+    transform: scale3d(0.95, 1.05, 1);
+  }
+  75% {
+    transform: scale3d(1.05, 0.95, 1);
+  }
+  100% {
+    transform: scale3d(1, 1, 1);
   }
 }

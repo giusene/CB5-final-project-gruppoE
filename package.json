@@ -18,5 +18,8 @@
     "react-dom": "18.2.0",
     "react-icons": "^4.7.1",
     "sass": "^1.58.1"
+  },
+  "devDependencies": {
+    "@svgr/webpack": "^6.5.1"
   }
 }
