@@ -3,4 +3,10 @@ const loginActions = {
   LOGOUT_USER: "LOGOUT_USER",
 };
 
-export { loginActions };
+const cartActions = {
+  ADD_TO_CART: "ADD_TO_CART",
+  REMOVE_FROM_CART: "REMOVE_FROM_CART",
+  CLEAR_CART: "CLEAR_CART",
+};
+
+export { loginActions, cartActions };
