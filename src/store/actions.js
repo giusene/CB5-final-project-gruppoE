@@ -9,4 +9,9 @@ const cartActions = {
   CLEAR_CART: "CLEAR_CART",
 };
 
-export { loginActions, cartActions };
+const favoriteActions = {
+  ADD_FAVORITE: "ADD_FAVORITE",
+  REMOVE_FAVORITE: "REMOVE_FAVORITE",
+};
+
+export { loginActions, cartActions, favoriteActions };
