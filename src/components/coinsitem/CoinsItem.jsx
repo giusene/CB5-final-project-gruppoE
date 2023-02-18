@@ -5,6 +5,7 @@ import styles from "./styles.module.scss";
 import { cartActions, favoriteActions } from "@/store/actions";
 import { AppCtx } from "@/store/context";
 import { useContext } from "react";
+import Link from "next/link";
 
 const CoinsItem = ({ data }) => {
   const {
@@ -12,8 +13,14 @@ const CoinsItem = ({ data }) => {
     dispatch,
   } = useContext(AppCtx);
 
-  const { image, name, symbol, current_price, price_change_percentage_24h } =
-    data;
+  const {
+    id,
+    image,
+    name,
+    symbol,
+    current_price,
+    price_change_percentage_24h,
+  } = data;
 
   const addToCartHandler = () => {
     dispatch({
@@ -21,13 +28,15 @@ const CoinsItem = ({ data }) => {
       payload: data,
     });
   };
-
+  console.log("data", data);
   return (
     <div className={styles.main}>
       <div className={styles.icon_wrapper}>
         <img src={image} alt={name} />
         <div className={styles.coin_name}>
-          <p className={styles.name}>{name}</p>
+          <Link href={`/crypto/${id}`}>
+            <p className={styles.name}>{name}</p>
+          </Link>
           <p className={styles.symbol}>{symbol}</p>
         </div>
       </div>
