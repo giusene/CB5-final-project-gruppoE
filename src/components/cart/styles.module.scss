@@ -2,9 +2,10 @@
   display: none;
 }
 
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 1280px) {
   .main {
     width: 100%;
+    max-width: 500px;
     display: flex;
     justify-content: center;
     padding: 2rem 1rem;

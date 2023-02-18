@@ -12,7 +12,7 @@
   );
   color: white;
 
-  h2 {
+  h1 {
     letter-spacing: 0.1rem;
     color: var(--details-main-color);
     text-shadow: 0 0 5px rgba($color: #ea4b87, $alpha: 0.6);
@@ -25,7 +25,7 @@
 
     button {
       position: absolute;
-      right: 100px;
+      right: 55px;
       top: 5px;
       border: none;
       border-radius: 1rem;
@@ -46,7 +46,8 @@
     .right_header {
       display: flex;
       flex-direction: column;
-      align-items: center;
+      align-items: flex-end;
+      font-size: 1rem;
 
       i {
         font-size: 2rem;

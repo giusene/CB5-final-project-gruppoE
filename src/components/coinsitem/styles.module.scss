@@ -1,5 +1,6 @@
 .main {
   width: 100%;
+  max-height: 77px;
   padding: 1rem;
   border-radius: 0.8rem;
   display: flex;
@@ -88,11 +89,12 @@
     width: 25%;
     display: flex;
     align-items: center;
-    justify-content: flex-start;
+    justify-content: center;
+    flex-wrap: wrap;
     gap: 0.5rem;
 
     button {
-      padding: 0.5rem 1.2rem;
+      padding: 0.4rem 1rem;
       border: none;
       border-radius: 1rem;
       font-weight: 600;

@@ -1,5 +1,7 @@
 .main {
   padding: var(--page-padding);
+  width: 100%;
+  max-width: 1000px;
   .coins_container {
     height: calc(80vh - var(--navbar-height));
     overflow-y: scroll;

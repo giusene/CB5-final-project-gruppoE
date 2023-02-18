@@ -27,7 +27,7 @@ const Header = () => {
 
   return (
     <div className={styles.main}>
-      <h2>{currentLabel.toUpperCase()}</h2>
+      <h1>{currentLabel.toUpperCase()}</h1>
       <div className={styles.auth_data}>
         {state.isLogged && <button onClick={logoutHandler}>Logout</button>}
         <div className={styles.right_header}>
