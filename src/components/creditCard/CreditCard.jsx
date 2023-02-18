@@ -3,8 +3,12 @@ import circuitPic from "/public/images/mastercard.png";
 import chipCard from "/public/images/chip.png";
 import mapCard from "/public/images/map.png";
 import styles from "./styles.module.scss";
+import { useContext } from "react";
+import { AppCtx } from "@/store/context";
 
 const CreditCard = () => {
+  const { state } = useContext(AppCtx);
+
   return (
     <div className={styles.main}>
       <div className={styles.card}>
@@ -28,7 +32,9 @@ const CreditCard = () => {
             </div>
 
             <div className={styles.card_name}>
-              <p>MARCO RIVERA</p>
+              <p>
+                {state.currentUser.name} {state.currentUser.surname}
+              </p>
               <p>SENEX❖</p>
             </div>
           </div>

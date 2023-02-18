@@ -1,6 +1,7 @@
 .main {
   display: flex;
   padding: 1rem;
+  height: 70px;
   justify-content: space-between;
   align-items: center;
   background: linear-gradient(
@@ -11,29 +12,45 @@
   );
   color: white;
 
-  h1 {
-    letter-spacing: 0.2rem;
+  h2 {
+    letter-spacing: 0.1rem;
     color: var(--details-main-color);
     text-shadow: 0 0 5px rgba($color: #ea4b87, $alpha: 0.6);
   }
 
   .auth_data {
     display: flex;
+    align-items: center;
     gap: 20px;
 
     button {
-      padding: 5px 10px;
+      position: absolute;
+      right: 100px;
+      top: 5px;
+      border: none;
+      border-radius: 1rem;
+      height: 30px;
+      padding: 0 10px;
+      font-weight: 500;
+      background-color: var(--details-main-color);
+      color: white;
+      letter-spacing: 0.1rem;
+      cursor: pointer;
+      transition: all 0.35s ease-out;
+
+      &:hover {
+        box-shadow: 0 0 10px rgba($color: #ea4b87, $alpha: 0.5);
+      }
     }
 
-    i {
-      font-size: 2.5rem;
+    .right_header {
       display: flex;
       flex-direction: column;
       align-items: center;
-    }
 
-    p {
-      font-size: 0.7rem;
+      i {
+        font-size: 2rem;
+      }
     }
   }
 }
