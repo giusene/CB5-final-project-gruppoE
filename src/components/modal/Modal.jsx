@@ -7,10 +7,10 @@ function Modal({ data, setModalState }) {
       <button onClick={() => setModalState(false)}>X</button>
       <h3>{name}</h3>
       <img src={image} />
-      <h2>Rarity ranking: #{rarity}</h2>
+      <h2>Rarity ranking: <span>#{rarity}</span></h2>
       <div className={styles.attributes}>
         {attributes.map((attr) => (
-          <p>{`${attr.trait_type}: ${attr.value}`}</p>
+          <p><h4 className={styles.trait}>{`${attr.trait_type}:`}</h4><h4>{`${attr.value}`}</h4> </p>
         ))}
       </div>
     </div>

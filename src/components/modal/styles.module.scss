@@ -1,7 +1,6 @@
 .main {
   background-color: rgb(68, 64, 64);
   border-radius: 12px;
-  width: 40%;
   height: 75vh;
   display: flex;
   flex-direction: column;
@@ -19,6 +18,8 @@
     font-size: 30px;
     cursor: pointer;
     transition: all 0.25s;
+    color: aliceblue;
+    transition: all 0.35s;
 
     &:hover {
       color: #ea4b87;
@@ -26,7 +27,8 @@
   }
 
   h3 {
-    margin-top: 50px;
+    margin-top: 60px;
+    color: aliceblue;
   }
 
   img {
@@ -34,16 +36,34 @@
     color: --details-main-color;
   }
 
+  h2{
+    color: aliceblue;
+
+  }
+  span{
+    color: #ea4b87;
+  }
   .attributes {
     display: flex;
     flex-direction: column;
-    gap: 5px;
+    gap: 10px;
     height: 200px;
     width: 280px;
     margin-top: 30px;
 
     p {
       font-weight: bold;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      
+      .trait{
+        color: #ea4b87;
+      }
+      h4{
+        color: aliceblue;
+      }
     }
+   
   }
 }
