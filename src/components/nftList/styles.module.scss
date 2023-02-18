@@ -5,12 +5,13 @@
 
   .list {
     display: flex;
-    flex-direction: column;
+    flex-wrap: wrap;
     gap: 4rem;
+    width: 65%;
   }
 
   .modal_container {
-    width: 40%;
+    width: 30%;
     height: 75vh;
     display: flex;
     justify-content: center;
