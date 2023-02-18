@@ -1,15 +1,30 @@
 import "@/styles/globals.css";
 import MainLayout from "@/layout/MainLayout";
-import { useReducer } from "react";
+import { useEffect, useReducer } from "react";
 import appReducer from "@/store/reducer";
 import { initialState } from "@/store/state";
 import { AppCtx } from "@/store/context";
 import Login from "./login";
+import { loginActions } from "@/store/actions";
 
 export default function App({ Component, pageProps }) {
   const [state, dispatch] = useReducer(appReducer, initialState);
 
-  // TODO: fix error page when login is not valid
+  useEffect(() => {
+    const rawData = localStorage.getItem("currentUser");
+    const parsedData = JSON.parse(rawData);
+
+    if (parsedData) {
+      console.log(parsedData);
+      dispatch({
+        type: loginActions.LOGIN_USER,
+        payload: {
+          username: parsedData.username,
+          password: parsedData.password,
+        },
+      });
+    }
+  }, []);
 
   return (
     <AppCtx.Provider value={{ state, dispatch }}>
