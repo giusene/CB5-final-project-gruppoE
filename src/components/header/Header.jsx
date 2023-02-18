@@ -19,10 +19,10 @@ const Header = () => {
 
   useEffect(() => {
     const currentPath = router.asPath;
-    const currentLink = navbarLinks.filter(
-      (link) => link.route === currentPath
-    )[0];
-    setCurrentLabel(currentLink.label);
+    const currentLink = navbarLinks.find((link) => link.route === currentPath);
+    if (currentLink) {
+      setCurrentLabel(currentLink.label);
+    }
   }, [router.asPath]);
 
   return (
