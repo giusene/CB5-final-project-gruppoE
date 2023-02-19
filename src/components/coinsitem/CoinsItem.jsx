@@ -28,7 +28,7 @@ const CoinsItem = ({ data }) => {
       payload: data,
     });
   };
-  console.log("data", data);
+
   return (
     <div className={styles.main}>
       <div className={styles.icon_wrapper}>
