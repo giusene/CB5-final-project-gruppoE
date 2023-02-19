@@ -28,14 +28,10 @@ const Header = () => {
   return (
     <div className={styles.main}>
       <h1>{currentLabel.toUpperCase()}</h1>
+
       <div className={styles.auth_data}>
-        {state.isLogged && <button onClick={logoutHandler}>Logout</button>}
-        <div className={styles.right_header}>
-          <i>
-            <BiUserCircle />
-          </i>
-          <h3>{state.currentUser.name}</h3>
-        </div>
+        {state.isLogged && <button onClick={logoutHandler}>LOGOUT</button>}
+        <img src={state.currentUser.pic} alt={state.currentUser.name} />
       </div>
     </div>
   );
