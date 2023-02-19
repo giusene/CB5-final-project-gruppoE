@@ -1,11 +1,12 @@
 import Cart from "@/components/cart/Cart";
 import CoinsList from "@/components/coinslist/CoinsList";
+import SearchBar from "@/components/searchbar/SearchBar";
 import styles from "@/styles/trade.module.scss";
-import { useState } from "react";
 
 const Trade = ({ coins }) => {
   return (
     <div className={styles.main}>
+      <SearchBar />
       <CoinsList coins={coins} />
       <Cart />
     </div>
