@@ -1,12 +1,21 @@
 import styles from "./styles.module.scss";
 import { BiSearch } from "react-icons/bi";
 
-const SearchBar = () => {
+const SearchBar = ({ searchValue, setSearchValue }) => {
+  const inputHandler = (e) => {
+    setSearchValue(e.target.value.toLowerCase());
+  };
+
   return (
     <div className={styles.main}>
-      <h3>Search coins</h3>
+      <h3>SEARCH COINS</h3>
       <form>
-        <input type="text" placeholder="Search coin..." />
+        <input
+          onChange={(e) => inputHandler(e)}
+          value={searchValue}
+          type="text"
+          placeholder="Search coin..."
+        />
         <button>
           <BiSearch />
         </button>

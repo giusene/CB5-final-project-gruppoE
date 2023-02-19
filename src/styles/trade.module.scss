@@ -1,4 +1,37 @@
 .main {
   display: flex;
   flex-direction: column;
+
+  .notfound {
+    margin-top: 2rem;
+    color: white;
+    background: linear-gradient(
+      180deg,
+      rgba(56, 54, 78, 1) 0%,
+      rgba(64, 61, 91, 1) 52%,
+      rgba(56, 54, 78, 1) 100%
+    );
+    width: 350px;
+    height: 350px;
+    align-self: center;
+    padding: 2rem 1rem;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 4rem;
+    align-items: center;
+    border-radius: 2rem;
+    box-shadow: 0 0 8px rgba(255, 255, 255, 0.3);
+
+    img {
+      width: 70px;
+    }
+  }
+
+  .text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
 }
