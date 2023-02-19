@@ -1,0 +1,35 @@
+.main {
+  padding: var(--page-padding);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+
+  form {
+    display: flex;
+    gap: 1rem;
+    width: 100%;
+    border-bottom: 2px solid var(--details-secondary-color);
+    padding: 0.5rem 0.2rem;
+
+    input {
+      flex-grow: 1;
+      border: none;
+      outline: none;
+      background-color: transparent;
+      color: white;
+      font-size: 1rem;
+    }
+
+    button {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: transparent;
+      color: white;
+      border: none;
+      font-size: 1.6rem;
+      cursor: pointer;
+    }
+  }
+}
