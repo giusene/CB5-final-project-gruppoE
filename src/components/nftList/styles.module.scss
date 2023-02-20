@@ -6,17 +6,20 @@
   .list {
     display: flex;
     flex-wrap: wrap;
-    gap: 4rem;
+    gap: 3rem;
     width: 60%;
   }
 
   .modal_container {
-    display: none;
-    width: 30%;
-    height: 75vh;
+    position: absolute;
+    top: -5px;
+    width: 100%;
     justify-content: center;
 
     @media only screen and (min-width: 768px) {
+      position: relative;
+      width: 400px;
+      height: 75vh;
       display: flex;
     }
   }

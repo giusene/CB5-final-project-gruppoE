@@ -1,13 +1,20 @@
 .main {
   background-color: rgb(68, 64, 64);
   border-radius: 12px;
-  height: 75vh;
+  height: 100%;
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 8px 16px;
   gap: 20px;
   position: fixed;
+
+  @media only screen and (min-width: 768px) {
+    position: relative;
+    height: 100%;
+    width: 100%;
+  }
 
   button {
     position: absolute;
@@ -36,11 +43,10 @@
     color: --details-main-color;
   }
 
-  h2{
+  h2 {
     color: aliceblue;
-
   }
-  span{
+  span {
     color: #ea4b87;
   }
   .attributes {
@@ -56,14 +62,13 @@
       display: flex;
       align-items: center;
       gap: 5px;
-      
-      .trait{
+
+      .trait {
         color: #ea4b87;
       }
-      h4{
+      h4 {
         color: aliceblue;
       }
     }
-   
   }
 }
