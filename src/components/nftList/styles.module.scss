@@ -1,13 +1,20 @@
 .main {
   padding: var(--page-padding);
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
+
+  @media only screen and (min-width: 768px) {
+    height: calc(90vh - var(--navbar-height));
+    overflow-y: scroll;
+  }
 
   .list {
+    margin-right: 100px;
     display: flex;
     flex-wrap: wrap;
+    justify-content: flex-start;
     gap: 3rem;
-    width: 60%;
+    width: 50%;
   }
 
   .modal_container {
@@ -17,9 +24,12 @@
     justify-content: center;
 
     @media only screen and (min-width: 768px) {
-      position: relative;
-      width: 400px;
+      position: fixed;
+      right: 30px;
+      top: 100px;
+      width: 300px;
       height: 75vh;
+      max-height: 700px;
       display: flex;
     }
   }
