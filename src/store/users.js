@@ -5,7 +5,12 @@ const users = [
     surname: "Di Stefano",
     username: "pietro23",
     email: "pietrodistefano@gmail.com",
+    pic: "",
     password: "coding",
+    social: {
+      linkedin: "",
+      github: "",
+    },
     assets: {
       coins: [],
       nft: [],
@@ -21,7 +26,12 @@ const users = [
     surname: "Tomasello",
     username: "cesare28",
     email: "cesaretomasello@gmail.com",
+    pic: "",
     password: "coding",
+    social: {
+      linkedin: "",
+      github: "",
+    },
     assets: {
       coins: [],
       nft: [],
@@ -37,7 +47,12 @@ const users = [
     surname: "Occhipinti",
     username: "sebastiano24",
     email: "sebastianoochhipinti@gmail.com",
+    pic: "",
     password: "coding",
+    social: {
+      linkedin: "",
+      github: "",
+    },
     assets: {
       coins: [],
       nft: [],
@@ -53,7 +68,12 @@ const users = [
     surname: "Rivera",
     username: "marco29",
     email: "marcorivera@gmail.com",
+    pic: "",
     password: "coding",
+    social: {
+      linkedin: "",
+      github: "",
+    },
     assets: {
       coins: [],
       nft: [],
@@ -68,8 +88,13 @@ const users = [
     name: "Chiara",
     surname: "Maggio",
     username: "magichiara",
-    email: "chiaramaggio@gmail.com",
+    email: "info.chiaramaggio@gmail.com",
+    pic: "/profile_pics/chiara.jpg",
     password: "coding",
+    social: {
+      linkedin: "https://www.linkedin.com/in/chiaramaggio",
+      github: "https://github.com/magichiara",
+    },
     assets: {
       coins: [],
       nft: [],
@@ -83,7 +108,12 @@ const users = [
     surname: "Senettone",
     username: "Senex30",
     email: "giuseppesenettone@gmail.com",
+    pic: "",
     password: "coding",
+    social: {
+      linkedin: "",
+      github: "",
+    },
     assets: {
       coins: [],
       nft: [],
