@@ -1,21 +1,19 @@
 import { loginActions, cartActions, favoriteActions } from "./actions";
-
+import setLocalStorage from "@/utils/localstorage";
 const appReducer = (state, action) => {
   switch (action.type) {
     // LOGIN
     case loginActions.LOGIN_USER:
       const user = state.users.find(
         (user) =>
-          user.username === action.payload.username && user.password === action.payload.password
+          user.username === action.payload.username &&
+          user.password === action.payload.password
       );
       if (user) {
-        localStorage.setItem("currentUser", JSON.stringify(user));
+        setLocalStorage(user);
         return {
           ...state,
           currentUser: user,
-          currentBalance: user.balance || 0,
-          currentCreditCard: user.creditCard,
-          cart: user.cart || [],
           isLogged: true,
         };
       } else {
@@ -27,32 +25,35 @@ const appReducer = (state, action) => {
       return {
         ...state,
         currentUser: "",
-        currentBalance: 0,
-        currentCreditCard: null,
-        cart: [],
         isLogged: false,
       };
-
+    // KEEP_SESSION_OPEN
+    case loginActions.KEEP_SESSION_OPEN:
+      return { ...state, currentUser: action.payload, isLogged: true };
     // FAVORITE COINS
-    // TODO: localstorage
     case favoriteActions.ADD_FAVORITE:
-      return {
+      const newState = {
         ...state,
         currentUser: {
           ...state.currentUser,
           favorite: [...state.currentUser.favorite, action.payload],
         },
       };
+      setLocalStorage(newState.currentUser);
+      return newState;
 
     case favoriteActions.REMOVE_FAVORITE:
-      console.log(action.payload);
-      return {
+      const filteredState = {
         ...state,
         currentUser: {
           ...state.currentUser,
-          favorite: state.currentUser.favorite.filter((fav) => fav.id !== action.payload.id),
+          favorite: state.currentUser.favorite.filter(
+            (fav) => fav.id !== action.payload.id
+          ),
         },
       };
+      setLocalStorage(filteredState.currentUser);
+      return filteredState;
 
     // ADD TO CART
     case cartActions.ADD_TO_CART:
