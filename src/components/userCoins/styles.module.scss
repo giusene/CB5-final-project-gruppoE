@@ -1,0 +1,13 @@
+.main {
+  color: white;
+  padding: 5px 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+
+  .favorite_list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+  }
+}

@@ -1,9 +1,13 @@
+import { useState } from "react";
 import Head from "next/head";
-import styles from "@/styles/Home.module.scss";
 import CryptoCoins from "@/components/cryptocoins/CryptoCoins";
 import FavoriteCoins from "@/components/favoriteCoins/FavoriteCoins";
+import Cart from "@/components/cart/Cart";
+import styles from "@/styles/Home.module.scss";
 
 export default function Home({ coins }) {
+  const [cartModal, setCartModal] = useState(false);
+
   return (
     <>
       <Head>
@@ -17,8 +21,12 @@ export default function Home({ coins }) {
           <CryptoCoins data={coins} />
         </div>
         <div>
-          <FavoriteCoins />
+          <FavoriteCoins setCartModal={setCartModal} />
         </div>
+        <>
+          {/* MODAL --> CART */}
+          {cartModal && <Cart setCartModal={setCartModal} coins={coins} />}
+        </>
       </main>
     </>
   );
