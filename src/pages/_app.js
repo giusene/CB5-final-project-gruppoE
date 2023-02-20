@@ -15,13 +15,9 @@ export default function App({ Component, pageProps }) {
     const parsedData = JSON.parse(rawData);
 
     if (parsedData) {
-      console.log(parsedData);
       dispatch({
-        type: loginActions.LOGIN_USER,
-        payload: {
-          username: parsedData.username,
-          password: parsedData.password,
-        },
+        type: loginActions.KEEP_SESSION_OPEN,
+        payload: parsedData,
       });
     }
   }, []);

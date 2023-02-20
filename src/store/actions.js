@@ -1,6 +1,7 @@
 const loginActions = {
   LOGIN_USER: "LOGIN_USER",
   LOGOUT_USER: "LOGOUT_USER",
+  KEEP_SESSION_OPEN: "KEEP_SESSION_OPEN",
 };
 
 const cartActions = {
