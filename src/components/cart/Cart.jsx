@@ -31,21 +31,30 @@ const Cart = ({ setCartModal }) => {
         setInputValue("");
       } else {
         setInputValue(absValue);
-        setTotalCoin(
-          removeDecimalPlaces(absValue / currentUser.cart[0].current_price)
-        );
+        setTotalCoin(removeDecimalPlaces(absValue / currentUser.cart[0].current_price));
       }
     }
+  };
+
+  // BUY COIN
+  const buyHandler = () => {
+    dispatch({
+      type: cartActions.BUY_COIN,
+      payload: currentUser.cart[0],
+    });
+    setCartModal(false);
+  };
+
+  const closeModal = () => {
+    setCartModal(false);
+    clearCartHandler();
   };
 
   return (
     <div className={styles.main}>
       <div className={styles.cart_container}>
         <h2>CART</h2>
-        <button
-          className={styles.close_cart}
-          onClick={() => setCartModal(false)}
-        >
+        <button className={styles.close_cart} onClick={() => closeModal()}>
           X
         </button>
 
@@ -54,12 +63,7 @@ const Cart = ({ setCartModal }) => {
         ) : (
           <>
             <form>
-              <input
-                onChange={inputHandler}
-                type="text"
-                pattern="[0-9]*"
-                placeholder="0,00"
-              />
+              <input onChange={inputHandler} type="text" pattern="[0-9]*" placeholder="0,00" />
               <i>
                 <BiDollar />
               </i>
@@ -72,20 +76,14 @@ const Cart = ({ setCartModal }) => {
                 </div>
 
                 <div className={styles.crypto_details}>
-                  <img
-                    src={currentUser.cart[0].image}
-                    alt={currentUser.cart[0].name}
-                  />
+                  <img src={currentUser.cart[0].image} alt={currentUser.cart[0].name} />
                   <p>{currentUser.cart[0].name}</p>
                 </div>
               </div>
 
               <div className={styles.usd}>
                 <div className={styles.label}>
-                  <p>
-                    {currentUser.cart[0].symbol &&
-                      currentUser.cart[0].symbol.toUpperCase()}
-                  </p>
+                  <p>{currentUser.cart[0].symbol && currentUser.cart[0].symbol.toUpperCase()}</p>
                 </div>
                 <div className={styles.usd_wallet}>
                   <p>{totalCoin}</p>
@@ -94,7 +92,7 @@ const Cart = ({ setCartModal }) => {
             </div>
             <div className={styles.btns}>
               <button onClick={() => clearCartHandler()}>CLEAR</button>
-              <button>BUY</button>
+              <button onClick={() => buyHandler()}>BUY</button>
             </div>
           </>
         )}

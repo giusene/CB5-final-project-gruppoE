@@ -6,8 +6,7 @@ const appReducer = (state, action) => {
     case loginActions.LOGIN_USER:
       const user = state.users.find(
         (user) =>
-          user.username === action.payload.username &&
-          user.password === action.payload.password
+          user.username === action.payload.username && user.password === action.payload.password
       );
       if (user) {
         setLocalStorage(user);
@@ -47,9 +46,7 @@ const appReducer = (state, action) => {
         ...state,
         currentUser: {
           ...state.currentUser,
-          favorite: state.currentUser.favorite.filter(
-            (fav) => fav.id !== action.payload.id
-          ),
+          favorite: state.currentUser.favorite.filter((fav) => fav.id !== action.payload.id),
         },
       };
       setLocalStorage(filteredState.currentUser);
@@ -77,6 +74,23 @@ const appReducer = (state, action) => {
       };
       setLocalStorage(clearCart.currentUser);
       return clearCart;
+
+    // BUY COIN
+    case cartActions.BUY_COIN:
+      const buyState = {
+        ...state,
+        currentUser: {
+          ...state.currentUser,
+          assets: {
+            coins: [...state.currentUser.assets.coins, action.payload],
+          },
+          cart: [],
+        },
+      };
+
+      setLocalStorage(buyState.currentUser);
+      return buyState;
+
     default:
       return state;
   }
