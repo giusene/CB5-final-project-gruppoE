@@ -1,3 +1,8 @@
 .main {
-  height: 100vh;
+  height: calc(90vh - var(--navbar-height));
+  padding: var(--page-padding);
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  overflow-y: scroll;
 }

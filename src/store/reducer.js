@@ -6,8 +6,7 @@ const appReducer = (state, action) => {
     case loginActions.LOGIN_USER:
       const user = state.users.find(
         (user) =>
-          user.username === action.payload.username &&
-          user.password === action.payload.password
+          user.username === action.payload.username && user.password === action.payload.password
       );
       if (user) {
         localStorage.setItem("currentUser", JSON.stringify(user));
@@ -35,17 +34,24 @@ const appReducer = (state, action) => {
       };
 
     // FAVORITE COINS
+    // TODO: localstorage
     case favoriteActions.ADD_FAVORITE:
       return {
         ...state,
-        favorite: [...state.favorite, { ...action.payload }],
+        currentUser: {
+          ...state.currentUser,
+          favorite: [...state.currentUser.favorite, action.payload],
+        },
       };
 
     case favoriteActions.REMOVE_FAVORITE:
       console.log(action.payload);
       return {
         ...state,
-        favorite: state.favorite.filter((fav) => fav.id !== action.payload.id),
+        currentUser: {
+          ...state.currentUser,
+          favorite: state.currentUser.favorite.filter((fav) => fav.id !== action.payload.id),
+        },
       };
 
     // ADD TO CART
