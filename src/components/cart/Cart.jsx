@@ -31,7 +31,9 @@ const Cart = ({ setCartModal }) => {
         setInputValue("");
       } else {
         setInputValue(absValue);
-        setTotalCoin(removeDecimalPlaces(absValue / state.cart.current_price));
+        setTotalCoin(
+          removeDecimalPlaces(absValue / currentUser.cart[0].current_price)
+        );
       }
     }
   };
@@ -70,14 +72,20 @@ const Cart = ({ setCartModal }) => {
                 </div>
 
                 <div className={styles.crypto_details}>
-                  <img src={state.cart.image} alt={state.cart.name} />
-                  <p>{state.cart.name}</p>
+                  <img
+                    src={currentUser.cart[0].image}
+                    alt={currentUser.cart[0].name}
+                  />
+                  <p>{currentUser.cart[0].name}</p>
                 </div>
               </div>
 
               <div className={styles.usd}>
                 <div className={styles.label}>
-                  <p>{state.cart.symbol && state.cart.symbol.toUpperCase()}</p>
+                  <p>
+                    {currentUser.cart[0].symbol &&
+                      currentUser.cart[0].symbol.toUpperCase()}
+                  </p>
                 </div>
                 <div className={styles.usd_wallet}>
                   <p>{totalCoin}</p>
