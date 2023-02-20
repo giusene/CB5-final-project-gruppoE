@@ -6,7 +6,10 @@ import { cartActions } from "@/store/actions";
 import removeDecimalPlaces from "@/utils/removeDecimal";
 
 const Cart = () => {
-  const { state, dispatch } = useContext(AppCtx);
+  const {
+    state: { currentUser },
+    dispatch,
+  } = useContext(AppCtx);
   const [inputValue, setInputValue] = useState(0);
   const [totalCoin, setTotalCoin] = useState(0);
 
@@ -38,17 +41,12 @@ const Cart = () => {
       <div className={styles.cart_container}>
         <h2>CART</h2>
 
-        {state.cart.length === 0 ? (
+        {currentUser.cart.length === 0 ? (
           <p>Cart is empty!</p>
         ) : (
           <>
             <form>
-              <input
-                onChange={inputHandler}
-                type="text"
-                pattern="[0-9]*"
-                placeholder="0,00"
-              />
+              <input onChange={inputHandler} type="text" pattern="[0-9]*" placeholder="0,00" />
               <i>
                 <BiDollar />
               </i>
