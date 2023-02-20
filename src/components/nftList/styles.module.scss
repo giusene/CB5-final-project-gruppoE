@@ -7,13 +7,17 @@
     display: flex;
     flex-wrap: wrap;
     gap: 4rem;
-    width: 65%;
+    width: 60%;
   }
 
   .modal_container {
+    display: none;
     width: 30%;
     height: 75vh;
-    display: flex;
     justify-content: center;
+
+    @media only screen and (min-width: 768px) {
+      display: flex;
+    }
   }
 }
