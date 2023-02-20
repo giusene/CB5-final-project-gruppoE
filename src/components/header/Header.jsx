@@ -15,6 +15,7 @@ const Header = () => {
     dispatch({
       type: loginActions.LOGOUT_USER,
     });
+    router.push("/");
   };
 
   useEffect(() => {
