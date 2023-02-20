@@ -5,7 +5,7 @@ import { useContext, useState } from "react";
 import { cartActions } from "@/store/actions";
 import removeDecimalPlaces from "@/utils/removeDecimal";
 
-const Cart = () => {
+const Cart = ({ setCartModal }) => {
   const {
     state: { currentUser },
     dispatch,
@@ -40,13 +40,24 @@ const Cart = () => {
     <div className={styles.main}>
       <div className={styles.cart_container}>
         <h2>CART</h2>
+        <button
+          className={styles.close_cart}
+          onClick={() => setCartModal(false)}
+        >
+          X
+        </button>
 
         {currentUser.cart.length === 0 ? (
           <p>Cart is empty!</p>
         ) : (
           <>
             <form>
-              <input onChange={inputHandler} type="text" pattern="[0-9]*" placeholder="0,00" />
+              <input
+                onChange={inputHandler}
+                type="text"
+                pattern="[0-9]*"
+                placeholder="0,00"
+              />
               <i>
                 <BiDollar />
               </i>

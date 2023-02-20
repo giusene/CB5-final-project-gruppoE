@@ -1,8 +1,12 @@
 .main {
   display: flex;
   flex-direction: column;
-  overflow-y: scroll;
+  overflow-y: hidden;
   height: calc(90vh - var(--navbar-height));
+
+  @media only screen and (min-width: 768px) {
+    height: calc(95vh - var(--navbar-height));
+  }
 
   .notfound {
     margin-top: 2rem;
