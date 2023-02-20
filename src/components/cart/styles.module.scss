@@ -1,128 +1,148 @@
 .main {
-  display: none;
-}
+  position: absolute;
+  background-color: rgba(255, 255, 255, 0.732);
+  height: 89vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  padding: 2rem 1rem;
 
-@media only screen and (min-width: 1280px) {
-  .main {
-    width: 100%;
-    max-width: 500px;
+  .cart_container {
+    position: relative;
+    top: 0;
     display: flex;
+    flex-direction: column;
     justify-content: center;
-    padding: 2rem 1rem;
+    align-items: center;
+    width: 400px;
+    height: 73vh;
+    max-height: 550px;
+    gap: 3rem;
+    background: linear-gradient(
+      180deg,
+      rgba(56, 54, 78, 1) 0%,
+      rgba(64, 61, 91, 1) 52%,
+      rgba(56, 54, 78, 1) 100%
+    );
+    border-radius: 2rem;
+    color: white;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
 
-    .cart_container {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      width: 400px;
-      height: 550px;
-      gap: 3rem;
-      background: linear-gradient(
-        180deg,
-        rgba(56, 54, 78, 1) 0%,
-        rgba(64, 61, 91, 1) 52%,
-        rgba(56, 54, 78, 1) 100%
-      );
-      border-radius: 2rem;
-      color: white;
-      box-shadow: 0 0 8px rgba(255, 255, 255, 0.3);
-      position: relative;
-
-      h2 {
-        padding: 0.4rem 3.8rem 0.6rem;
-        letter-spacing: 0.2rem;
-        background-color: rgba(211, 211, 211, 0.555);
-        box-shadow: 0 0 15px rgba(211, 211, 211, 0.555);
-        position: absolute;
-        top: 0;
-        border-bottom-left-radius: 1.6rem;
-        border-bottom-right-radius: 1.6rem;
-      }
-
-      form {
-        box-sizing: content-box;
-        padding-bottom: 0.5rem;
-        display: flex;
-        align-items: center;
-        border-bottom: 2px solid var(--details-secondary-color);
-
-        input {
-          flex-grow: 1;
-          background-color: transparent;
-          border: none;
-          outline: none;
-          font-size: 1.6rem;
-          color: white;
-        }
-
-        i {
-          display: flex;
-          font-size: 2rem;
-        }
-      }
-
-      .change_wrapper {
-        border: 0.5px solid rgba(211, 211, 211, 0.555);
-        width: 300px;
-        display: flex;
-        flex-direction: column;
-        height: 180px;
-
-        .crypto {
-          padding: 0.8rem;
-          height: 50%;
-          display: flex;
-          align-items: center;
-          gap: 1.8rem;
-
-          .crypto_details {
-            display: flex;
-            gap: 0.5rem;
-            align-items: center;
-
-            img {
-              width: 40px;
-              height: 40px;
-            }
-          }
-        }
-
-        .usd {
-          border-top: 0.5px solid rgba(211, 211, 211, 0.555);
-          padding: 0.8rem;
-          height: 50%;
-          display: flex;
-          align-items: center;
-          gap: 1.8rem;
-        }
-      }
-
-      .change {
-        border-top: 0.5px solid rgba(211, 211, 211, 0.555);
-      }
+    @media only screen and (min-width: 768px) {
+      top: 100px;
     }
-  }
 
-  .btns {
-    display: flex;
-    gap: 1.2rem;
-
-    button {
-      border-radius: 1.2rem;
+    .close_cart {
+      position: absolute;
+      top: 10px;
+      right: 25px;
+      background-color: transparent;
       border: none;
-      width: 140px;
-      padding: 0.6rem 0.1rem;
-      color: white;
+      font-weight: bold;
+      font-size: 30px;
       cursor: pointer;
-      font-weight: 600;
-      letter-spacing: 0.1rem;
-      background-color: var(--details-secondary-color);
-      transition: all 0.35s ease-out;
+      transition: all 0.25s;
+      color: aliceblue;
+      transition: all 0.35s;
 
       &:hover {
-        box-shadow: 0 0 15px rgba($color: #b375ef, $alpha: 0.5);
+        color: #ea4b87;
       }
+    }
+
+    h2 {
+      padding: 0.4rem 3.8rem 0.6rem;
+      letter-spacing: 0.2rem;
+      background-color: rgba(211, 211, 211, 0.555);
+      box-shadow: 0 0 15px rgba(211, 211, 211, 0.555);
+      position: absolute;
+      top: 0;
+      border-bottom-left-radius: 1.6rem;
+      border-bottom-right-radius: 1.6rem;
+    }
+
+    form {
+      box-sizing: content-box;
+      padding-bottom: 0.5rem;
+      display: flex;
+      align-items: center;
+      border-bottom: 2px solid var(--details-secondary-color);
+
+      input {
+        flex-grow: 1;
+        background-color: transparent;
+        border: none;
+        outline: none;
+        font-size: 1.6rem;
+        color: white;
+      }
+
+      i {
+        display: flex;
+        font-size: 2rem;
+      }
+    }
+
+    .change_wrapper {
+      border: 0.5px solid rgba(211, 211, 211, 0.555);
+      width: 300px;
+      display: flex;
+      flex-direction: column;
+      height: 180px;
+
+      .crypto {
+        padding: 0.8rem;
+        height: 50%;
+        display: flex;
+        align-items: center;
+        gap: 1.8rem;
+
+        .crypto_details {
+          display: flex;
+          gap: 0.5rem;
+          align-items: center;
+
+          img {
+            width: 40px;
+            height: 40px;
+          }
+        }
+      }
+
+      .usd {
+        border-top: 0.5px solid rgba(211, 211, 211, 0.555);
+        padding: 0.8rem;
+        height: 50%;
+        display: flex;
+        align-items: center;
+        gap: 1.8rem;
+      }
+    }
+
+    .change {
+      border-top: 0.5px solid rgba(211, 211, 211, 0.555);
+    }
+  }
+}
+
+.btns {
+  display: flex;
+  gap: 1.2rem;
+
+  button {
+    border-radius: 1.2rem;
+    border: none;
+    width: 140px;
+    padding: 0.6rem 0.1rem;
+    color: white;
+    cursor: pointer;
+    font-weight: 600;
+    letter-spacing: 0.1rem;
+    background-color: var(--details-secondary-color);
+    transition: all 0.35s ease-out;
+
+    &:hover {
+      box-shadow: 0 0 15px rgba($color: #b375ef, $alpha: 0.5);
     }
   }
 }

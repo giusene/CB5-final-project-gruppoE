@@ -1,9 +1,10 @@
 .main {
   padding: var(--page-padding);
   width: 100%;
-  max-width: 1000px;
+  height: calc(100% - var(--navbar-height));
+
   .coins_container {
-    height: calc(80vh - var(--navbar-height));
+    height: calc(60vh - var(--navbar-height));
     overflow-y: scroll;
     padding: 5px 4px;
     display: flex;
@@ -20,7 +21,11 @@
     }
 
     @media only screen and (min-width: 768px) {
-      height: calc(85vh - var(--navbar-height));
+      height: calc(73vh - var(--navbar-height));
+    }
+
+    @media only screen and (min-width: 1280px) {
+      height: calc(70vh - var(--navbar-height));
     }
   }
 }

@@ -3,11 +3,11 @@ import CoinsList from "@/components/coinslist/CoinsList";
 import SearchBar from "@/components/searchbar/SearchBar";
 import styles from "@/styles/trade.module.scss";
 import { useState, useEffect } from "react";
-import { FaBeer } from "react-icons/fa";
 
 const Trade = ({ coins }) => {
   const [filteredCoins, setFilteredCoins] = useState(coins);
   const [searchValue, setSearchValue] = useState("");
+  const [cartModal, setCartModal] = useState(false);
 
   const filterHandler = () => {
     if (searchValue === "") {
@@ -32,7 +32,7 @@ const Trade = ({ coins }) => {
         filterHandler={filterHandler}
       />
       {filteredCoins.length > 0 ? (
-        <CoinsList coins={filteredCoins} />
+        <CoinsList coins={filteredCoins} setCartModal={setCartModal} />
       ) : (
         <div className={styles.notfound}>
           <img
@@ -46,8 +46,7 @@ const Trade = ({ coins }) => {
           </div>
         </div>
       )}
-
-      <Cart />
+      {cartModal && <Cart setCartModal={setCartModal} />}
     </div>
   );
 };
