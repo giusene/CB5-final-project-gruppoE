@@ -1,8 +1,6 @@
 import NftList from "@/components/nftList/NftList";
 
 const Nft = ({ data }) => {
-  console.log(data);
-
   return (
     <div>
       <NftList data={data} />

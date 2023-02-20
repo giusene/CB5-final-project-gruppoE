@@ -3,7 +3,6 @@ import Link from "next/link";
 
 const CryptoCoins = ({ data }) => {
   const { coins } = data;
-  console.log("criptoo", data);
 
   return (
     <div className={styles.main}>
