@@ -13,8 +13,12 @@ export default function Home({ coins }) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className={styles.main}>
-        <CryptoCoins data={coins} />
-        <FavoriteCoins />
+        <div>
+          <CryptoCoins data={coins} />
+        </div>
+        <div>
+          <FavoriteCoins />
+        </div>
       </main>
     </>
   );

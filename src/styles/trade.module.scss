@@ -1,6 +1,8 @@
 .main {
   display: flex;
   flex-direction: column;
+  overflow-y: scroll;
+  height: calc(90vh - var(--navbar-height));
 
   .notfound {
     margin-top: 2rem;

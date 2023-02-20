@@ -20,7 +20,7 @@ const CryptoCoins = ({ data }) => {
               </Link>
             </div>
             <div className={styles.price}>
-              <p>{coin.item.market_cap_rank} USD</p>
+              <p>${coin.item.market_cap_rank},00</p>
             </div>
           </div>
         ))}

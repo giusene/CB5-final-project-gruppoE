@@ -5,17 +5,19 @@ import styles from "./styles.module.scss";
 
 const FavoriteCoins = () => {
   const {
-    state: { favorite },
+    state: { currentUser },
     dispatch,
   } = useContext(AppCtx);
-  console.log(favorite);
+  // console.log(favorite);
 
   return (
     <div className={styles.main}>
       <h3>Watchlist</h3>
-      {favorite.map((coin, index) => (
-        <CoinsItem key={index} data={coin} />
-      ))}
+      <div className={styles.favorite_list}>
+        {currentUser.favorite.map((coin, index) => (
+          <CoinsItem key={index} data={coin} />
+        ))}
+      </div>
     </div>
   );
 };
