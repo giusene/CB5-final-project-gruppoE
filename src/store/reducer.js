@@ -57,20 +57,26 @@ const appReducer = (state, action) => {
 
     // ADD TO CART
     case cartActions.ADD_TO_CART:
-      localStorage.setItem("cart", JSON.stringify(action.payload));
-      return { ...state, cart: action.payload };
-    /*     // REMOVE FROM CART
-    case cartActions.REMOVE_FROM_CART:
-      const filteredCart = state.cart.filter((item) => item.id !== action.payload.id);
-      localStorage.setItem("cart", JSON.stringify(filteredCart));
-      return { ...state, cart: filteredCart }; */
+      const addCartState = {
+        ...state,
+        currentUser: {
+          ...state.currentUser,
+          cart: [...state.currentUser.cart, action.payload],
+        },
+      };
+      setLocalStorage(addCartState.currentUser);
+      return addCartState;
     // CLEAR CART
     case cartActions.CLEAR_CART:
-      localStorage.removeItem("cart");
-      return {
+      const clearCart = {
         ...state,
-        cart: [],
+        currentUser: {
+          ...state.currentUser,
+          cart: [],
+        },
       };
+      setLocalStorage(clearCart.currentUser);
+      return clearCart;
     default:
       return state;
   }
