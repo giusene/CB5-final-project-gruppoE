@@ -28,6 +28,7 @@ const UserCoins = () => {
         });
       })
     );
+    // eslint-disable-next-line
   }, []);
 
   return (

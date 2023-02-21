@@ -65,6 +65,7 @@ function Wallet() {
       total += multi;
     });
     setBalance(total);
+    // eslint-disable-next-line
   }, []);
 
   return (
