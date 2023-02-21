@@ -5,7 +5,7 @@ import { loginActions } from "@/store/actions";
 import SignUp from "../signup/SignUp";
 
 const LoginForm = () => {
-  const { dispatch } = useContext(AppCtx);
+  const { dispatch,state } = useContext(AppCtx);
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [signUp, setSignUp] = useState(false);
@@ -17,6 +17,7 @@ const LoginForm = () => {
       type: loginActions.LOGIN_USER,
       payload: { username, password },
     });
+    console.log(state.users);
   };
 
   return (

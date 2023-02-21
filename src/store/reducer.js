@@ -1,4 +1,4 @@
-import { loginActions, signupActions, cartActions, favoriteActions } from "./actions";
+import { loginActions, cartActions, favoriteActions } from "./actions";
 import setLocalStorage from "@/utils/localstorage";
 const appReducer = (state, action) => {
   switch (action.type) {
@@ -31,8 +31,8 @@ const appReducer = (state, action) => {
       return { ...state, currentUser: action.payload, isLogged: true };
    
       //SIGNUP
-    case signupActions.SIGNUP_USER:
-      return{...state, currentUser: action.payload , isLogged: true};
+    case loginActions.SIGNUP_USER:
+      return{...state, users: [...state.users, action.payload]};
 
     // FAVORITE COINS
     case favoriteActions.ADD_FAVORITE:
