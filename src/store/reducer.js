@@ -29,8 +29,7 @@ const appReducer = (state, action) => {
     // KEEP_SESSION_OPEN
     case loginActions.KEEP_SESSION_OPEN:
       return { ...state, currentUser: action.payload, isLogged: true };
-   
-      //SIGNUP
+      
     case loginActions.SIGNUP_USER:
       return{...state, users: [...state.users, action.payload]};
 
@@ -95,6 +94,14 @@ const appReducer = (state, action) => {
 
       setLocalStorage(buyState.currentUser);
       return buyState;
+
+    case cartActions.UPDATE_PRICE:
+      state.currentUser.assets.coins[action.payload.index].coin.current_price =
+        action.payload.new_price;
+
+      console.log(action.payload.new_price);
+      setLocalStorage(state.currentUser);
+      return state;
 
     default:
       return state;

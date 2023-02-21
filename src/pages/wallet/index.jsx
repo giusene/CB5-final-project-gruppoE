@@ -1,9 +1,19 @@
 import LineChart from "@/components/chart/LineChart";
-import styles from "@/components/chart/styles.module.scss";
 import CreditCard from "@/components/creditCard/CreditCard";
 import UserCoins from "@/components/userCoins/UserCoins";
+import { AppCtx } from "@/store/context";
+import { useContext, useEffect, useState } from "react";
+import { currencyFormat } from "@/utils/currencyFormat";
+import styles from "@/components/chart/styles.module.scss";
 
 function Wallet() {
+  const [balance, setBalance] = useState(0);
+
+  const {
+    state: { currentUser },
+    dispatch,
+  } = useContext(AppCtx);
+
   const data = {
     labels: [
       "Gennaio",
@@ -47,6 +57,16 @@ function Wallet() {
     },
   };
 
+  /* MAP COINS */
+  useEffect(() => {
+    let total = 0;
+    currentUser.assets.coins.map((coin) => {
+      const multi = coin.coin.qty * coin.coin.current_price;
+      total += multi;
+    });
+    setBalance(total);
+  }, []);
+
   return (
     <div className={styles.main}>
       <div className={styles.left_container}>
@@ -66,7 +86,7 @@ function Wallet() {
         <CreditCard />
         <div className={styles.balance}>
           <h2>Balance:</h2>
-          <h3>0,00000000</h3>
+          <p>{currencyFormat(balance)}</p>
         </div>
       </div>
     </div>
