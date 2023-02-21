@@ -8,7 +8,7 @@ function Modal({ data, setModalState }) {
     <div className={styles.main}>
       <button onClick={() => setModalState(false)}>X</button>
       <h3>{name}</h3>
-      <Image src={image} alt={name} />
+      <Image src={image} alt={name} width={560} height={400} />
       <h2>
         Rarity ranking: <span>#{rarity}</span>
       </h2>

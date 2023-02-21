@@ -40,6 +40,8 @@
 
   img {
     width: 200px;
+    object-fit: cover;
+    border-radius: 0.75rem;
     color: --details-main-color;
   }
 
