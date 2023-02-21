@@ -4,17 +4,17 @@
   align-items: center;
   height: 100vh;
 
-  .change_btn{
-    color: aliceblue;
-    font-size: 18px;
+  .change_btn {
+    color: white;
+    font-size: 1rem;
     border: none;
     font-weight: 600;
     background-color: unset;
     transition: all 0.35s;
     cursor: pointer;
 
-    &:hover{
-      color: black;
+    &:hover {
+      color: var(--details-secondary-color);
     }
   }
 
@@ -26,8 +26,8 @@
       rgba(64, 61, 91, 1) 52%,
       rgba(56, 54, 78, 1) 100%
     );
-    width: 350px;
-    height: 400px;
+    width: 360px;
+    height: 500px;
     padding: 2rem 1rem;
     display: flex;
     flex-direction: column;
@@ -47,7 +47,7 @@
         width: 50%;
         display: flex;
         justify-content: center;
-        padding: 0.4rem;
+        padding: 0.5rem;
 
         a {
           color: white;
@@ -75,8 +75,10 @@
         border: none;
         border-radius: 1.5rem;
         outline: none;
+        color: white;
 
         &:focus {
+          background-color: transparent;
           border: 1px solid #b375ef;
           color: white;
         }
@@ -88,14 +90,15 @@
       align-self: center;
 
       button {
-        padding: 0.8rem 1.5rem;
+        padding: 0.8rem 1.7rem;
         font-weight: 600;
         background-color: var(--details-secondary-color);
         color: white;
         border: none;
-        border-radius: 1.4rem;
+        border-radius: 1.6rem;
         cursor: pointer;
         transition: all 0.35s ease-out;
+        font-size: 1.2rem;
 
         &:hover {
           box-shadow: 0 0 10px rgba($color: #b375ef, $alpha: 0.5);

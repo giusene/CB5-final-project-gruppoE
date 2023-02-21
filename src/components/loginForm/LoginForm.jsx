@@ -2,10 +2,10 @@ import styles from "./styles.module.scss";
 import { useState, useContext } from "react";
 import { AppCtx } from "@/store/context";
 import { loginActions } from "@/store/actions";
-import SignUp from "../signup/SignUp";
+import SignupForm from "../signupForm/SignupForm";
 
 const LoginForm = () => {
-  const { dispatch, state } = useContext(AppCtx);
+  const { dispatch } = useContext(AppCtx);
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [signUp, setSignUp] = useState(false);
@@ -16,7 +16,6 @@ const LoginForm = () => {
       type: loginActions.LOGIN_USER,
       payload: { username, password },
     });
-    console.log(state.users);
   };
 
   return (
@@ -28,7 +27,7 @@ const LoginForm = () => {
               className={styles.change_btn}
               onClick={() => setSignUp(false)}
             >
-              Login
+              SIGNIN
             </button>
           </div>
           <div>
@@ -36,15 +35,13 @@ const LoginForm = () => {
               className={styles.change_btn}
               onClick={() => setSignUp(true)}
             >
-              Sign Up
+              SIGNUP
             </button>
           </div>
-          {console.log(signUp)}
         </div>
-        {signUp === false && (
+        {!signUp && (
           <form onSubmit={submitHandler}>
             <input
-              className={styles.login_input}
               type="text"
               name="username"
               onInput={(e) => setUsername(e.target.value)}
@@ -53,19 +50,19 @@ const LoginForm = () => {
             />
 
             <input
-              className={styles.login_input}
               type="password"
               name="password"
               onInput={(e) => setPassword(e.target.value)}
               placeholder="PASSWORD"
               required
             />
+
             <div className={styles.btn}>
               <button type="submit">SIGN IN</button>
             </div>
           </form>
         )}
-        {signUp === true && <SignUp setSignUp={setSignUp} />}
+        {signUp && <SignupForm setSignUp={setSignUp} />}
       </div>
     </div>
   );
