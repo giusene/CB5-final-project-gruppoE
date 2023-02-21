@@ -37,10 +37,12 @@ const Cart = ({ setCartModal }) => {
   };
 
   // BUY COIN
-  const buyHandler = () => {
+  const buyHandler = (e) => {
     dispatch({
       type: cartActions.BUY_COIN,
-      payload: currentUser.cart[0],
+      payload: {
+        coin: { ...currentUser.cart[0], qty: totalCoin },
+      },
     });
     setCartModal(false);
   };
