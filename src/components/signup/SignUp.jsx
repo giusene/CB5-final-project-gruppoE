@@ -92,9 +92,3 @@ function SignUp() {
 }
 
 export default SignUp;
-
-// name: "Pietro",
-// surname: "Di Stefano",
-// username: "pietro23",
-// email: "pietrodistefano@gmail.com",
-// password: "coding",
