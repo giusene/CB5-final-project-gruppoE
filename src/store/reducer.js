@@ -6,7 +6,8 @@ const appReducer = (state, action) => {
     case loginActions.LOGIN_USER:
       const user = state.users.find(
         (user) =>
-          user.username === action.payload.username && user.password === action.payload.password
+          user.username === action.payload.username &&
+          user.password === action.payload.password
       );
       if (user) {
         setLocalStorage(user);
@@ -16,7 +17,7 @@ const appReducer = (state, action) => {
           isLogged: true,
         };
       } else {
-        return state;
+        return { ...state, loginError: true };
       }
     // LOGOUT
     case loginActions.LOGOUT_USER:
@@ -29,8 +30,23 @@ const appReducer = (state, action) => {
     // KEEP_SESSION_OPEN
     case loginActions.KEEP_SESSION_OPEN:
       return { ...state, currentUser: action.payload, isLogged: true };
-
+    // SIGNUP_USER
     case loginActions.SIGNUP_USER:
+      const existsUser = state.users.find(
+        (user) => user.username === action.payload.username
+      );
+      const existsEmail = state.users.find(
+        (user) => user.email === action.payload.email
+      );
+      if (existsUser) {
+        return { ...state, usernameError: true };
+      }
+      if (existsEmail) {
+        return { ...state, emailError: true };
+      }
+      if (action.payload.password.length < 6) {
+        return { ...state, pswError: true };
+      }
       return { ...state, users: [...state.users, action.payload] };
 
     // FAVORITE COINS
@@ -50,7 +66,9 @@ const appReducer = (state, action) => {
         ...state,
         currentUser: {
           ...state.currentUser,
-          favorite: state.currentUser.favorite.filter((fav) => fav.id !== action.payload.id),
+          favorite: state.currentUser.favorite.filter(
+            (fav) => fav.id !== action.payload.id
+          ),
         },
       };
       setLocalStorage(filteredState.currentUser);

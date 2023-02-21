@@ -1,0 +1,46 @@
+.main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+
+  .wrapper {
+    border-radius: 2rem;
+    background: linear-gradient(
+      180deg,
+      rgba(56, 54, 78, 1) 0%,
+      rgba(64, 61, 91, 1) 52%,
+      rgba(56, 54, 78, 1) 100%
+    );
+    width: 360px;
+    height: 500px;
+    padding: 2rem 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3rem;
+    box-shadow: 0 0 8px rgba(255, 255, 255, 0.3);
+
+    .labels {
+      width: 200px;
+      display: flex;
+      justify-content: center;
+      border: 2px solid var(--details-secondary-color);
+      border-radius: 1.2rem;
+      overflow: hidden;
+
+      .label {
+        width: 50%;
+        display: flex;
+        justify-content: center;
+        padding: 0.5rem;
+        color: white;
+        cursor: pointer;
+      }
+
+      .selected {
+        background-color: var(--details-secondary-color);
+      }
+    }
+  }
+}
