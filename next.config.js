@@ -25,6 +25,11 @@ const nextConfig = {
         hostname: "storage.googleapis.com",
         port: "",
       },
+      {
+        protocol: "https",
+        hostname: "cdn-icons-png.flaticon.com",
+        port: "",
+      },
     ],
   },
 };

@@ -5,7 +5,6 @@
   overflow-x: hidden;
   width: 100%;
   height: calc(90vh - var(--navbar-height));
-  
 
   .left_container {
     display: flex;
@@ -19,11 +18,20 @@
       min-width: 300px;
       max-width: 360px;
       min-height: 250px;
-      border-radius: 12px ;
       object-fit: contain;
     }
 
-    
+    @media only screen and (min-width: 768px) {
+      padding-left: 8vw;
+      height: 70vh;
+      width: 65%;
+
+      .chart {
+        min-width: 400px;
+        min-height: 500px;
+      }
+    }
+
     @media only screen and (min-width: 1280px) {
       padding-left: 8vw;
       height: 70vh;
@@ -32,16 +40,14 @@
       .chart {
         min-width: 950px;
         min-height: 350px;
-
       }
     }
-   
+
     // .coins {
     // }
   }
-  .coins{
+  .coins {
     width: 95%;
-    
   }
   .right_container {
     display: none;
@@ -63,5 +69,4 @@
   p {
     color: white;
   }
-  
 }

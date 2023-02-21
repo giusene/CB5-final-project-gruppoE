@@ -30,7 +30,8 @@
     box-shadow: 0 0 8px rgba(255, 255, 255, 0.3);
 
     img {
-      width: 70px;
+      object-fit: cover;
+      width: 100px;
     }
   }
 

@@ -32,7 +32,10 @@ function Wallet() {
     datasets: [
       {
         label: "Saldo",
-        data: [1000, 1200, 1300, 1500, 1800, 2000, 2200, 2400, 2600, 2800, 3000, 3200],
+        data: [
+          1000, 1200, 1300, 1500, 1800, 2000, 2200, 2400, 2600, 2800, 3000,
+          3200,
+        ],
 
         borderColor: "purple",
 
@@ -42,6 +45,12 @@ function Wallet() {
   };
   const options = {
     plugins: {
+      legend: {
+        labels: {
+          color: "white",
+          usePointStyle: true,
+        },
+      },
       title: {
         display: false,
         text: "Stacked Line/Bar Chart",
@@ -51,7 +60,13 @@ function Wallet() {
     scales: {
       y: {
         ticks: {
+          color: "white",
           stacke: true,
+        },
+      },
+      x: {
+        ticks: {
+          color: "white",
         },
       },
     },
@@ -78,7 +93,6 @@ function Wallet() {
               <LineChart data={data} options={options} />
             </div>
           </div>
-         
         </div>
 
         <div className={styles.coins}>
