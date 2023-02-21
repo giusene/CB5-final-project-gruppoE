@@ -3,31 +3,46 @@
   justify-content: center;
   padding: var(--page-padding);
   overflow-x: hidden;
+  width: 100%;
+  height: calc(90vh - var(--navbar-height));
+  
 
   .left_container {
-    height: 70vh;
-    width: 65%;
     display: flex;
     flex-direction: column;
     gap: 50px;
-
-    @media only screen and (min-width: 1280px) {
-      padding-left: 8vw;
-    }
-
+    align-items: center;
+    margin-left: 10px;
     .chart {
       display: flex;
-      flex-direction: column;
       align-items: center;
-      max-width: 650px;
-      min-height: 300px;
-      margin-right: 15px;
+      min-width: 300px;
+      max-width: 360px;
+      min-height: 250px;
+      border-radius: 12px ;
+      object-fit: contain;
     }
 
+    
+    @media only screen and (min-width: 1280px) {
+      padding-left: 8vw;
+      height: 70vh;
+      width: 65%;
+
+      .chart {
+        min-width: 950px;
+        min-height: 350px;
+
+      }
+    }
+   
     // .coins {
     // }
   }
-
+  .coins{
+    width: 95%;
+    
+  }
   .right_container {
     display: none;
     width: 35%;
@@ -48,4 +63,5 @@
   p {
     color: white;
   }
+  
 }

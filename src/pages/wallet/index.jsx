@@ -73,9 +73,12 @@ function Wallet() {
       <div className={styles.left_container}>
         <div>
           <h2>Chart</h2>
-          <div className={styles.chart}>
-            <LineChart data={data} options={options} />
+          <div className={styles.container}>
+            <div className={styles.chart}>
+              <LineChart data={data} options={options} />
+            </div>
           </div>
+         
         </div>
 
         <div className={styles.coins}>
