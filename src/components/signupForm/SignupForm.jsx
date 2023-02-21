@@ -3,18 +3,16 @@ import { AppCtx } from "@/store/context";
 import { loginActions } from "@/store/actions";
 import styles from "./styles.module.scss";
 
-function SignupForm({ setSignUp }) {
+function SignupForm() {
+  const { state, dispatch } = useContext(AppCtx);
   const [name, setName] = useState("");
   const [surname, setSurname] = useState("");
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const { dispatch } = useContext(AppCtx);
-
   const submitHandler = (e) => {
     e.preventDefault();
-
     dispatch({
       type: loginActions.SIGNUP_USER,
       payload: {
@@ -37,8 +35,6 @@ function SignupForm({ setSignUp }) {
         favorite: [],
       },
     });
-
-    setSignUp(false);
   };
 
   return (
@@ -68,6 +64,7 @@ function SignupForm({ setSignUp }) {
           placeholder="USERNAME"
           required
         />
+        {state.usernameError && <div>ERROR</div>}
         <input
           className={styles.signup_input}
           type="text"
@@ -76,6 +73,7 @@ function SignupForm({ setSignUp }) {
           placeholder="EMAIL"
           required
         />
+        {state.emailError && <div>ERROR</div>}
         <input
           className={styles.signup_input}
           type="password"
@@ -84,6 +82,7 @@ function SignupForm({ setSignUp }) {
           placeholder="PASSWORD"
           required
         />
+        {state.pswError && <div>ERROR</div>}
         <div className={styles.btn}>
           <button type="submit">SIGN UP</button>
         </div>
