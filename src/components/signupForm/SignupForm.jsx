@@ -3,14 +3,14 @@ import { AppCtx } from "@/store/context";
 import { loginActions } from "@/store/actions";
 import styles from "./styles.module.scss";
 
-function SignUp({ setSignUp }) {
+function SignupForm({ setSignUp }) {
   const [name, setName] = useState("");
   const [surname, setSurname] = useState("");
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const { dispatch, state } = useContext(AppCtx);
+  const { dispatch } = useContext(AppCtx);
 
   const submitHandler = (e) => {
     e.preventDefault();
@@ -43,7 +43,7 @@ function SignUp({ setSignUp }) {
 
   return (
     <div className={styles.main}>
-      <form onSubmit={submitHandler}>
+      <form className={styles.form} onSubmit={submitHandler}>
         <input
           className={styles.signup_input}
           type="text"
@@ -84,10 +84,12 @@ function SignUp({ setSignUp }) {
           placeholder="PASSWORD"
           required
         />
-        <input type="submit" value="Sign Up" />
+        <div className={styles.btn}>
+          <button type="submit">SIGN UP</button>
+        </div>
       </form>
     </div>
   );
 }
 
-export default SignUp;
+export default SignupForm;
