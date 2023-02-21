@@ -2,7 +2,7 @@
 const nextConfig = {
   reactStrictMode: true,
 
-  webpack(config) {
+  /*   webpack(config) {
     config.module.rules.push({
       test: /\.svg$/i,
       issuer: /\.[jt]sx?$/,
@@ -10,6 +10,22 @@ const nextConfig = {
     });
 
     return config;
+  }, */
+
+  images: {
+    // domains: [`assets.coingecko.com`, `storage.googleapis.com`],
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "assets.coingecko.com",
+        port: "",
+      },
+      {
+        protocol: "https",
+        hostname: "storage.googleapis.com",
+        port: "",
+      },
+    ],
   },
 };
 

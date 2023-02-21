@@ -4,6 +4,7 @@ import { AppCtx } from "@/store/context";
 import { useContext, useState } from "react";
 import { cartActions } from "@/store/actions";
 import removeDecimalPlaces from "@/utils/removeDecimal";
+import Image from "next/image";
 
 const Cart = ({ setCartModal }) => {
   const {
@@ -78,7 +79,12 @@ const Cart = ({ setCartModal }) => {
                 </div>
 
                 <div className={styles.crypto_details}>
-                  <img src={currentUser.cart[0].image} alt={currentUser.cart[0].name} />
+                  <Image
+                    src={currentUser.cart[0].image}
+                    alt={currentUser.cart[0].name}
+                    width={100}
+                    height={100}
+                  />
                   <p>{currentUser.cart[0].name}</p>
                 </div>
               </div>
