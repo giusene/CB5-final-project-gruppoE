@@ -1,46 +1,34 @@
 .main {
+  padding: 8rem 0;
+  position: relative;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
+  width: 100%;
   height: 100vh;
+  background-color: var(--bg-color);
 
-  .wrapper {
-    border-radius: 2rem;
-    background: linear-gradient(
-      180deg,
-      rgba(56, 54, 78, 1) 0%,
-      rgba(64, 61, 91, 1) 52%,
-      rgba(56, 54, 78, 1) 100%
-    );
-    width: 360px;
-    height: 500px;
-    padding: 2rem 1rem;
+  .labels {
+    position: absolute;
+    top: 3rem;
+    width: 200px;
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 3rem;
-    box-shadow: 0 0 8px rgba(255, 255, 255, 0.3);
+    justify-content: center;
+    border: 2px solid var(--details-secondary-color);
+    border-radius: 1.2rem;
+    overflow: hidden;
 
-    .labels {
-      width: 200px;
+    .label {
+      width: 50%;
       display: flex;
       justify-content: center;
-      border: 2px solid var(--details-secondary-color);
-      border-radius: 1.2rem;
-      overflow: hidden;
+      padding: 0.5rem;
+      color: white;
+      cursor: pointer;
+    }
 
-      .label {
-        width: 50%;
-        display: flex;
-        justify-content: center;
-        padding: 0.5rem;
-        color: white;
-        cursor: pointer;
-      }
-
-      .selected {
-        background-color: var(--details-secondary-color);
-      }
+    .selected {
+      background-color: var(--details-secondary-color);
     }
   }
 }

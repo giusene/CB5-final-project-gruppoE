@@ -1,6 +1,7 @@
 import { useState, useContext } from "react";
 import { AppCtx } from "@/store/context";
 import { loginActions } from "@/store/actions";
+import { BsExclamationSquare } from "react-icons/bs";
 import styles from "./styles.module.scss";
 
 function SignupForm() {
@@ -38,8 +39,8 @@ function SignupForm() {
   };
 
   return (
-    <div className={styles.main}>
-      <form className={styles.form} onSubmit={submitHandler}>
+    <form className={styles.form} onSubmit={submitHandler}>
+      <div className={styles.inputs}>
         <input
           className={styles.signup_input}
           type="text"
@@ -64,7 +65,14 @@ function SignupForm() {
           placeholder="USERNAME"
           required
         />
-        {state.usernameError && <div>ERROR</div>}
+        {state.usernameError && (
+          <div className={styles.error}>
+            <i>
+              <BsExclamationSquare />
+            </i>
+            <p>Username is not available!</p>
+          </div>
+        )}
         <input
           className={styles.signup_input}
           type="text"
@@ -73,7 +81,14 @@ function SignupForm() {
           placeholder="EMAIL"
           required
         />
-        {state.emailError && <div>ERROR</div>}
+        {state.emailError && (
+          <div className={styles.error}>
+            <i>
+              <BsExclamationSquare />
+            </i>
+            <p>This Email is already in use!</p>
+          </div>
+        )}
         <input
           className={styles.signup_input}
           type="password"
@@ -82,12 +97,20 @@ function SignupForm() {
           placeholder="PASSWORD"
           required
         />
-        {state.pswError && <div>ERROR</div>}
-        <div className={styles.btn}>
-          <button type="submit">SIGN UP</button>
-        </div>
-      </form>
-    </div>
+        {state.pswError && (
+          <div className={styles.error}>
+            <i>
+              <BsExclamationSquare />
+            </i>
+            <p>Password must be at least 6 characters!</p>
+          </div>
+        )}
+      </div>
+
+      <div className={styles.btn}>
+        <button type="submit">SIGN UP</button>
+      </div>
+    </form>
   );
 }
 
