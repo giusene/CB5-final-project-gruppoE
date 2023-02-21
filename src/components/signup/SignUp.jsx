@@ -1,6 +1,6 @@
 import { useState,useContext } from 'react';
 import { AppCtx } from '@/store/context';
-import { signupActions } from '@/store/actions';
+import {  loginActions } from '@/store/actions';
 import styles from './styles.module.scss';
 function SignUp() {
     const [name, setName] = useState('');
@@ -17,7 +17,7 @@ function SignUp() {
         e.preventDefault();
         
         dispatch({
-            type: signupActions.SIGNUP_USER,
+            type: loginActions.SIGNUP_USER,
             payload: { 
                 id: 7,
                 name: name,
