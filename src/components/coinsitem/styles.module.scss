@@ -21,28 +21,40 @@
     width: 35%;
     gap: 1rem;
 
-    img {
-      width: 45px;
-      height: 45px;
-      border-radius: 50%;
-    }
-  }
+    a {
+      display: flex;
+      gap: 0.5rem;
 
-  .coin_name {
-    width: 140px;
-    display: flex;
-    flex-direction: column;
-    gap: 0.3rem;
+      img {
+        width: 45px;
+        height: 45px;
+        border-radius: 50%;
+      }
 
-    .name {
-      color: white;
-      font-size: 0.85rem;
-    }
+      .coin_name {
+        width: 140px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 0.3rem;
 
-    .symbol {
-      font-size: 0.9rem;
-      color: rgba(165, 165, 165, 0.74);
-      text-transform: uppercase;
+        @media only screen and (min-width: 768px) {
+          flex-direction: row;
+          align-items: center;
+          justify-content: flex-start;
+        }
+
+        .name {
+          color: white;
+          font-size: 0.85rem;
+        }
+
+        .symbol {
+          font-size: 0.9rem;
+          color: rgba(165, 165, 165, 0.74);
+          text-transform: uppercase;
+        }
+      }
     }
   }
 

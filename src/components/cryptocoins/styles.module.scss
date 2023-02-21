@@ -46,6 +46,10 @@
         height: 45px;
         border-radius: 50%;
       }
+      a {
+        display: flex;
+        gap: 0.5rem;
+      }
     }
 
     .coin_name {

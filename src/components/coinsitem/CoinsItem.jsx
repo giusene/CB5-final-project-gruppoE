@@ -14,7 +14,14 @@ const CoinsItem = ({ data, setCartModal }) => {
     dispatch,
   } = useContext(AppCtx);
 
-  const { id, image, name, symbol, current_price, price_change_percentage_24h } = data;
+  const {
+    id,
+    image,
+    name,
+    symbol,
+    current_price,
+    price_change_percentage_24h,
+  } = data;
 
   const addToCartHandler = () => {
     dispatch({
@@ -27,13 +34,13 @@ const CoinsItem = ({ data, setCartModal }) => {
   return (
     <div className={styles.main}>
       <div className={styles.icon_wrapper}>
-        <Image src={image} alt={name} width={100} height={100} />
-        <div className={styles.coin_name}>
-          <Link href={`/crypto/${id}`}>
+        <Link href={`/crypto/${id}`}>
+          <Image src={image} alt={name} width={100} height={100} />
+          <div className={styles.coin_name}>
             <p className={styles.name}>{name}</p>
-          </Link>
-          <p className={styles.symbol}>{symbol}</p>
-        </div>
+            <p className={styles.symbol}>{symbol}</p>
+          </div>
+        </Link>
       </div>
       <div className={styles.price}>
         <div>
@@ -42,10 +49,16 @@ const CoinsItem = ({ data, setCartModal }) => {
         <div>
           <p
             className={`${styles.price_change} ${
-              price_change_percentage_24h < 0 ? styles.price_down : styles.price_up
+              price_change_percentage_24h < 0
+                ? styles.price_down
+                : styles.price_up
             }`}
           >
-            {price_change_percentage_24h < 0 ? <FiTrendingDown /> : <FiTrendingUp />}
+            {price_change_percentage_24h < 0 ? (
+              <FiTrendingDown />
+            ) : (
+              <FiTrendingUp />
+            )}
             <span> </span>
             {price_change_percentage_24h}
           </p>
@@ -69,7 +82,9 @@ const CoinsItem = ({ data, setCartModal }) => {
         ) : (
           <i>
             <AiOutlineStar
-              onClick={() => dispatch({ type: favoriteActions.ADD_FAVORITE, payload: data })}
+              onClick={() =>
+                dispatch({ type: favoriteActions.ADD_FAVORITE, payload: data })
+              }
             />
           </i>
         )}

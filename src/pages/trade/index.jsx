@@ -14,7 +14,9 @@ const Trade = ({ coins }) => {
     if (searchValue === "") {
       setFilteredCoins(coins);
     } else {
-      const updatedFilter = coins.filter((coin) => coin.name.toLowerCase().includes(searchValue));
+      const updatedFilter = coins.filter((coin) =>
+        coin.name.toLowerCase().includes(searchValue)
+      );
       setFilteredCoins(updatedFilter);
     }
   };
