@@ -21,6 +21,7 @@ const Trade = ({ coins }) => {
 
   useEffect(() => {
     filterHandler();
+    // eslint-disable-next-line
   }, [searchValue]);
 
   return (
