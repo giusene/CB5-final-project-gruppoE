@@ -13,9 +13,7 @@ const Trade = ({ coins }) => {
     if (searchValue === "") {
       setFilteredCoins(coins);
     } else {
-      const updatedFilter = coins.filter((coin) =>
-        coin.name.toLowerCase().includes(searchValue)
-      );
+      const updatedFilter = coins.filter((coin) => coin.name.toLowerCase().includes(searchValue));
       setFilteredCoins(updatedFilter);
     }
   };
@@ -35,10 +33,7 @@ const Trade = ({ coins }) => {
         <CoinsList coins={filteredCoins} setCartModal={setCartModal} />
       ) : (
         <div className={styles.notfound}>
-          <img
-            src="https://cdn-icons-png.flaticon.com/512/3670/3670605.png"
-            alt="notfound"
-          />
+          <img src="https://cdn-icons-png.flaticon.com/512/3670/3670605.png" alt="notfound" />
 
           <div className={styles.text}>
             <p>No results found for "{searchValue}"...</p>
@@ -46,7 +41,7 @@ const Trade = ({ coins }) => {
           </div>
         </div>
       )}
-      {cartModal && <Cart setCartModal={setCartModal} />}
+      {cartModal && <Cart setCartModal={setCartModal} coins={coins} />}
     </div>
   );
 };

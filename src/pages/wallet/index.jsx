@@ -1,6 +1,7 @@
 import LineChart from "@/components/chart/LineChart";
 import styles from "@/components/chart/styles.module.scss";
 import CreditCard from "@/components/creditCard/CreditCard";
+import UserCoins from "@/components/userCoins/UserCoins";
 
 function Wallet() {
   const data = {
@@ -21,10 +22,7 @@ function Wallet() {
     datasets: [
       {
         label: "Saldo",
-        data: [
-          1000, 1200, 1300, 1500, 1800, 2000, 2200, 2400, 2600, 2800, 3000,
-          3200,
-        ],
+        data: [1000, 1200, 1300, 1500, 1800, 2000, 2200, 2400, 2600, 2800, 3000, 3200],
 
         borderColor: "purple",
 
@@ -60,7 +58,7 @@ function Wallet() {
         </div>
 
         <div className={styles.coins}>
-          <h2>Your coins</h2>
+          <UserCoins />
         </div>
       </div>
 
