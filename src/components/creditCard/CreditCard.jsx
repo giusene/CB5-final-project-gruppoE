@@ -14,10 +14,10 @@ const CreditCard = () => {
       <div className={styles.card}>
         <div className={styles.card_inner}>
           <div className={styles.card_front}>
-            <Image src={mapCard} className={styles.map_card} />
+            <Image src={mapCard} alt="world-map" className={styles.map_card} />
             <div className={styles.row}>
-              <Image src={chipCard} />
-              <Image src={circuitPic} />
+              <Image src={chipCard} alt="card-chip" />
+              <Image src={circuitPic} alt="bank-circuit" />
             </div>
             <div className={styles.card_number}>
               <p>5322</p>

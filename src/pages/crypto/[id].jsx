@@ -1,4 +1,5 @@
 import { useRef, useEffect, useState } from "react";
+import Image from "next/image";
 import Chart from "chart.js/auto";
 
 Chart.defaults.font.family = "sans-serif";
@@ -40,9 +41,11 @@ function Crypto({ data, chartData }) {
       {current_price && <p>{current_price}</p>}
       <p>Market Cap: {market_cap}</p>
       {image && (
-        <img
+        <Image
           src={image.large}
           alt={name}
+          width={100}
+          height={100}
           onLoad={handleImageLoad}
           style={{ display: imageLoaded ? "block" : "none" }}
         />

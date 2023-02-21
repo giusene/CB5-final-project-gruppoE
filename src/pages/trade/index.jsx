@@ -1,6 +1,7 @@
 import Cart from "@/components/cart/Cart";
 import CoinsList from "@/components/coinslist/CoinsList";
 import SearchBar from "@/components/searchbar/SearchBar";
+import Image from "next/image";
 import styles from "@/styles/trade.module.scss";
 import { useState, useEffect } from "react";
 
@@ -33,7 +34,12 @@ const Trade = ({ coins }) => {
         <CoinsList coins={filteredCoins} setCartModal={setCartModal} />
       ) : (
         <div className={styles.notfound}>
-          <img src="https://cdn-icons-png.flaticon.com/512/3670/3670605.png" alt="notfound" />
+          <Image
+            src="https://cdn-icons-png.flaticon.com/512/3670/3670605.png"
+            alt="notfound"
+            width={100}
+            height={100}
+          />
 
           <div className={styles.text}>
             <p>No results found for "{searchValue}"...</p>

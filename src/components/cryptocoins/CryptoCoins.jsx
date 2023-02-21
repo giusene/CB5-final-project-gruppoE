@@ -1,5 +1,6 @@
 import styles from "../../components/cryptocoins/styles.module.scss";
 import Link from "next/link";
+import Image from "next/image";
 
 const CryptoCoins = ({ data }) => {
   const { coins } = data;
@@ -10,7 +11,7 @@ const CryptoCoins = ({ data }) => {
         {coins.map((coin) => (
           <div className={styles.coin_row} key={coin.item.id}>
             <div className={styles.icon_wrapper}>
-              <img src={coin.item.large} alt={coin.item.name} />
+              <Image src={coin.item.large} alt={coin.item.name} width={100} height={100} />
               <Link href={`/crypto/${coin.item.id}`}>
                 <div className={styles.coin_name}>
                   <p className={styles.name}>{coin.item.name}</p>

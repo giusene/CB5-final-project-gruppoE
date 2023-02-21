@@ -1,10 +1,10 @@
 import styles from "./styles.module.scss";
-import { BiUserCircle } from "react-icons/bi";
 import { useState, useEffect, useContext } from "react";
 import { useRouter } from "next/router";
 import { navbarLinks } from "@/utils/navbarLinks";
 import { AppCtx } from "@/store/context";
 import { loginActions } from "@/store/actions";
+import Image from "next/image";
 
 const Header = () => {
   const { state, dispatch } = useContext(AppCtx);
@@ -32,7 +32,7 @@ const Header = () => {
 
       <div className={styles.auth_data}>
         {state.isLogged && <button onClick={logoutHandler}>LOGOUT</button>}
-        <img src={state.currentUser.pic} alt={state.currentUser.name} />
+        {/* <Image src={state.currentUser.pic} alt={state.currentUser.name} /> */}
       </div>
     </div>
   );

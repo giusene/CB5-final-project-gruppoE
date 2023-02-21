@@ -19,7 +19,6 @@ const UserCoins = () => {
       )
     ).then((data) =>
       data.map((coin, index) => {
-        console.log(coin);
         dispatch({
           type: cartActions.UPDATE_PRICE,
           payload: {
