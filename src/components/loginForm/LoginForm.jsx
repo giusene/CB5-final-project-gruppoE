@@ -2,7 +2,7 @@ import styles from "./styles.module.scss";
 import { useState, useContext } from "react";
 import { AppCtx } from "@/store/context";
 import { loginActions } from "@/store/actions";
-import SignupForm from "../signupForm/SignupForm";
+import { BsExclamationSquare } from "react-icons/bs";
 
 const LoginForm = () => {
   const { state, dispatch } = useContext(AppCtx);
@@ -18,8 +18,8 @@ const LoginForm = () => {
   };
 
   return (
-    <div className={styles.main}>
-      <form onSubmit={submitHandler}>
+    <form className={styles.form} onSubmit={submitHandler}>
+      <div className={styles.inputs}>
         <input
           type="text"
           name="username"
@@ -35,12 +35,20 @@ const LoginForm = () => {
           placeholder="PASSWORD"
           required
         />
-        {state.loginError && <div>ERROR</div>}
-        <div className={styles.btn}>
-          <button type="submit">SIGN IN</button>
-        </div>
-      </form>
-    </div>
+        {state.loginError && (
+          <div className={styles.error}>
+            <i>
+              <BsExclamationSquare />
+            </i>
+            <p>Invalid username or password!</p>
+          </div>
+        )}
+      </div>
+
+      <div className={styles.btn}>
+        <button type="submit">SIGN IN</button>
+      </div>
+    </form>
   );
 };
 

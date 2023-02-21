@@ -8,32 +8,30 @@ const AuthCard = () => {
 
   return (
     <div className={styles.main}>
-      <div className={styles.wrapper}>
-        <div className={styles.labels}>
-          <p
-            className={
-              switcher === "signin"
-                ? `${styles.label} ${styles.selected}`
-                : `${styles.label}`
-            }
-            onClick={() => setSwitcher("signin")}
-          >
-            SIGNIN
-          </p>
-          <p
-            className={
-              switcher === "signup"
-                ? `${styles.label} ${styles.selected}`
-                : `${styles.label}`
-            }
-            onClick={() => setSwitcher("signup")}
-          >
-            SIGNUP
-          </p>
-        </div>
-
-        {switcher === "signin" ? <LoginForm /> : <SignupForm />}
+      <div className={styles.labels}>
+        <p
+          className={
+            switcher === "signin"
+              ? `${styles.label} ${styles.selected}`
+              : `${styles.label}`
+          }
+          onClick={() => setSwitcher("signin")}
+        >
+          SIGNIN
+        </p>
+        <p
+          className={
+            switcher === "signup"
+              ? `${styles.label} ${styles.selected}`
+              : `${styles.label}`
+          }
+          onClick={() => setSwitcher("signup")}
+        >
+          SIGNUP
+        </p>
       </div>
+
+      {switcher === "signin" ? <LoginForm /> : <SignupForm />}
     </div>
   );
 };

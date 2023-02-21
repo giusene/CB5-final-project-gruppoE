@@ -1,21 +1,56 @@
 .form {
+  border-radius: 2rem;
+  padding: 4rem 2rem 2rem;
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  align-items: center;
+  gap: 2rem;
+  justify-content: space-between;
+  background: linear-gradient(
+    180deg,
+    rgba(56, 54, 78, 1) 0%,
+    rgba(64, 61, 91, 1) 52%,
+    rgba(56, 54, 78, 1) 100%
+  );
 
-  input {
-    padding: 0.8rem;
-    min-width: 260px;
-    background-color: var(--bg-color);
-    border: none;
-    border-radius: 1.5rem;
-    outline: none;
-    color: white;
+  .inputs {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
 
-    &:focus {
-      background-color: transparent;
-      border: 1px solid #b375ef;
+    input {
+      padding: 1rem;
+      min-width: 260px;
+      background-color: var(--bg-color);
+      border: none;
+      border-radius: 1.5rem;
+      outline: none;
       color: white;
+
+      &:focus {
+        background-color: transparent;
+        border: 1px solid #b375ef;
+        color: white;
+      }
+    }
+
+    .error {
+      padding-left: 0.6rem;
+      align-self: flex-start;
+      display: flex;
+      align-items: center;
+      color: white;
+      gap: 0.3rem;
+      animation: shake 0.82s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+      transform: translate3d(0, 0, 0);
+
+      p {
+        font-size: 0.8rem;
+      }
+
+      i {
+        display: flex;
+      }
     }
   }
 
@@ -24,7 +59,7 @@
     align-self: center;
 
     button {
-      padding: 0.8rem 1.7rem;
+      padding: 0.6rem 1.3rem;
       font-weight: 600;
       background-color: var(--details-secondary-color);
       color: white;
@@ -32,11 +67,34 @@
       border-radius: 1.6rem;
       cursor: pointer;
       transition: all 0.35s ease-out;
-      font-size: 1.2rem;
+      font-size: 1.1rem;
 
       &:hover {
         box-shadow: 0 0 10px rgba($color: #b375ef, $alpha: 0.5);
       }
     }
+  }
+}
+
+@keyframes shake {
+  10%,
+  90% {
+    transform: translate3d(-1px, 0, 0);
+  }
+
+  20%,
+  80% {
+    transform: translate3d(2px, 0, 0);
+  }
+
+  30%,
+  50%,
+  70% {
+    transform: translate3d(-4px, 0, 0);
+  }
+
+  40%,
+  60% {
+    transform: translate3d(4px, 0, 0);
   }
 }
