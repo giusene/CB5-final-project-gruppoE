@@ -3,7 +3,9 @@ const loginActions = {
   LOGOUT_USER: "LOGOUT_USER",
   KEEP_SESSION_OPEN: "KEEP_SESSION_OPEN",
 };
-
+const signupActions = {
+  SIGNUP_USER: "SIGNUP_USER"
+}
 const cartActions = {
   ADD_TO_CART: "ADD_TO_CART",
   REMOVE_FROM_CART: "REMOVE_FROM_CART",
@@ -16,4 +18,4 @@ const favoriteActions = {
   REMOVE_FAVORITE: "REMOVE_FAVORITE",
 };
 
-export { loginActions, cartActions, favoriteActions };
+export { loginActions, signupActions, cartActions, favoriteActions };

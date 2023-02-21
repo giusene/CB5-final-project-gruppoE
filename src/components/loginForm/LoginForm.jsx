@@ -2,11 +2,14 @@ import styles from "./styles.module.scss";
 import { useState, useContext } from "react";
 import { AppCtx } from "@/store/context";
 import { loginActions } from "@/store/actions";
+import SignUp from "../signup/SignUp";
 
 const LoginForm = () => {
   const { dispatch } = useContext(AppCtx);
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const [signUp, setSignUp] = useState(false);
+
 
   const submitHandler = (e) => {
     e.preventDefault();
@@ -21,13 +24,14 @@ const LoginForm = () => {
       <div className={styles.wrapper}>
         <div className={styles.login_nav}>
           <div className={`${styles.login_nav__item} ${styles.active}`}>
-            <a href="#">SIGNIN</a>
+            <button className={styles.change_btn} onClick={()=> setSignUp(false)}>Login</button>
           </div>
           <div>
-            <a href="#">SIGNUP</a>
+          <button className={styles.change_btn} onClick={()=> setSignUp(true)}>Sign Up</button>
           </div>
+          {console.log(signUp)}
         </div>
-
+        {signUp === false && 
         <form onSubmit={submitHandler}>
           <input
             className={styles.login_input}
@@ -50,6 +54,9 @@ const LoginForm = () => {
             <button type="submit">SIGN IN</button>
           </div>
         </form>
+        }
+        {signUp === true && <SignUp/>} 
+        
       </div>
     </div>
   );
