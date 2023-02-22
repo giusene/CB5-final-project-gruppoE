@@ -1,11 +1,16 @@
 import styles from "./styles.module.scss";
 import { navbarLinks } from "@/utils/navbarLinks";
 import Link from "next/link";
-
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { useRouter } from "next/router";
 
 const Navbar = () => {
-  const [activeId, setActiveId] = useState(1);
+  const router = useRouter();
+  const [activeId, setActiveId] = useState(router.asPath);
+
+  useEffect(() => {
+    setActiveId(router.asPath);
+  }, [router.asPath]);
 
   return (
     <div className={styles.main}>
@@ -15,8 +20,10 @@ const Navbar = () => {
           href={link.route}
           onClick={() => setActiveId(link.id)}
           className={
-            activeId === link.id
-              ? `${styles.link} ${link.id === 3 ? styles.icon_big : ""} ${styles.icon_active}`
+            activeId === link.route
+              ? `${styles.link} ${link.id === 3 ? styles.icon_big : ""} ${
+                  styles.icon_active
+                }`
               : `${styles.link} ${link.id === 3 ? styles.icon_big : ""}`
           }
         >
