@@ -27,12 +27,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background: linear-gradient(
-      180deg,
-      rgba(56, 54, 78, 1) 0%,
-      rgba(64, 61, 91, 1) 52%,
-      rgba(56, 54, 78, 1) 100%
-    );
+    background-color: var(--box-color);
 
     .icon_wrapper {
       display: flex;
