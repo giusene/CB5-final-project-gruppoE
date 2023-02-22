@@ -3,10 +3,13 @@
 :root {
   --navbar-height: 10vh;
   --page-padding: 2rem 1rem;
-  --bg-color: #201a28;
-  --box-color: #2b2938;
-  --details-main-color: #ea4b87;
+  --bg-color: #131224;
+  --box-color: #292641;
+  --details-base-color: #5a5868;
+  --details-main-color: #c0fb34;
   --details-secondary-color: #b375ef;
+  --details-tertiary-color: #20d9e2;
+  --details-quaternary-color: #dd41e5;
 }
 
 * {
