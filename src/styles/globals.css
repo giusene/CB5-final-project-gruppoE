@@ -28,23 +28,23 @@ a {
   text-decoration: none;
 }
 
-
 @media only screen and (min-width: 1280px) {
   body {
     background-color: var(--bg-color);
     height: 100vh;
   }
-  }
+}
 
 /* Stile della scrollbar */
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 1px;
 }
 
 /* Stile del "pulgar" della scrollbar (il pulsante che si trascina) */
 ::-webkit-scrollbar-thumb {
   background-color: var(--details-secondary-color);
   border-radius: 4px;
+  border-top: 40px solid;
 }
 
 /* Stile della scrollbar quando viene trascinata */
@@ -55,5 +55,4 @@ a {
 /* Stile della scrollbar quando viene trascinata con il mouse */
 ::-webkit-scrollbar-thumb:active {
   background-color: var(--details-secondary-color);
-
 }

@@ -7,12 +7,13 @@
   position: fixed;
   bottom: 0;
   padding: 1.5rem 1.3rem;
-  background: linear-gradient(
+  /*   background: linear-gradient(
     360deg,
     rgba(32, 26, 40, 1) 0%,
     rgba(37, 35, 50, 1) 49%,
     rgba(48, 46, 64, 1) 100%
-  );
+  ); */
+  background-color: var(--box-color);
   z-index: 999;
   border-top-left-radius: 2rem;
   border-top-right-radius: 2rem;
@@ -27,12 +28,6 @@
     border-bottom-right-radius: 1rem;
     justify-content: center;
     gap: 3rem;
-    background: linear-gradient(
-      90deg,
-      rgba(32, 26, 40, 1) 0%,
-      rgba(37, 35, 50, 1) 49%,
-      rgba(48, 46, 64, 1) 100%
-    );
   }
 
   .nav_label {
@@ -43,7 +38,7 @@
     @media only screen and (min-width: 1280px) {
       display: block;
       width: 88%;
-      color: rgba(165, 165, 165, 0.74);
+      color: #838097;
     }
   }
 
@@ -52,7 +47,7 @@
     text-decoration: none;
     width: 70px;
     height: 50px;
-    border-radius: 30px;
+    border-radius: 10px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -60,7 +55,7 @@
     transition: all 0.35s ease-out;
 
     &:hover {
-      background-color: #2f3228;
+      background-color: #bffb342b;
       border-radius: 30px;
     }
 
@@ -71,11 +66,12 @@
       gap: 1.5rem;
       width: 100%;
       padding-left: 0.5rem;
-      border-radius: 30px;
+      border-radius: 10px;
       transition: all 0.15s ease-out;
 
       &:hover {
-        background-color: #2f3228;
+        background-color: #bffb342b;
+        border-radius: 10px;
       }
     }
   }
@@ -89,7 +85,6 @@
   .icon_big {
     svg {
       font-size: 3.2rem;
-
       border-radius: 30px;
 
       @media only screen and (min-width: 1280px) {
@@ -99,7 +94,7 @@
   }
 
   svg {
-    color: rgba(165, 165, 165, 0.74);
+    color: #838097;
     font-size: 1.65rem;
 
     @media only screen and (min-width: 1280px) {
@@ -109,9 +104,13 @@
 }
 
 .icon_active {
-  background-color: #2f3228;
-  border-radius: 30px;
+  background: #bffb342b;
+  border-radius: 10px;
   transition: all 0.15s ease-out;
+
+  @media only screen and (min-width: 1280px) {
+    background: linear-gradient(to left, var(--box-color), #bffb342b 65%);
+  }
 
   svg {
     color: var(--details-main-color);
