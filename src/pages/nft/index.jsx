@@ -1,9 +1,29 @@
 import NftList from "@/components/nftList/NftList";
 import styles from "@/styles/nft.module.scss";
+import { RiArrowDownSLine } from "react-icons/ri";
+import { useState } from "react";
 
 const Nft = ({ data }) => {
+  const [showDescr, setShowDescr] = useState(false);
+
   return (
     <div className={styles.main}>
+      <div className={styles.info}>
+        <div className={styles.title}>
+          <h2>{data.contract.name}</h2>
+          <i
+            className={showDescr && `${styles.up}`}
+            onClick={() => setShowDescr((prev) => !prev)}
+          >
+            <RiArrowDownSLine />
+          </i>
+        </div>
+        {showDescr && (
+          <div className={styles.description}>
+            <p>{data.contract.metadata.description}</p>
+          </div>
+        )}
+      </div>
       <NftList data={data} />
     </div>
   );
