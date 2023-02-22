@@ -2,17 +2,17 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  transform: scale(0.7);
 
   .card {
-    min-width: 500px;
-    height: 300px;
-    transform: scale(70%);
+    min-width: 300px;
+    height: 180px;
     color: white;
     cursor: pointer;
 
     @media only screen and (min-width: 1280px) {
-      transform: scale(100%);
+      position: absolute;
+      top: 200px;
+      transform: scale(40%);
     }
 
     .card_inner {
@@ -51,12 +51,12 @@
         justify-content: space-between;
 
         img {
-          width: 60px;
-          height: 55px;
+          width: 36px;
+          height: 33px;
           object-fit: contain;
         }
         img:nth-child(2) {
-          width: 80px;
+          width: 48px;
           height: 100%;
         }
       }
@@ -65,10 +65,10 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
-        margin-top: 4rem;
+        margin-top: 2rem;
 
         p {
-          font-size: 2rem;
+          font-size: 1.2rem;
         }
       }
 
@@ -76,10 +76,10 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
-        margin-top: 2.5rem;
+        margin-top: 0.8rem;
 
         p {
-          font-size: 0.8rem;
+          font-size: 0.7rem;
         }
       }
 
@@ -87,10 +87,10 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
-        margin-top: 1.3rem;
+        margin-top: 0.78rem;
 
         p {
-          font-size: 1.4rem;
+          font-size: 0.9rem;
         }
       }
     }

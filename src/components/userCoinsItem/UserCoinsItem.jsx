@@ -27,7 +27,7 @@ const UserCoinsItem = ({ data }) => {
       </div>
       <div className={styles.price}>
         <div>
-          <p>Coin value: {currencyFormat(current_price)}</p>
+          <p className={styles.current_price}>Coin value: {currencyFormat(current_price)}</p>
         </div>
         <div>
           <p
@@ -40,7 +40,9 @@ const UserCoinsItem = ({ data }) => {
             {price_change_percentage_24h}
           </p>
         </div>
-        <div>Owned: {qty}</div>
+        <div className={styles.owned}>
+          <p> Owned: {qty} </p>
+        </div>
       </div>
     </div>
   );
