@@ -85,7 +85,7 @@ export const users = [
     password: "coding",
     social: {
       linkedin: "https://www.linkedin.com/in/sebastianoocchipinti25/",
-      github: "https://github.com/pietrodistefano23",
+      github: "https://github.com/theBoneless25",
     },
     assets: {
       coins: [],
