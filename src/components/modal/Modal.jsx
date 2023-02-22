@@ -1,4 +1,5 @@
 import styles from "@/components/modal/styles.module.scss";
+import { AiOutlineCloseCircle } from "react-icons/ai";
 import Image from "next/image";
 
 function Modal({ data, setModalState }) {
@@ -6,19 +7,28 @@ function Modal({ data, setModalState }) {
 
   return (
     <div className={styles.main}>
-      <button onClick={() => setModalState(false)}>X</button>
-      <h3>{name}</h3>
-      <Image src={image} alt={name} width={560} height={400} />
-      <h2>
-        Rarity ranking: <span>#{rarity}</span>
-      </h2>
-      <div className={styles.attributes}>
-        {attributes.map((attr, index) => (
-          <p key={index}>
-            <h4 className={styles.trait}>{`${attr.trait_type}:`}</h4>
-            <h4>{`${attr.value}`}</h4>
-          </p>
-        ))}
+      <i onClick={() => setModalState(false)}>
+        <AiOutlineCloseCircle />
+      </i>
+      <div className={styles.elements}>
+        <div className={styles.title}>
+          <h2>{name.toUpperCase()}</h2>
+        </div>
+        <div className={styles.image}>
+          <Image src={image} alt={name} width={500} height={500} />
+          <h3>
+            RARITY RANK: <span>#{rarity}</span>
+          </h3>
+        </div>
+
+        <div className={styles.attributes}>
+          {attributes.map((attr, index) => (
+            <div key={index}>
+              <h3 className={styles.trait}>{attr.trait_type}</h3>
+              <h3 className={styles.values}>{`${attr.value}`}</h3>
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );

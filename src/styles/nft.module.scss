@@ -1,0 +1,5 @@
+.main {
+  overflow-y: scroll;
+  height: calc(90vh - var(--navbar-height));
+  padding: var(--page-padding);
+}
