@@ -31,6 +31,7 @@ const appReducer = (state, action) => {
         ...state,
         currentUser: "",
         isLogged: false,
+        isSignedUp : false
       };
     // KEEP_SESSION_OPEN
     case loginActions.KEEP_SESSION_OPEN:
@@ -56,6 +57,7 @@ const appReducer = (state, action) => {
         ...state,
         users: [...state.users, action.payload],
         switcher: "signin",
+        isSignedUp : true,
       };
     // AUTH SWITCHER
     case signupActions.AUTH_SWITCHER:

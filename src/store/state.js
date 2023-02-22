@@ -9,6 +9,7 @@ const initialState = {
   emailError: false,
   pswError: false,
   switcher: "signin",
+  isSignedUp: false,
 };
 
 export { initialState };
