@@ -8,6 +8,7 @@ const initialState = {
   usernameError: false,
   emailError: false,
   pswError: false,
+  switcher: "signin",
 };
 
 export { initialState };

@@ -1,4 +1,9 @@
-import { loginActions, cartActions, favoriteActions } from "./actions";
+import {
+  loginActions,
+  cartActions,
+  favoriteActions,
+  signupActions,
+} from "./actions";
 import setLocalStorage from "@/utils/localstorage";
 const appReducer = (state, action) => {
   switch (action.type) {
@@ -31,7 +36,7 @@ const appReducer = (state, action) => {
     case loginActions.KEEP_SESSION_OPEN:
       return { ...state, currentUser: action.payload, isLogged: true };
     // SIGNUP_USER
-    case loginActions.SIGNUP_USER:
+    case signupActions.SIGNUP_USER:
       const existsUser = state.users.find(
         (user) => user.username === action.payload.username
       );
@@ -47,8 +52,14 @@ const appReducer = (state, action) => {
       if (action.payload.password.length < 6) {
         return { ...state, pswError: true };
       }
-      return { ...state, users: [...state.users, action.payload] };
-
+      return {
+        ...state,
+        users: [...state.users, action.payload],
+        switcher: "signin",
+      };
+    // AUTH SWITCHER
+    case signupActions.AUTH_SWITCHER:
+      return { ...state, switcher: action.payload };
     // FAVORITE COINS
     case favoriteActions.ADD_FAVORITE:
       const newState = {

@@ -1,6 +1,6 @@
 import { useState, useContext } from "react";
 import { AppCtx } from "@/store/context";
-import { loginActions } from "@/store/actions";
+import { signupActions } from "@/store/actions";
 import { BsExclamationSquare } from "react-icons/bs";
 import styles from "./styles.module.scss";
 
@@ -15,7 +15,7 @@ function SignupForm() {
   const submitHandler = (e) => {
     e.preventDefault();
     dispatch({
-      type: loginActions.SIGNUP_USER,
+      type: signupActions.SIGNUP_USER,
       payload: {
         id: 7,
         name: name,
