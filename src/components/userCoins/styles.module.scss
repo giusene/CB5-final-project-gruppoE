@@ -6,11 +6,21 @@
   flex-direction: column;
   gap: 2rem;
 
+  h3 {
+    font-size: 1.5rem;
+  }
+
   .favorite_list {
+    width: 90vw;
     display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
     align-items: center;
     gap: 1.2rem;
+    overflow-x: scroll;
+
+    @media only screen and (min-width: 1280px) {
+      flex-direction: column;
+      width: 100%;
+      overflow-x: none;
+    }
   }
 }

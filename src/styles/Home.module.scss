@@ -5,4 +5,8 @@
   flex-direction: column;
   gap: 3rem;
   overflow-y: scroll;
+
+  @media only screen and (min-width: 1280px) {
+    height: calc(100vh - var(--navbar-height));
+  }
 }
