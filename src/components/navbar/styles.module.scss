@@ -20,8 +20,11 @@
   @media only screen and (min-width: 1280px) {
     position: relative;
     flex-direction: column;
-    height: 100vh;
-    border-radius: 0;
+    height: 100%;
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
+    border-bottom-left-radius: 1rem;
+    border-bottom-right-radius: 1rem;
     justify-content: center;
     gap: 3rem;
     background: linear-gradient(
@@ -57,7 +60,7 @@
     transition: all 0.35s ease-out;
 
     &:hover {
-      background-color: #ea4b88df;
+      background-color: #2f3228;
       border-radius: 30px;
     }
 
@@ -72,7 +75,7 @@
       transition: all 0.15s ease-out;
 
       &:hover {
-        background-color: #ea4b88df;
+        background-color: #2f3228;
       }
     }
   }
@@ -85,7 +88,10 @@
 
   .icon_big {
     svg {
-      font-size: 3.5rem;
+      font-size: 3.2rem;
+
+      border-radius: 30px;
+
       @media only screen and (min-width: 1280px) {
         font-size: 2.5rem;
       }
@@ -94,7 +100,7 @@
 
   svg {
     color: rgba(165, 165, 165, 0.74);
-    font-size: 2rem;
+    font-size: 1.65rem;
 
     @media only screen and (min-width: 1280px) {
       font-size: 2rem;
@@ -103,17 +109,17 @@
 }
 
 .icon_active {
-  background-color: var(--details-main-color);
+  background-color: #2f3228;
   border-radius: 30px;
   transition: all 0.15s ease-out;
 
   svg {
-    color: rgb(235, 234, 234);
+    color: var(--details-main-color);
     animation: jello-horizontal 0.5s both;
   }
 
   .nav_label {
-    color: rgb(235, 234, 234);
+    color: var(--details-main-color);
   }
 }
 

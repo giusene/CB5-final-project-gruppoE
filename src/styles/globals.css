@@ -28,6 +28,14 @@ a {
   text-decoration: none;
 }
 
+
+@media only screen and (min-width: 1280px) {
+  body {
+    background-color: var(--bg-color);
+    height: 100vh;
+  }
+  }
+
 /* Stile della scrollbar */
 ::-webkit-scrollbar {
   width: 8px;
@@ -47,4 +55,5 @@ a {
 /* Stile della scrollbar quando viene trascinata con il mouse */
 ::-webkit-scrollbar-thumb:active {
   background-color: var(--details-secondary-color);
+
 }

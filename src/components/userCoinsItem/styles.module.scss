@@ -1,6 +1,6 @@
 .main {
   min-width: 150px;
-  height: 230px;
+  height: 200px;
   padding: 1rem 0;
   border-radius: 0.8rem;
   display: flex;
@@ -8,83 +8,126 @@
   align-items: center;
   justify-content: space-between;
   gap: 2px;
-
-  background: linear-gradient(
-    180deg,
-    rgba(56, 54, 78, 1) 0%,
-    rgba(64, 61, 91, 1) 52%,
-    rgba(56, 54, 78, 1) 100%
-  );
+  background-color: var(--box-color);
   color: white;
 
   @media only screen and (min-width: 1280px) {
-    width: 600px;
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-  }
-
-  .icon_wrapper {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
     width: 100%;
-    gap: 1rem;
-
-    img {
-      width: 45px;
-      height: 45px;
-      border-radius: 50%;
-    }
+    height: 77px;
   }
 
-  .coin_name {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 0.3rem;
-
-    .name {
-      color: white;
-      font-size: 0.85rem;
+  a {
+    @media only screen and (min-width: 1280px) {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
     }
 
-    .symbol {
-      font-size: 0.9rem;
-      color: rgba(165, 165, 165, 0.74);
-      text-transform: uppercase;
+    .icon_wrapper {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+      width: 100%;
+
+      img {
+        width: 45px;
+        height: 45px;
+        border-radius: 50%;
+      }
+      @media only screen and (min-width: 1280px) {
+        padding-left: 1rem;
+        width: 35%;
+        flex-direction: row;
+        justify-content: flex-start;
+      }
     }
-  }
 
-  .price {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 1rem;
+    .coin_name {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.3rem;
 
-    p {
-      font-size: 0.8rem;
-      text-align: center;
+      @media only screen and (min-width: 1280px) {
+        align-items: flex-start;
+      }
+      .name {
+        color: white;
+        font-size: 0.85rem;
+      }
+
+      .symbol {
+        font-size: 0.9rem;
+        color: var(--details-main-color);
+        text-transform: uppercase;
+      }
     }
 
-    .current_price {
-      display: none;
+    .price {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+      width: 100%;
+
+      @media only screen and (min-width: 1280px) {
+        flex-direction: row;
+        justify-content: space-between;
+      }
+
+      p {
+        font-size: 0.8rem;
+        text-align: center;
+
+        @media only screen and (min-width: 1280px) {
+          font-size: 1rem;
+        }
+      }
+
+      .current_price {
+        display: none;
+      }
+
+      .price_change {
+        @media only screen and (min-width: 1280px) {
+          width: 150px;
+          text-align: left;
+        }
+      }
+      .price_up {
+        color: #02da26;
+      }
+
+      .price_down {
+        color: #fb3835;
+      }
+
+      @media only screen and (min-width: 1280px) {
+        flex-direction: row;
+      }
     }
-  }
 
-  .price_up {
-    color: #02da26;
-  }
+    .owned {
+      width: 60%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
 
-  .price_down {
-    color: #fb3835;
-  }
+      @media only screen and (min-width: 1280px) {
+        width: 250px;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-start;
+        p {
+          display: flex;
 
-  .owned {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+          gap: 0.3rem;
+        }
+      }
+    }
   }
 
   //   @media only screen and (min-width: 1280px) {

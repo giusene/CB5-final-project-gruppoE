@@ -4,18 +4,22 @@
   height: 70px;
   justify-content: space-between;
   align-items: center;
-  background: linear-gradient(
+  /*   background: linear-gradient(
     180deg,
     rgba(32, 26, 40, 1) 0%,
     rgba(37, 35, 50, 1) 49%,
     #302e40 100%
-  );
+  ); */
   color: white;
 
   h1 {
     letter-spacing: 0.1rem;
     color: var(--details-main-color);
-    text-shadow: 0 0 5px rgba($color: #ea4b87, $alpha: 0.6);
+    // text-shadow: 0 0 5px rgba($color: #ea4b87, $alpha: 0.6);
+
+    @media only screen and (min-width: 1280px) {
+      // display: none;
+    }
   }
 
   .auth_data {
@@ -29,8 +33,8 @@
       height: 30px;
       padding: 0 10px;
       font-weight: 500;
-      background-color: var(--details-secondary-color);
-      color: white;
+      background-color: var(--details-main-color);
+      color: black;
       letter-spacing: 0.1rem;
       cursor: pointer;
       transition: all 0.35s ease-out;

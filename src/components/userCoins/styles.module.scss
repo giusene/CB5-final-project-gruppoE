@@ -5,6 +5,9 @@
   display: flex;
   flex-direction: column;
   gap: 2rem;
+  @media only screen and (min-width: 1280px) {
+    align-items: flex-start;
+  }
 
   h3 {
     font-size: 1.5rem;
@@ -16,9 +19,17 @@
     align-items: center;
     gap: 1.2rem;
     overflow-x: scroll;
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: rgba(64, 61, 91, 1);
+    }
 
     @media only screen and (min-width: 1280px) {
       flex-direction: column;
+      align-items: flex-start;
       width: 100%;
       overflow-x: none;
     }

@@ -1,5 +1,6 @@
 import { currencyFormat } from "@/utils/currencyFormat";
 import { FiTrendingUp, FiTrendingDown } from "react-icons/fi";
+import { RiCopperCoinLine } from "react-icons/ri";
 import { AppCtx } from "@/store/context";
 import { useContext } from "react";
 import Link from "next/link";
@@ -16,34 +17,37 @@ const UserCoinsItem = ({ data }) => {
 
   return (
     <div className={styles.main}>
-      <div className={styles.icon_wrapper}>
-        <Image src={image} alt={name} width={100} height={100} />
-        <div className={styles.coin_name}>
-          <Link href={`/crypto/${id}`}>
+      <Link href={`/crypto/${id}`}>
+        <div className={styles.icon_wrapper}>
+          <Image src={image} alt={name} width={100} height={100} />
+          <div className={styles.coin_name}>
             <p className={styles.name}>{name}</p>
-          </Link>
-          <p className={styles.symbol}>{symbol}</p>
+
+            <p className={styles.symbol}>{symbol}</p>
+          </div>
         </div>
-      </div>
-      <div className={styles.price}>
-        <div>
-          <p className={styles.current_price}>Coin value: {currencyFormat(current_price)}</p>
+        <div className={styles.price}>
+          <div>
+            <p className={styles.current_price}>Coin value: {currencyFormat(current_price)}</p>
+          </div>
+          <div>
+            <p
+              className={`${styles.price_change} ${
+                price_change_percentage_24h < 0 ? styles.price_down : styles.price_up
+              }`}
+            >
+              {price_change_percentage_24h < 0 ? <FiTrendingDown /> : <FiTrendingUp />}
+              <span> </span>
+              {price_change_percentage_24h}
+            </p>
+          </div>
+          <div className={styles.owned}>
+            <p>
+              Owned <RiCopperCoinLine /> {qty}
+            </p>
+          </div>
         </div>
-        <div>
-          <p
-            className={`${styles.price_change} ${
-              price_change_percentage_24h < 0 ? styles.price_down : styles.price_up
-            }`}
-          >
-            {price_change_percentage_24h < 0 ? <FiTrendingDown /> : <FiTrendingUp />}
-            <span> </span>
-            {price_change_percentage_24h}
-          </p>
-        </div>
-        <div className={styles.owned}>
-          <p> Owned: {qty} </p>
-        </div>
-      </div>
+      </Link>
     </div>
   );
 };
