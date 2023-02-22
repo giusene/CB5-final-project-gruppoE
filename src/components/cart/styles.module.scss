@@ -1,12 +1,27 @@
 .main {
   position: absolute;
-  top: 0;
   background-color: #201a28;
-  height: 89vh;
+  top: 0;
+  height: 100vh;
   width: 100vw;
   display: flex;
   justify-content: center;
-  padding: 2rem 1rem;
+  animation: slider 0.5s;
+
+  @keyframes slider {
+    from {
+      transform: translateY(1000px);
+    }
+    to {
+      transform: translateY(0);
+    }
+  }
+
+  @media only screen and (min-width: 1280px) {
+    width: 100vw;
+    height: 100vh;
+    left: 0px;
+  }
 
   .close_cart {
     position: absolute;
@@ -26,13 +41,24 @@
     }
 
     @media only screen and (min-width: 768px) {
-      font-size: 50px;
+      font-size: 40px;
     }
   }
 
   .cart_container {
-    position: relative;
-    top: 40px;
+    position: absolute;
+    transform: scale(80%);
+    top: 90px;
+
+    @media only screen and (min-width: 768px) {
+      transform: scale(100%);
+      top: 180px;
+    }
+
+    @media only screen and (min-width: 1280px) {
+      transform: scale(110%);
+    }
+
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -50,10 +76,6 @@
     border-radius: 2rem;
     color: white;
     box-shadow: 0 0 8px rgba(255, 255, 255, 0.5);
-
-    @media only screen and (min-width: 768px) {
-      top: 150px;
-    }
 
     h2 {
       padding: 0.4rem 3.8rem 0.6rem;

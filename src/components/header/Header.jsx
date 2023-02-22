@@ -24,7 +24,6 @@ const Header = () => {
     if (currentLink) {
       setCurrentLabel(currentLink.label);
     }
-    console.log(currentPath);
   }, [router.asPath]);
 
   return (
