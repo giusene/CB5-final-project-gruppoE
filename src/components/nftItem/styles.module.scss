@@ -1,6 +1,6 @@
 .main {
-  width: 270px;
-  height: 350px;
+  width: 200px;
+  height: 300px;
   cursor: pointer;
   position: relative;
   border-radius: 1rem;
@@ -17,8 +17,8 @@
   }
 
   img {
-    width: 270px;
-    height: 350px;
+    width: 200px;
+    height: 300px;
     object-fit: cover;
     border-radius: 1rem;
   }
@@ -28,11 +28,11 @@
     display: flex;
     align-items: center;
     gap: 1rem;
-    bottom: -1.8rem;
-    left: 33%;
+    bottom: -1rem;
+    left: 35%;
     transform: translate(-50%, -50%);
     background-color: rgba(255, 255, 255, 0.801);
-    padding: 1.5rem 0.5rem;
+    padding: 0.5rem;
     border-radius: 0.5rem;
     box-shadow: 0 0 4px rgba(0, 0, 0, 0.5);
     cursor: pointer;
