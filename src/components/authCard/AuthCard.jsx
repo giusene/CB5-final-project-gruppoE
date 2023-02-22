@@ -1,37 +1,46 @@
 import styles from "./styles.module.scss";
-import { useState } from "react";
+import { useContext } from "react";
 import LoginForm from "../loginForm/LoginForm";
 import SignupForm from "../signupForm/SignupForm";
+import { AppCtx } from "@/store/context";
+import { signupActions } from "@/store/actions";
 
 const AuthCard = () => {
-  const [switcher, setSwitcher] = useState("signin");
+  const { state, dispatch } = useContext(AppCtx);
+
+  const switcherHandler = (str) => {
+    dispatch({
+      type: signupActions.AUTH_SWITCHER,
+      payload: str,
+    });
+  };
 
   return (
     <div className={styles.main}>
       <div className={styles.labels}>
         <p
           className={
-            switcher === "signin"
+            state.switcher === "signin"
               ? `${styles.label} ${styles.selected}`
               : `${styles.label}`
           }
-          onClick={() => setSwitcher("signin")}
+          onClick={() => switcherHandler("signin")}
         >
           SIGNIN
         </p>
         <p
           className={
-            switcher === "signup"
+            state.switcher === "signup"
               ? `${styles.label} ${styles.selected}`
               : `${styles.label}`
           }
-          onClick={() => setSwitcher("signup")}
+          onClick={() => switcherHandler("signup")}
         >
           SIGNUP
         </p>
       </div>
 
-      {switcher === "signin" ? <LoginForm /> : <SignupForm />}
+      {state.switcher === "signin" ? <LoginForm /> : <SignupForm />}
     </div>
   );
 };
