@@ -10,14 +10,27 @@
   @media only screen and (min-width: 768px) {
     align-items: center;
     canvas {
-      max-width: 1000px;
-      max-height: 500px;
+      max-width: 800px;
+      max-height: 350px;
+      object-fit: contain;
     }
+  }
+  @media only screen and (min-width: 1280px) {
+    height: calc(100vh - var(--navbar-height));
   }
 
   .crypto_container {
     display: flex;
     gap: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 0 12px #4d1487(0, 0, 0, 0.5);
+    background: whitesmoke;
+    background: linear-gradient(90deg, #292641 0%, rgba(179, 117, 239, 1) 100%);
+    padding: 1rem;
+
+    img:hover {
+      transform: scale(1.1);
+    }
 
     @media only screen and (min-width: 768px) {
       justify-content: space-evenly;
@@ -31,6 +44,7 @@
     img {
       background-color: whitesmoke;
       border-radius: 100%;
+      transition: transform 0.3s ease-in-out;
     }
 
     .crypto_name {
@@ -40,13 +54,35 @@
       justify-content: center;
 
       p {
-        color: rgba(165, 165, 165, 0.74);
+        color: whitesmoke;
       }
     }
   }
 
   .description {
     font-size: 0.8rem;
-    max-width: 600px;
+    max-width: 1000px;
+    margin-top: 20px;
+    border: 1px solid var(--details-secondary-color);
+    background: var(--details-secondary-color);
+    padding: 2rem;
+    font-size: 15px;
+    transition: transform 0.2s ease-in-out;
+    border-radius: 0.5rem;
+    position: relative;
+    font-family: "Roboto", sans-serif;
+  }
+
+  .description:hover {
+    transform: translateY(-5px);
+  }
+  .description::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: transparent;
   }
 }
