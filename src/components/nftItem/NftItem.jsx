@@ -13,10 +13,16 @@ tokenID: data.token_id
 */
   return (
     <div className={styles.main} onClick={() => HandleModal(data, item)}>
-      <Image src={item.cached_file_url} alt={data.contract.name} width={500} height={500} />
+      <Image
+        src={item.cached_file_url}
+        alt={data.contract.name}
+        width={500}
+        height={500}
+      />
+
       <div className={styles.details}>
-        <h4>{data.contract.name}</h4>
-        <p># {item.token_id}</p>
+        <p>{data.contract.name}</p>
+        <div className={styles.id}>#{item.token_id}</div>
       </div>
     </div>
   );

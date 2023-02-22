@@ -1,23 +1,62 @@
 .main {
-  width: 250px;
+  width: 270px;
   height: 350px;
   cursor: pointer;
+  position: relative;
+  border-radius: 1rem;
+  box-shadow: var(--details-main-color) 6px 6px 2px;
 
+  &:nth-child(even) {
+    box-shadow: var(--details-quaternary-color) 6px 6px 2px;
+
+    .details {
+      .id {
+        background-color: var(--details-main-color);
+      }
+    }
+  }
 
   img {
-    width: 250px;
+    width: 270px;
     height: 350px;
     object-fit: cover;
-    border-radius: 8px;
-    box-shadow: rgba(240, 46, 170, 0.4) 5px 5px,
-      rgba(240, 46, 170, 0.3) 10px 10px, rgba(240, 46, 170, 0.2) 15px 15px,
-      rgba(240, 46, 170, 0.1) 20px 20px, rgba(240, 46, 170, 0.05) 25px 25px;
+    border-radius: 1rem;
   }
 
   .details {
-    h4,
+    position: absolute;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    bottom: -1.8rem;
+    left: 33%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(255, 255, 255, 0.801);
+    padding: 1.5rem 0.5rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+    transition: all 0.35s ease-out;
+
+    &:hover {
+      background-color: rgba(255, 255, 255, 0.9);
+    }
+
+    .id {
+      background-color: var(--details-quaternary-color);
+      padding: 0.5rem;
+      box-shadow: 0 0 4px rgba(0, 0, 0, 0.5);
+      border-radius: 0.4rem;
+      font-weight: 600;
+      letter-spacing: 0.1rem;
+    }
+
     p {
-      color: white;
+      text-transform: uppercase;
+      z-index: 10;
+      font-size: 0.9rem;
+      color: black;
+      font-weight: 600;
     }
   }
 }

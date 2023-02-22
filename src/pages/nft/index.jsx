@@ -1,8 +1,9 @@
 import NftList from "@/components/nftList/NftList";
+import styles from "@/styles/nft.module.scss";
 
 const Nft = ({ data }) => {
   return (
-    <div>
+    <div className={styles.main}>
       <NftList data={data} />
     </div>
   );

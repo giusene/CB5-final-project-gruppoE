@@ -1,16 +1,103 @@
 .main {
-  background-color: rgb(68, 64, 64);
-  border-radius: 12px;
+  background-color: var(--bg-color);
   height: 100%;
   width: 100%;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  padding: 8px 16px;
+  padding: 2rem;
   gap: 20px;
   position: fixed;
 
-  @media only screen and (min-width: 768px) {
+  i {
+    align-self: flex-end;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.3rem;
+    color: var(--details-main-color);
+    cursor: pointer;
+    transition: all 0.25s ease-out;
+
+    &:hover {
+      transform: rotate(180deg);
+    }
+  }
+
+  .elements {
+    padding: 1rem 4rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+
+    .title {
+      padding-bottom: 0.5rem;
+
+      h2 {
+        font-size: 1.8rem;
+        color: var(--details-main-color);
+        letter-spacing: 0.2rem;
+      }
+    }
+
+    .image {
+      display: flex;
+      gap: 1rem;
+      color: white;
+      justify-content: space-between;
+
+      img {
+        width: 290px;
+        height: 370px;
+        object-fit: cover;
+        border-radius: 1rem;
+        box-shadow: 0 0 8px var(--details-main-color);
+      }
+
+      h3 {
+        border-radius: 0.5rem;
+        padding: 2rem 1rem;
+        text-align: center;
+        border: 2px solid var(--details-main-color);
+        writing-mode: vertical-lr;
+        letter-spacing: 0.2rem;
+
+        span {
+          color: var(--details-main-color);
+          font-size: 2rem;
+        }
+      }
+    }
+
+    .attributes {
+      background-color: var(--box-color);
+      border-radius: 1rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      padding: 1.5rem;
+      color: white;
+      box-shadow: 0 0 5px rgba($color: #ffffff, $alpha: 0.8);
+
+      div {
+        display: flex;
+        text-transform: uppercase;
+        align-items: center;
+        justify-content: space-between;
+
+        h3 {
+          width: 140px;
+          letter-spacing: 0.1rem;
+        }
+
+        .values {
+          color: var(--details-main-color);
+        }
+      }
+    }
+  }
+}
+
+/* @media only screen and (min-width: 768px) {
     position: relative;
     height: 100%;
     width: 100%;
@@ -74,3 +161,4 @@
     }
   }
 }
+ */
