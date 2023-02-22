@@ -1,6 +1,8 @@
 .main {
+  height: calc(83vh - var(--navbar-height));
   display: flex;
   justify-content: center;
+  overflow-y: scroll;
 
   .list {
     padding: 1rem;
@@ -12,6 +14,11 @@
   }
 
   @media only screen and (min-width: 768px) {
+    height: calc(88vh - var(--navbar-height));
+    overflow-y: scroll;
+  }
+
+  @media only screen and (min-width: 1280px) {
     height: calc(90vh - var(--navbar-height));
     overflow-y: scroll;
   }
