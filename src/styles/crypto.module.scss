@@ -25,8 +25,9 @@
     border-radius: 8px;
     box-shadow: 0 0 12px #4d1487(0, 0, 0, 0.5);
     background: whitesmoke;
-    background: linear-gradient(90deg, #292641 0%, rgba(179, 117, 239, 1) 100%);
+    background: linear-gradient(90deg, #131224 0%, rgba(179, 117, 239, 1) 100%);
     padding: 1rem;
+    cursor: pointer;
 
     img:hover {
       transform: scale(1.1);
