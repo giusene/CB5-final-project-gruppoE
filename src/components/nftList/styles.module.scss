@@ -1,17 +1,33 @@
 .main {
+  margin-top: 4.5rem;
+  height: calc(90vh - var(--navbar-height));
   display: flex;
   flex-direction: column;
+  align-items: center;
   color: white;
-  justify-content: center;
   gap: 3rem;
+  overflow-y: hidden;
 
   .list {
+    height: calc(75vh - var(--navbar-height)); /* diminuire */
     padding: 1rem;
     width: 100%;
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 4rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 3rem;
+    overflow-y: scroll;
+
+    @media only screen and (min-width: 768px) {
+      margin-top: 1rem;
+      height: calc(88vh - var(--navbar-height));
+      overflow-y: scroll;
+    }
+
+    @media only screen and (min-width: 1280px) {
+      height: calc(100vh - var(--navbar-height));
+      margin-top: 1rem;
+    }
   }
 
   @media only screen and (min-width: 768px) {
@@ -24,19 +40,21 @@
     overflow-y: scroll;
   }
 
-  /* .modal_container {
+  .modal_container {
     position: absolute;
-    top: -5px;
-    width: 100%;
-    justify-content: center;
+    background-color: beige;
+    top: 0;
+    z-index: 5;
+    width: 100vw;
+    height: 100vh;
+
     @media only screen and (min-width: 768px) {
       position: fixed;
-      right: 30px;
       top: 100px;
       width: 300px;
       height: 75vh;
       max-height: 700px;
       display: flex;
     }
-  } */
+  }
 }
