@@ -18,7 +18,7 @@ const Navbar = () => {
   return (
     <div className={styles.main}>
       <div className={styles.logo}>
-        <Image src={CryptoLogoType} alt={"logo"} width={300} height={300} />
+        <Image src={CryptoLogoType} alt="logo" width={300} height={300} />
       </div>
 
       <div className={styles.nav_links}>

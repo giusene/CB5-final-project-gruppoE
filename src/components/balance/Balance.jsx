@@ -19,7 +19,6 @@ const Balance = ({ variant }) => {
       total += multi;
     });
     setBalance(total);
-    
   }, [currentUser]);
 
   return (

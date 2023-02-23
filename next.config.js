@@ -2,7 +2,7 @@
 const nextConfig = {
   reactStrictMode: true,
 
-  webpack(config) {
+  /*   webpack(config) {
     config.module.rules.push({
       test: /\.svg$/i,
       issuer: /\.[jt]sx?$/,
@@ -10,7 +10,7 @@ const nextConfig = {
     });
 
     return config;
-  },
+  }, */
 
   images: {
     // domains: [`assets.coingecko.com`, `storage.googleapis.com`],
