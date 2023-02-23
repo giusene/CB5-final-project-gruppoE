@@ -5,6 +5,7 @@ import styles from "./styles.module.scss";
 
 const Balance = ({ variant }) => {
   const [balance, setBalance] = useState(0);
+  {console.log(balance)}
 
   const {
     state: { currentUser },
