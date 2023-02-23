@@ -6,7 +6,7 @@ import { useContext } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import styles from "./styles.module.scss";
-import SellCoins from "../sellCoins/sellCoins";
+import SellCoins from "../sellCoins/SellCoins";
 
 const UserCoinsItem = ({ data }) => {
   const {
@@ -48,7 +48,7 @@ const UserCoinsItem = ({ data }) => {
           </div>
         </div>
       </Link>
-      <SellCoins id={id}/>
+      <SellCoins id={id} />
     </div>
   );
 };
