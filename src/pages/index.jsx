@@ -1,12 +1,18 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Head from "next/head";
 import CryptoCoins from "@/components/cryptocoins/CryptoCoins";
 import FavoriteCoins from "@/components/favoriteCoins/FavoriteCoins";
 import Cart from "@/components/cart/Cart";
 import styles from "@/styles/Home.module.scss";
+import Loader from "../components/loader/Loader";
 
 export default function Home({ coins }) {
   const [cartModal, setCartModal] = useState(false);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    setLoading(false);
+  }, []);
 
   return (
     <>
@@ -16,18 +22,22 @@ export default function Home({ coins }) {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className={styles.main}>
-        <div>
-          <CryptoCoins data={coins} />
-        </div>
-        <div>
-          <FavoriteCoins setCartModal={setCartModal} />
-        </div>
-        <>
-          {/* MODAL --> CART */}
-          {cartModal && <Cart setCartModal={setCartModal} coins={coins} />}
-        </>
-      </main>
+      {loading ? (
+        <Loader />
+      ) : (
+        <main className={styles.main}>
+          <div>
+            <CryptoCoins data={coins} />
+          </div>
+          <div>
+            <FavoriteCoins setCartModal={setCartModal} />
+          </div>
+          <>
+            {/* MODAL --> CART */}
+            {cartModal && <Cart setCartModal={setCartModal} coins={coins} />}
+          </>
+        </main>
+      )}
     </>
   );
 }

@@ -3,8 +3,13 @@ import styles from "../loader/styles.module.scss";
 
 const Loader = () => {
   return (
-    <div className={styles.loaderContainer}>
-      <div className={styles.loader}></div>
+    <div class={styles.main}>
+      <div class={styles.lds_ring}>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
     </div>
   );
 };

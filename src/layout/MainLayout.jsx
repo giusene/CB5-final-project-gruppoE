@@ -11,6 +11,7 @@ const MainLayout = ({ children }) => {
       </div>
       <div className={styles.hero}>
         <Header />
+
         {children}
       </div>
       <div className={styles.widgetbar}>
