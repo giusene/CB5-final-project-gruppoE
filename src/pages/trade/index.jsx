@@ -3,20 +3,23 @@ import CoinsList from "@/components/coinslist/CoinsList";
 import SearchBar from "@/components/searchbar/SearchBar";
 import Image from "next/image";
 import styles from "@/styles/trade.module.scss";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
+import { AppCtx } from "@/store/context";
 
 const Trade = ({ coins }) => {
   const [filteredCoins, setFilteredCoins] = useState(coins);
   const [searchValue, setSearchValue] = useState("");
-  const [cartModal, setCartModal] = useState(false);
+
+  const {
+    state: { currentUser, showModal },
+    dispatch,
+  } = useContext(AppCtx);
 
   const filterHandler = () => {
     if (searchValue === "") {
       setFilteredCoins(coins);
     } else {
-      const updatedFilter = coins.filter((coin) =>
-        coin.name.toLowerCase().includes(searchValue)
-      );
+      const updatedFilter = coins.filter((coin) => coin.name.toLowerCase().includes(searchValue));
       setFilteredCoins(updatedFilter);
     }
   };
@@ -50,7 +53,8 @@ const Trade = ({ coins }) => {
           </div>
         </div>
       )}
-      {cartModal && <Cart setCartModal={setCartModal} coins={coins} />}
+
+      {showModal && <Cart setCartModal={setCartModal} coins={coins} />}
     </div>
   );
 };

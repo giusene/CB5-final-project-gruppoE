@@ -12,12 +12,7 @@ const CryptoCoins = ({ data }) => {
           <div className={styles.coin_row} key={coin.item.id}>
             <div className={styles.icon_wrapper}>
               <Link href={`/crypto/${coin.item.id}`}>
-                <Image
-                  src={coin.item.large}
-                  alt={coin.item.name}
-                  width={100}
-                  height={100}
-                />
+                <Image src={coin.item.large} alt={coin.item.name} width={100} height={100} />
                 <div className={styles.coin_name}>
                   <p className={styles.name}>{coin.item.name}</p>
                   <p>{coin.item.symbol}</p>
@@ -25,6 +20,7 @@ const CryptoCoins = ({ data }) => {
               </Link>
             </div>
             <div className={styles.price}>
+              <p>Market Cap:</p>
               <p>${coin.item.market_cap_rank},00</p>
             </div>
           </div>

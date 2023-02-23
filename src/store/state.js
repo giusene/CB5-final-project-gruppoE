@@ -10,6 +10,7 @@ const initialState = {
   pswError: false,
   switcher: "signin",
   isSignedUp: false,
+  showModal: false,
 };
 
 export { initialState };

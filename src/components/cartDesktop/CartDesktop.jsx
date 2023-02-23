@@ -6,9 +6,9 @@ import { cartActions } from "@/store/actions";
 import removeDecimalPlaces from "@/utils/removeDecimal";
 import Image from "next/image";
 
-const Cart = () => {
+const CartDesktop = () => {
   const {
-    state: { currentUser, showModal },
+    state: { currentUser },
     dispatch,
   } = useContext(AppCtx);
   const [inputValue, setInputValue] = useState(0);
@@ -26,8 +26,7 @@ const Cart = () => {
       type: cartActions.CLEAR_CART,
     });
     setTotalCoin(0);
-    setCartText({ operation: "Cleared!", message: "Cart will now close." });
-
+    setCartText({ operation: "", message: "Cart is empty." });
     setTimeout(() => {
       dispatch({
         type: cartActions.MODAL_TIMER,
@@ -73,8 +72,6 @@ const Cart = () => {
   return (
     <div className={styles.main}>
       <div className={styles.cart_container}>
-        <h2>CART</h2>
-
         {currentUser.cart.length === 0 ? (
           <>
             <h4>{cartText.operation}</h4>
@@ -126,4 +123,4 @@ const Cart = () => {
   );
 };
 
-export default Cart;
+export default CartDesktop;

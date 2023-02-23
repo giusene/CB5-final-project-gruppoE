@@ -8,6 +8,10 @@
   justify-content: center;
   animation: slider 0.5s;
 
+  @media only screen and (min-width: 1280px) {
+    display: none;
+  }
+
   @keyframes slider {
     from {
       transform: translateY(1000px);
@@ -15,10 +19,6 @@
     to {
       transform: translateY(0);
     }
-  }
-
-  @media only screen and (min-width: 1280px) {
-    left: 0px;
   }
 
   .close_cart {

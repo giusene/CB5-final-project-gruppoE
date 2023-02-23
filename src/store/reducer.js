@@ -12,8 +12,7 @@ const appReducer = (state, action) => {
     case loginActions.LOGIN_USER:
       const user = state.users.find(
         (user) =>
-          user.username === action.payload.username &&
-          user.password === action.payload.password
+          user.username === action.payload.username && user.password === action.payload.password
       );
       if (user) {
         setLocalStorage(user);
@@ -32,19 +31,15 @@ const appReducer = (state, action) => {
         ...state,
         currentUser: "",
         isLogged: false,
-        isSignedUp : false
+        isSignedUp: false,
       };
     // KEEP_SESSION_OPEN
     case loginActions.KEEP_SESSION_OPEN:
       return { ...state, currentUser: action.payload, isLogged: true };
     // SIGNUP_USER
     case signupActions.SIGNUP_USER:
-      const existsUser = state.users.find(
-        (user) => user.username === action.payload.username
-      );
-      const existsEmail = state.users.find(
-        (user) => user.email === action.payload.email
-      );
+      const existsUser = state.users.find((user) => user.username === action.payload.username);
+      const existsEmail = state.users.find((user) => user.email === action.payload.email);
       if (existsUser) {
         return { ...state, usernameError: true };
       }
@@ -58,7 +53,7 @@ const appReducer = (state, action) => {
         ...state,
         users: [...state.users, action.payload],
         switcher: "signin",
-        isSignedUp : true,
+        isSignedUp: true,
       };
     // AUTH SWITCHER
     case signupActions.AUTH_SWITCHER:
@@ -80,9 +75,7 @@ const appReducer = (state, action) => {
         ...state,
         currentUser: {
           ...state.currentUser,
-          favorite: state.currentUser.favorite.filter(
-            (fav) => fav.id !== action.payload.id
-          ),
+          favorite: state.currentUser.favorite.filter((fav) => fav.id !== action.payload.id),
         },
       };
       setLocalStorage(filteredState.currentUser);
@@ -96,6 +89,7 @@ const appReducer = (state, action) => {
           ...state.currentUser,
           cart: [...state.currentUser.cart, action.payload],
         },
+        showModal: true,
       };
       setLocalStorage(addCartState.currentUser);
       return addCartState;
@@ -133,22 +127,26 @@ const appReducer = (state, action) => {
 
       setLocalStorage(state.currentUser);
       return state;
-    
+
+    case cartActions.MODAL_TIMER:
+      return {
+        ...state,
+        showModal: false,
+      };
+
     case tradingActions.SELL_COIN:
       const sell = {
         ...state,
-        currentUser:{
+        currentUser: {
           ...state.currentUser,
           assets: {
-            
-            coins: state.currentUser.assets.coins.filter(item => item.coin.id !== action.payload)
-          }
-        }
+            coins: state.currentUser.assets.coins.filter((item) => item.coin.id !== action.payload),
+          },
+        },
       };
-      console.log(sell.currentUser)
+
       setLocalStorage(sell.currentUser);
       return sell;
-
 
     default:
       return state;

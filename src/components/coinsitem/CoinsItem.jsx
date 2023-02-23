@@ -10,25 +10,18 @@ import Image from "next/image";
 
 const CoinsItem = ({ data, setCartModal }) => {
   const {
-    state: { currentUser },
+    state: { currentUser, showModal },
     dispatch,
   } = useContext(AppCtx);
 
-  const {
-    id,
-    image,
-    name,
-    symbol,
-    current_price,
-    price_change_percentage_24h,
-  } = data;
+  const { id, image, name, symbol, current_price, price_change_percentage_24h } = data;
 
   const addToCartHandler = () => {
     dispatch({
       type: cartActions.ADD_TO_CART,
       payload: data,
     });
-    setCartModal(() => true);
+    // setCartModal(() => true);
   };
 
   return (
@@ -49,16 +42,10 @@ const CoinsItem = ({ data, setCartModal }) => {
         <div>
           <p
             className={`${styles.price_change} ${
-              price_change_percentage_24h < 0
-                ? styles.price_down
-                : styles.price_up
+              price_change_percentage_24h < 0 ? styles.price_down : styles.price_up
             }`}
           >
-            {price_change_percentage_24h < 0 ? (
-              <FiTrendingDown />
-            ) : (
-              <FiTrendingUp />
-            )}
+            {price_change_percentage_24h < 0 ? <FiTrendingDown /> : <FiTrendingUp />}
             <span> </span>
             {price_change_percentage_24h}
           </p>
@@ -82,9 +69,7 @@ const CoinsItem = ({ data, setCartModal }) => {
         ) : (
           <i>
             <AiOutlineStar
-              onClick={() =>
-                dispatch({ type: favoriteActions.ADD_FAVORITE, payload: data })
-              }
+              onClick={() => dispatch({ type: favoriteActions.ADD_FAVORITE, payload: data })}
             />
           </i>
         )}
