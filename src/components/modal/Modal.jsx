@@ -12,20 +12,20 @@ function Modal({ data, setModalState }) {
       </i>
       <div className={styles.elements}>
         <div className={styles.title}>
-          <h2>{name.toUpperCase()}</h2>
+          <h3>{name.toUpperCase()}</h3>
         </div>
         <div className={styles.image}>
           <Image src={image} alt={name} width={500} height={500} />
           <h3>
-            RARITY RANK: <span>#{rarity}</span>
+            RARITY RANK | <span>#{rarity}</span>
           </h3>
         </div>
 
         <div className={styles.attributes}>
           {attributes.map((attr, index) => (
             <div key={index}>
-              <h3 className={styles.trait}>{attr.trait_type}</h3>
-              <h3 className={styles.values}>{`${attr.value}`}</h3>
+              <h4 className={styles.trait}>{attr.trait_type}</h4>
+              <h4 className={styles.values}>{`${attr.value}`}</h4>
             </div>
           ))}
         </div>
