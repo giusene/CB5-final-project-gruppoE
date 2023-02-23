@@ -19,7 +19,9 @@ const Trade = ({ coins }) => {
     if (searchValue === "") {
       setFilteredCoins(coins);
     } else {
-      const updatedFilter = coins.filter((coin) => coin.name.toLowerCase().includes(searchValue));
+      const updatedFilter = coins.filter((coin) =>
+        coin.name.toLowerCase().includes(searchValue)
+      );
       setFilteredCoins(updatedFilter);
     }
   };
@@ -37,7 +39,7 @@ const Trade = ({ coins }) => {
         filterHandler={filterHandler}
       />
       {filteredCoins.length > 0 ? (
-        <CoinsList coins={filteredCoins} setCartModal={setCartModal} />
+        <CoinsList coins={filteredCoins} />
       ) : (
         <div className={styles.notfound}>
           <Image
@@ -54,7 +56,7 @@ const Trade = ({ coins }) => {
         </div>
       )}
 
-      {showModal && <Cart setCartModal={setCartModal} coins={coins} />}
+      {showModal && <Cart coins={coins} />}
     </div>
   );
 };
