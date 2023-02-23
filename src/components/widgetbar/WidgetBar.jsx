@@ -13,6 +13,7 @@ const WidgetBar = () => {
   const { state } = useContext(AppCtx);
 
   const { pic, name, surname, username } = state.currentUser;
+  console.log(state.currentUser.pic);
 
   useEffect(() => {
     const currentPath = router.asPath;
@@ -22,7 +23,12 @@ const WidgetBar = () => {
   return (
     <div className={styles.main}>
       <div className={styles.user_data}>
-        <Image width={200} height={200} src={pic} alt={name} />
+        <Image
+          src="https://cdn-icons-png.flaticon.com/512/21/21104.png"
+          alt={name}
+          width={200}
+          height={200}
+        />
         <div className={styles.user_name}>
           <h3>
             {name} {surname}
