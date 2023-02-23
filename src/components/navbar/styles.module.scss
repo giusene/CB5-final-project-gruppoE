@@ -6,13 +6,7 @@
   align-items: center;
   position: fixed;
   bottom: 0;
-  padding: 1.5rem 1.3rem;
-  /*   background: linear-gradient(
-    360deg,
-    rgba(32, 26, 40, 1) 0%,
-    rgba(37, 35, 50, 1) 49%,
-    rgba(48, 46, 64, 1) 100%
-  ); */
+
   background-color: var(--box-color);
   z-index: 999;
   border-top-left-radius: 2rem;
@@ -27,17 +21,57 @@
     border-bottom-left-radius: 1rem;
     border-bottom-right-radius: 1rem;
     justify-content: center;
-    gap: 3rem;
+    gap: 0rem;
+  }
+
+  .logo {
+    display: none;
+
+    @media only screen and (min-width: 1280px) {
+      display: block;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-bottom: 1px solid var(--details-base-color);
+      width: 100%;
+      padding: 1.5rem 1.3rem;
+    }
+
+    img {
+      @media only screen and (min-width: 1280px) {
+        // stroke: var(--details-main-color);
+        // fill: linear-gradient(to left, var(--details-main-color), #bffb342b 65%);
+        // border: 1px solid pink;
+        width: 155px;
+        height: 70px;
+      }
+    }
+  }
+
+  .nav_links {
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    align-items: center;
+    padding: 1.5rem 1.3rem;
+
+    @media only screen and (min-width: 1280px) {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      justify-content: flex-start;
+      gap: 0.8rem;
+    }
   }
 
   .nav_label {
     display: none;
     font-size: 1rem;
-    font-weight: 600;
+    font-weight: 500;
 
     @media only screen and (min-width: 1280px) {
       display: block;
-      width: 88%;
+      width: 70%;
       color: #838097;
     }
   }
@@ -63,7 +97,6 @@
       display: flex;
       align-items: center;
       justify-content: flex-start;
-      gap: 1.5rem;
       width: 100%;
       padding-left: 0.5rem;
       border-radius: 10px;
@@ -78,7 +111,11 @@
 
   .icon {
     @media only screen and (min-width: 1280px) {
-      width: 12%;
+      width: 30%;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
   }
 
@@ -98,7 +135,7 @@
     font-size: 1.65rem;
 
     @media only screen and (min-width: 1280px) {
-      font-size: 2rem;
+      font-size: 1.75rem;
     }
   }
 }
@@ -119,6 +156,14 @@
 
   .nav_label {
     color: var(--details-main-color);
+  }
+}
+
+.help_center {
+  display: none;
+
+  @media only screen and (min-width: 1280px) {
+    display: block;
   }
 }
 
