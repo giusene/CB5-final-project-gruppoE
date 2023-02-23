@@ -1,28 +1,34 @@
 import NftList from "@/components/nftList/NftList";
 import styles from "@/styles/nft.module.scss";
-import { RiArrowDownSLine } from "react-icons/ri";
+import { FaChevronDown } from "react-icons/fa";
 import { useState } from "react";
 
 const Nft = ({ data }) => {
   const [showDescr, setShowDescr] = useState(false);
 
+  const handleClick = () => {
+    setShowDescr((prev) => !prev);
+  };
+
   return (
     <div className={styles.main}>
       <div className={styles.info}>
         <div className={styles.title}>
-          <h2>{data.contract.name}</h2>
+          <h3>{data.contract.name}</h3>
           <i
-            className={showDescr && `${styles.up}`}
-            onClick={() => setShowDescr((prev) => !prev)}
+            className={`${styles.icon} ${showDescr ? styles.rotate : ""}`}
+            onClick={handleClick}
           >
-            <RiArrowDownSLine />
+            <FaChevronDown />
           </i>
         </div>
-        {showDescr && (
-          <div className={styles.description}>
-            <p>{data.contract.metadata.description}</p>
-          </div>
-        )}
+        <div
+          className={`${styles.description} ${
+            showDescr ? styles.show : styles.hide
+          }`}
+        >
+          <p>{data.contract.metadata.description}</p>
+        </div>
       </div>
       <NftList data={data} />
     </div>

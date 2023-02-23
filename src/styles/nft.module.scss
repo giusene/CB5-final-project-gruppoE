@@ -7,47 +7,82 @@
   margin-bottom: 10vh;
 
   .info {
+    z-index: 1;
+    position: absolute;
+    left: 0;
+    border-radius: 1rem;
+    background: var(--box-color);
+    margin: 0 1.5rem;
     display: flex;
     align-items: center;
     flex-direction: column;
     justify-content: space-around;
-    gap: 1rem;
+    box-shadow: 0 0 6px rgba($color: #ffffff, $alpha: 0.5);
 
     .title {
       border-radius: 1rem;
-      padding: 1rem;
       width: 100%;
+      padding: 1rem 1.5rem;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      border: 2px solid var(--details-main-color);
 
-      i {
+      h3 {
+        text-transform: uppercase;
+        text-shadow: 0 0 3px rgba($color: #000000, $alpha: 0.6);
+      }
+
+      .icon {
+        cursor: pointer;
         display: flex;
-        font-size: 1.5rem;
+        font-size: 1.2rem;
         transition: all 0.25s ease-in-out;
       }
 
-      .up {
+      .rotate {
         transform: rotate(180deg);
       }
     }
 
     .description {
       border-radius: 1rem;
-      padding: 1rem;
+      padding: 0 1.5rem;
       width: 100%;
-      border: 2px solid var(--details-main-color);
+      max-height: 0;
+      overflow: hidden;
+      visibility: hidden;
+      transition: all 0.35s ease-in-out;
+      line-height: 1.4;
+
+      &.show {
+        max-height: 500px;
+        visibility: visible;
+        padding-bottom: 1.2rem;
+      }
+
+      &.hide {
+        max-height: 0;
+        visibility: hidden;
+      }
+    }
+  }
+
+  @media only screen and (min-width: 768px) {
+    height: calc(95vh - var(--navbar-height));
+    .info {
+      left: 2.5%;
+      position: absolute;
+      width: 90%;
+      font-size: 1.2rem;
+      line-height: 1.7;
+    }
+
+    @media only screen and (min-width: 1280px) {
+      height: calc(100vh - var(--navbar-height));
+      .info {
+        left: 20%;
+        width: 47%;
+      }
     }
   }
 }
-
-/*   @media only screen and (min-width: 768px) {
-    height: calc(95vh - var(--navbar-height));
-  }
-
-  @media only screen and (min-width: 1280px) {
-    height: calc(100vh - var(--navbar-height));
-  }
-}
- */
