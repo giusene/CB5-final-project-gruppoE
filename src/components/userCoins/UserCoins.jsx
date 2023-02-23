@@ -2,6 +2,7 @@ import { AppCtx } from "@/store/context";
 import { useContext, useEffect } from "react";
 import { cartActions } from "@/store/actions";
 import UserCoinsItem from "../userCoinsItem/UserCoinsItem";
+import EmptyAssets from "../emptyAssets/EmptyAssets";
 import styles from "./styles.module.scss";
 
 const UserCoins = () => {
@@ -35,6 +36,7 @@ const UserCoins = () => {
     <div className={styles.main}>
       <h3>Your Assets</h3>
       <div className={styles.favorite_list}>
+        {currentUser.assets.coins.length === 0 && <EmptyAssets/>}
         {currentUser.assets.coins.map((asset, index) => (
           <UserCoinsItem key={index} data={asset.coin} />
         ))}

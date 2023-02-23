@@ -16,6 +16,7 @@
   .favorite_list {
     width: 90vw;
     display: flex;
+    justify-content: center;
     align-items: center;
     gap: 1.2rem;
     overflow-x: scroll;
