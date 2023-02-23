@@ -3,6 +3,7 @@ import {
   cartActions,
   favoriteActions,
   signupActions,
+  tradingActions,
 } from "./actions";
 import setLocalStorage from "@/utils/localstorage";
 const appReducer = (state, action) => {
@@ -132,6 +133,22 @@ const appReducer = (state, action) => {
 
       setLocalStorage(state.currentUser);
       return state;
+    
+    case tradingActions.SELL_COIN:
+      const sell = {
+        ...state,
+        currentUser:{
+          ...state.currentUser,
+          assets: {
+            
+            coins: state.currentUser.assets.coins.filter(item => item.coin.id !== action.payload)
+          }
+        }
+      };
+      console.log(sell.currentUser)
+      setLocalStorage(sell.currentUser);
+      return sell;
+
 
     default:
       return state;

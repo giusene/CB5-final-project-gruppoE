@@ -6,13 +6,13 @@ import { useContext } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import styles from "./styles.module.scss";
+import SellCoins from "../sellCoins/sellCoins";
 
 const UserCoinsItem = ({ data }) => {
   const {
     state: { currentUser },
     dispatch,
   } = useContext(AppCtx);
-
   const { id, image, name, symbol, current_price, price_change_percentage_24h, qty } = data;
 
   return (
@@ -48,6 +48,7 @@ const UserCoinsItem = ({ data }) => {
           </div>
         </div>
       </Link>
+      <SellCoins id={id}/>
     </div>
   );
 };

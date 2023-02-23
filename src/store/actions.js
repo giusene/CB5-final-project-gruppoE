@@ -22,4 +22,8 @@ const favoriteActions = {
   REMOVE_FAVORITE: "REMOVE_FAVORITE",
 };
 
-export { loginActions, signupActions, cartActions, favoriteActions };
+const tradingActions = {
+  SELL_COIN: "SELL_COIN"
+}
+
+export { loginActions, signupActions, cartActions, favoriteActions ,tradingActions};

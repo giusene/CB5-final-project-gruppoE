@@ -1,0 +1,16 @@
+.main{
+    width: 55%;
+    button{
+        width: 100%;
+        background-color: var(--bg-color);
+        padding: 10px;
+        border-radius: 12px;
+        font-size: 15px;
+        color: aliceblue;
+        cursor: pointer;
+        
+    }
+    @media only screen and (min-width: 1280px) {
+        width: 15%;
+    }
+}
