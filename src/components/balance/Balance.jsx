@@ -19,6 +19,7 @@ const Balance = ({ variant }) => {
       total += multi;
     });
     setBalance(total);
+    // eslint-disable-next-line
   }, [currentUser]);
 
   return (
