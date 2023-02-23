@@ -4,10 +4,11 @@ import { AppCtx } from "@/store/context";
 import Image from "next/image";
 import CreditCard from "../creditCard/CreditCard";
 import styles from "./styles.module.scss";
-import Cart from "../cart/Cart";
-import Balance from "../balance/Balance";
 
-const WidgetBar = () => {
+import Balance from "../balance/Balance";
+import CartDesktop from "../cartDesktop/CartDesktop";
+
+const WidgetBar = ({ setCartModal }) => {
   const router = useRouter();
   const [path, setPath] = useState("");
   const { state } = useContext(AppCtx);
@@ -40,7 +41,7 @@ const WidgetBar = () => {
         </div>
       </div>
       <div className={styles.container}>
-        {path === "/" && <h1>home</h1>}
+        {path === "/" && <p>Welcome back</p>}
         {path === "/wallet" && (
           <>
             <h2>Total Earnings</h2>
@@ -50,7 +51,7 @@ const WidgetBar = () => {
             </div>
           </>
         )}
-        {path === "/trade" && <Cart />}
+        {path === "/trade" && <CartDesktop setCartModal={setCartModal} />}
         {path === "/nft" && <h1>nft</h1>}
         {path === "/contacts" && <h1>contacts</h1>}
       </div>

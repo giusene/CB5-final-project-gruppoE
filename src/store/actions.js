@@ -15,6 +15,7 @@ const cartActions = {
   CLEAR_CART: "CLEAR_CART",
   BUY_COIN: "BUY_COIN",
   UPDATE_PRICE: "UPDATE_PRICE",
+  MODAL_TIMER: "MODAL_TIMER",
 };
 
 const favoriteActions = {
@@ -23,7 +24,7 @@ const favoriteActions = {
 };
 
 const tradingActions = {
-  SELL_COIN: "SELL_COIN"
-}
+  SELL_COIN: "SELL_COIN",
+};
 
-export { loginActions, signupActions, cartActions, favoriteActions ,tradingActions};
+export { loginActions, signupActions, cartActions, favoriteActions, tradingActions };

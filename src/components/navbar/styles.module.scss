@@ -34,16 +34,14 @@
       align-items: center;
       border-bottom: 1px solid var(--details-base-color);
       width: 100%;
-      padding: 1.5rem 1.3rem;
+      height: 120px;
+      // padding: 1.5rem 1.3rem;
     }
 
     img {
       @media only screen and (min-width: 1280px) {
-        // stroke: var(--details-main-color);
-        // fill: linear-gradient(to left, var(--details-main-color), #bffb342b 65%);
-        // border: 1px solid pink;
-        width: 155px;
-        height: 70px;
+        width: 120px;
+        height: 50px;
       }
     }
   }
@@ -164,6 +162,7 @@
 
   @media only screen and (min-width: 1280px) {
     display: block;
+    margin-top: 4rem;
   }
 }
 

@@ -1,16 +1,23 @@
-.main{
-    width: 55%;
-    button{
-        width: 100%;
-        background-color: var(--bg-color);
-        padding: 10px;
-        border-radius: 12px;
-        font-size: 15px;
-        color: aliceblue;
-        cursor: pointer;
-        
+.main {
+  width: 70%;
+
+  button {
+    width: 100%;
+    padding: 0.4rem 1rem;
+    border: none;
+    border-radius: 0.5rem;
+    font-weight: 600;
+    background-color: var(--details-main-color);
+    color: black;
+    letter-spacing: 0.1rem;
+    cursor: pointer;
+    transition: all 0.35s ease-out;
+
+    &:hover {
+      box-shadow: 0 0 10px rgba($color: #ea4b87, $alpha: 0.5);
     }
-    @media only screen and (min-width: 1280px) {
-        width: 15%;
-    }
+  }
+  @media only screen and (min-width: 1280px) {
+    width: 15%;
+  }
 }
