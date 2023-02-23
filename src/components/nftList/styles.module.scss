@@ -1,8 +1,9 @@
 .main {
-  height: calc(83vh - var(--navbar-height));
   display: flex;
+  flex-direction: column;
+  color: white;
   justify-content: center;
-  overflow-y: scroll;
+  gap: 3rem;
 
   .list {
     padding: 1rem;
@@ -23,7 +24,7 @@
     overflow-y: scroll;
   }
 
-  .modal_container {
+  /* .modal_container {
     position: absolute;
     top: -5px;
     width: 100%;
@@ -37,5 +38,5 @@
       max-height: 700px;
       display: flex;
     }
-  }
+  } */
 }

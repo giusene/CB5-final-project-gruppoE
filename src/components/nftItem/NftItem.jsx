@@ -2,6 +2,7 @@ import styles from "../nftItem/styles.module.scss";
 import Image from "next/image";
 
 const NftItem = ({ item, data, HandleModal }) => {
+  console.log(data);
   /* 
   -- NFT DETAILS --
 name: contract.name 
@@ -21,7 +22,6 @@ tokenID: data.token_id
       />
 
       <div className={styles.details}>
-        <p>{data.contract.name}</p>
         <div className={styles.id}>#{item.token_id}</div>
       </div>
     </div>
