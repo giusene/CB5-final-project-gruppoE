@@ -7,13 +7,13 @@ import Image from "next/image";
 import Calendar from "@/atoms/calendar/Calendar";
 import CryptoLogo from "/public/logo/crypto-logo.svg";
 import { navbarLinks } from "@/utils/navbarLinks";
+import { BiExit } from "react-icons/bi";
 
 const Header = () => {
   const { state, dispatch } = useContext(AppCtx);
   const { name } = state.currentUser;
   const router = useRouter();
   const [path, setPath] = useState("");
-  const [openMenu, setOpenMenu] = useState(false);
 
   useEffect(() => {
     const currentPath = router.asPath;
@@ -29,10 +29,6 @@ const Header = () => {
       type: loginActions.LOGOUT_USER,
     });
     router.push("/");
-  };
-
-  const menuHandle = () => {
-    setOpenMenu(!openMenu);
   };
 
   return (
@@ -60,21 +56,11 @@ const Header = () => {
 
       {/* USER DATA */}
       <div className={styles.auth_data}>
-        <Image
-          src={state.currentUser.pic}
-          alt={state.currentUser.name}
-          width={100}
-          height={100}
-          onClick={() => menuHandle()}
-        />
+        <button>
+          <BiExit onClick={logoutHandler} />
+        </button>
+        <Image src={state.currentUser.pic} alt={state.currentUser.name} width={100} height={100} />
       </div>
-      {openMenu && (
-        <div className={styles.menu_mobile}>
-          <ul>
-            <li onClick={logoutHandler}>Logout</li>
-          </ul>
-        </div>
-      )}
     </div>
   );
 };
