@@ -3,16 +3,35 @@
   align-items: center;
   flex-direction: column;
   gap: 1rem;
-  justify-content:flex-start;
+  justify-content: flex-start;
   display: flex;
   padding: var(--page-padding);
-  height: calc(90vh - var(--navbar-height));
-
+  height: calc(90vh - (var(--navbar-height)));
   overflow-y: scroll;
 
-  @media only screen and (min-width: 1280px) {
-  height: calc(100vh - var(--navbar-height));
-
+  .copyright {
+    padding: 2.2rem 0 0;
+    font-size: 0.7rem;
+    color: lightgray;
   }
-  
+}
+
+@media only screen and (min-width: 768px) {
+  .main {
+    height: calc(90vh - var(--navbar-height));
+
+    .copyright {
+      font-size: 0.9rem;
+    }
+  }
+}
+
+@media only screen and (min-width: 1280px) {
+  .main {
+    height: calc(100vh - var(--navbar-height));
+
+    .copyright {
+      font-size: 1rem;
+    }
+  }
 }
