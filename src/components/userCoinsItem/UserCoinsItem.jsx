@@ -25,40 +25,39 @@ const UserCoinsItem = ({ data }) => {
 
   return (
     <div className={styles.main}>
-      <Link href={`/crypto/${id}`}>
-        <div className={styles.icon_wrapper}>
-          <Image src={image} alt={name} width={100} height={100} />
-          <div className={styles.coin_name}>
-            <p className={styles.symbol}>{symbol}</p>
-          </div>
+      <div className={styles.icon_wrapper}>
+        <Image src={image} alt={name} width={100} height={100} />
+        <div className={styles.coin_name}>
+          <p className={styles.symbol}>{symbol}</p>
         </div>
-        <div className={styles.price}>
-          <div className={styles.current_price}>
-            <p>Coin value {currencyFormat(current_price)}</p>
-          </div>
-          <div>
-            <p
-              className={`${styles.price_change} ${
-                price_change_percentage_24h < 0
-                  ? styles.price_down
-                  : styles.price_up
-              }`}
-            >
-              {price_change_percentage_24h < 0 ? (
-                <FiTrendingDown />
-              ) : (
-                <FiTrendingUp />
-              )}
-              <span> </span>
-              {price_change_percentage_24h}
-            </p>
-          </div>
-          <div className={styles.owned}>
-            <p>Owned</p>
-            <p>{qty}</p>
-          </div>
+      </div>
+      <div className={styles.price}>
+        <div className={styles.current_price}>
+          <p>Coin value {currencyFormat(current_price)}</p>
         </div>
-      </Link>
+        <div>
+          <p
+            className={`${styles.price_change} ${
+              price_change_percentage_24h < 0
+                ? styles.price_down
+                : styles.price_up
+            }`}
+          >
+            {price_change_percentage_24h < 0 ? (
+              <FiTrendingDown />
+            ) : (
+              <FiTrendingUp />
+            )}
+            <span> </span>
+            {price_change_percentage_24h}
+          </p>
+        </div>
+        <div className={styles.owned}>
+          <p>Owned</p>
+          <p>{qty}</p>
+        </div>
+      </div>
+
       <SellCoins id={id} />
     </div>
   );
