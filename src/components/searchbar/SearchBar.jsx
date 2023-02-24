@@ -8,7 +8,6 @@ const SearchBar = ({ searchValue, setSearchValue }) => {
 
   return (
     <div className={styles.main}>
-      <h3>SEARCH COINS</h3>
       <form>
         <input
           onChange={(e) => inputHandler(e)}

@@ -20,7 +20,6 @@ function Wallet() {
         <>
           <div className={styles.right_container}>
             <Balance />
-
             <CreditCard />
           </div>
           <div className={styles.left_container}>

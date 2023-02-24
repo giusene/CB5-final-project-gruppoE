@@ -1,7 +1,7 @@
 import Cart from "@/components/cart/Cart";
 import CoinsList from "@/components/coinslist/CoinsList";
 import SearchBar from "@/components/searchbar/SearchBar";
-import Image from "next/image";
+import { MdSearchOff } from "react-icons/md";
 import styles from "@/styles/trade.module.scss";
 import { useState, useEffect, useContext } from "react";
 import { AppCtx } from "@/store/context";
@@ -33,6 +33,9 @@ const Trade = ({ coins }) => {
 
   return (
     <div className={styles.main}>
+      <div className={styles.title}>
+        <h3>Coins</h3>
+      </div>
       <SearchBar
         searchValue={searchValue}
         setSearchValue={setSearchValue}
@@ -42,20 +45,17 @@ const Trade = ({ coins }) => {
         <CoinsList coins={filteredCoins} />
       ) : (
         <div className={styles.notfound}>
-          <Image
-            src={"https://cdn-icons-png.flaticon.com/512/3670/3670605.png"}
-            alt="notfound"
-            width={100}
-            height={100}
-          />
+          <i>
+            <MdSearchOff />
+          </i>
 
           <div className={styles.text}>
-            <p>No results found for "{searchValue}"...</p>
-            <p>PLEASE TRY AGAIN</p>
+            <p>No results found for "{searchValue}"</p>
+            <h3>PLEASE TRY AGAIN</h3>
           </div>
         </div>
       )}
-      {showModal && <Cart coins={coins} />}b{" "}
+      {showModal && <Cart coins={coins} />}
     </div>
   );
 };
