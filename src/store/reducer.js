@@ -32,6 +32,7 @@ const appReducer = (state, action) => {
         currentUser: "",
         isLogged: false,
         isSignedUp: false,
+        loginError: false,
       };
     // KEEP_SESSION_OPEN
     case loginActions.KEEP_SESSION_OPEN:
@@ -107,20 +108,52 @@ const appReducer = (state, action) => {
 
     // BUY COIN
     case cartActions.BUY_COIN:
-      const buyState = {
-        ...state,
-        currentUser: {
-          ...state.currentUser,
-          assets: {
-            coins: [...state.currentUser.assets.coins, action.payload],
-          },
-          cart: [],
-        },
-      };
+      const coinIndex = state.currentUser.assets.coins.filter(coin => {
+        if(coin.coin.id === action.payload.coin.id){
+          const totale = coin.coin.qty + action.payload.coin.qty;
+          
 
-      setLocalStorage(buyState.currentUser);
-      return buyState;
+          const newCoin = {
+            
+              ...coin.coin ,
+              qty: totale 
+            
+            
+          }
+          console.log(newCoin);
+          return newCoin;
+        }
+      });
+      console.log(coinIndex)
+      if(coinIndex.length > 0){
+        const newCoins = state.currentUser.assets.coins.filter(coin => coin.coin.id !== action.payload.coin.id);
+        newCoins.push(coinIndex[0])
+        const newState = {
+          ...state,
+              currentUser: {
+                ...state.currentUser,
+                assets: {coins: newCoins},
+                cart: []
+                                  
+          }}
+          setLocalStorage(newState.currentUser)
+        return newState;
 
+      }else{
+        const newState = {
+          ...state,
+              currentUser: {
+                ...state.currentUser,
+                assets: {
+                 coins: [...state.currentUser.assets.coins, action.payload]},
+                 cart : []
+          
+        }}
+          setLocalStorage(newState.currentUser)
+        return newState;
+        
+      }
+     
     case cartActions.UPDATE_PRICE:
       state.currentUser.assets.coins[action.payload.index].coin.current_price =
         action.payload.new_price;
