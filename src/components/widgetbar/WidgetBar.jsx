@@ -7,7 +7,7 @@ import styles from "./styles.module.scss";
 import Balance from "../balance/Balance";
 import CartDesktop from "../cartDesktop/CartDesktop";
 
-const WidgetBar = ({ setCartModal }) => {
+const WidgetBar = () => {
   const router = useRouter();
   const [path, setPath] = useState("");
   const { state } = useContext(AppCtx);
@@ -18,6 +18,8 @@ const WidgetBar = ({ setCartModal }) => {
   useEffect(() => {
     const currentPath = router.asPath;
     setPath(currentPath);
+
+    console.log(pic);
   }, [router.asPath]);
 
   return (
@@ -27,6 +29,7 @@ const WidgetBar = ({ setCartModal }) => {
          
         )} */}
         <Image src={pic} alt={name} width={500} height={500} />
+
         <div className={styles.user_name}>
           <h3>
             {name} {surname}
@@ -45,7 +48,7 @@ const WidgetBar = ({ setCartModal }) => {
             </div>
           </>
         )}
-        {path === "/trade" && <CartDesktop setCartModal={setCartModal} />}
+        {path === "/trade" && <CartDesktop />}
         {path === "/nft" && <h1>nft</h1>}
         {path === "/contacts" && <h1>contacts</h1>}
       </div>
