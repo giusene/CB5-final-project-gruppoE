@@ -45,7 +45,9 @@ const CartDesktop = () => {
         setInputValue("");
       } else {
         setInputValue(absValue);
-        setTotalCoin(removeDecimalPlaces(absValue / currentUser.cart[0].current_price));
+        setTotalCoin(
+          removeDecimalPlaces(absValue / currentUser.cart[0].current_price)
+        );
       }
     }
   };
@@ -72,6 +74,7 @@ const CartDesktop = () => {
   return (
     <div className={styles.main}>
       <div className={styles.cart_container}>
+        <h2>YOUR CART</h2>
         {currentUser.cart.length === 0 ? (
           <>
             <h4>{cartText.operation}</h4>
@@ -80,7 +83,12 @@ const CartDesktop = () => {
         ) : (
           <>
             <form>
-              <input onChange={inputHandler} type="text" pattern="[0-9]*" placeholder="0,00" />
+              <input
+                onChange={inputHandler}
+                type="text"
+                pattern="[0-9]*"
+                placeholder="0,00"
+              />
               <i>
                 <BiDollar />
               </i>
@@ -105,7 +113,10 @@ const CartDesktop = () => {
 
               <div className={styles.usd}>
                 <div className={styles.label}>
-                  <p>{currentUser.cart[0].symbol && currentUser.cart[0].symbol.toUpperCase()}</p>
+                  <p>
+                    {currentUser.cart[0].symbol &&
+                      currentUser.cart[0].symbol.toUpperCase()}
+                  </p>
                 </div>
                 <div className={styles.usd_wallet}>
                   <p>{totalCoin}</p>
