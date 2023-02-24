@@ -8,7 +8,7 @@ import { useContext } from "react";
 import Link from "next/link";
 import Image from "next/image";
 
-const CoinsItem = ({ data, setCartModal }) => {
+const CoinsItem = ({ data }) => {
   const {
     state: { currentUser, showModal },
     dispatch,
@@ -21,7 +21,6 @@ const CoinsItem = ({ data, setCartModal }) => {
       type: cartActions.ADD_TO_CART,
       payload: data,
     });
-    // setCartModal(() => true);
   };
 
   return (
