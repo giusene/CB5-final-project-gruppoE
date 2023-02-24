@@ -2,7 +2,13 @@
 <!-- Generator: Adobe Illustrator 26.2.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
 <svg version="1.1" class="animation" id="Livello_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 viewBox="0 0 168.1 206.9" style="enable-background:new 0 0 168.1 206.9;" xml:space="preserve" fill="#c0fb34">
-	 
+	 <animate
+      attributeName="fill"
+      values="#c0fb34;#5a5868;#c0fb34"
+	  from="left"
+	  to="right"
+      dur="2.5s"
+      repeatCount="indefinite" />
 <style type="text/css">
 	.st0{fill:url(#SVGID_1_);}
 	.st1{fill:url(#SVGID_00000166663600733572315360000011102222752406393272_);}
