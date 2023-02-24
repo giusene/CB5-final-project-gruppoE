@@ -3,15 +3,11 @@
   color: white;
   padding: 5px 8px;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   gap: 2rem;
 
   @media only screen and (min-width: 1280px) {
     align-items: flex-start;
-  }
-
-  h3 {
-    font-size: 1.5rem;
   }
 
   .favorite_list {
@@ -22,13 +18,16 @@
     gap: 1.2rem;
     overflow-x: scroll;
     padding-bottom: 10px;
+
     &::-webkit-scrollbar {
-      display: block;
-      height: 10px;
+      display: none;
     }
 
-    &::-webkit-scrollbar-thumb {
-      color: rgba(64, 61, 91, 1);
+    @media only screen and (min-width: 768px) {
+      flex-direction: column;
+      align-items: flex-start;
+      width: 100%;
+      overflow-x: none;
     }
 
     @media only screen and (min-width: 1280px) {

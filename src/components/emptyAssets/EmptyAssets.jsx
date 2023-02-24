@@ -1,13 +1,19 @@
-import Link from 'next/link';
+import Link from "next/link";
+import { IoIosRocket } from "react-icons/io";
+import styles from "./styles.module.scss";
 
-import styles from './styles.module.scss'
 function EmptyAssets() {
   return (
     <div className={styles.main}>
-        <h4>You don't have any coins yet</h4>
-        <Link href='/trade'>Click here and start playing</Link>
+      <h3>no items yet</h3>
+      <button>
+        <Link href="/trade">START PLAYNG</Link>
+        <i>
+          <IoIosRocket />
+        </i>
+      </button>
     </div>
-  )
+  );
 }
 
 export default EmptyAssets;

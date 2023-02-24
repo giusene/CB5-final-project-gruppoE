@@ -43,7 +43,7 @@ const Trade = ({ coins }) => {
       ) : (
         <div className={styles.notfound}>
           <Image
-            src="https://cdn-icons-png.flaticon.com/512/3670/3670605.png"
+            src={"https://cdn-icons-png.flaticon.com/512/3670/3670605.png"}
             alt="notfound"
             width={100}
             height={100}
@@ -55,8 +55,7 @@ const Trade = ({ coins }) => {
           </div>
         </div>
       )}
-
-      {showModal && <Cart coins={coins} />}
+      {showModal && <Cart coins={coins} />}b{" "}
     </div>
   );
 };

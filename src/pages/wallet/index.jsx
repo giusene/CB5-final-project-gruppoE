@@ -14,6 +14,7 @@ function Wallet() {
 
   return (
     <div className={styles.main}>
+      <h3 className={styles.title}>Your Assets</h3>
       {loading === true && <Loader />}
       {loading === false && (
         <>

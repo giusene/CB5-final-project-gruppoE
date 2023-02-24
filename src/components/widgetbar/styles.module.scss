@@ -37,25 +37,6 @@
         color: rgb(175, 175, 175);
       }
     }
-
-    .buttons {
-      button {
-        border: none;
-        border-radius: 0.5rem;
-        height: 30px;
-        padding: 0 10px;
-        font-weight: 500;
-        background-color: var(--details-main-color);
-        color: black;
-        letter-spacing: 0.05rem;
-        cursor: pointer;
-        transition: all 0.35s ease-out;
-
-        &:hover {
-          box-shadow: 0 0 10px rgba($color: #a1a1a1, $alpha: 0.5);
-        }
-      }
-    }
   }
 
   .container {

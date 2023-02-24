@@ -24,10 +24,14 @@ const Balance = ({ variant }) => {
 
   return (
     <div
-      className={`${styles.main} ${variant === "variant_desktop" ? styles.variant_desktop : ""}`}
+      className={`${styles.main} ${
+        variant === "variant_desktop" ? styles.variant_desktop : ""
+      }`}
     >
-      <h2>Balance:</h2>
-      <p>{currencyFormat(balance)}</p>
+      <div className={styles.balance}>
+        <h2>Balance</h2>
+        <h3>{currencyFormat(balance)}</h3>
+      </div>
     </div>
   );
 };

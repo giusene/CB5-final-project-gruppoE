@@ -9,6 +9,7 @@ const NftItem = ({ item, data, HandleModal }) => {
         alt={data.contract.name}
         width={500}
         height={500}
+        priority
       />
 
       <div className={styles.id}>

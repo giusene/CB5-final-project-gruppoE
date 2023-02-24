@@ -1,11 +1,66 @@
+.main {
+  width: 100%;
+  background-color: var(--box-color);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem;
+  border-radius: 1rem;
 
-.main{
-    font-size: 20px;
-    background-color: var( --box-color);
-    padding: 20px;
-   border-radius: 2rem;
-    a{
-        color: #c0fb34;
-        cursor: pointer;
+  h3 {
+    text-transform: uppercase;
+    font-size: 1rem;
+  }
+
+  button {
+    background-color: var(--details-main-color);
+    display: flex;
+    border: none;
+    align-items: center;
+    gap: 0.4rem;
+    justify-content: space-between;
+    color: black;
+    border-radius: 0.4rem;
+    padding: 0.6rem;
+    cursor: pointer;
+    font-size: 1rem;
+
+    a {
+      color: black;
+      font-weight: 600;
+      font-size: 0.8rem;
     }
+
+    i {
+      display: none;
+    }
+  }
+  @media only screen and (min-width: 768px) {
+  }
+
+  @media only screen and (min-width: 1280px) {
+  }
 }
+/* button {
+    background-color: var(--details-main-color);
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    color: black;
+    border-radius: 0.4rem;
+    padding: 0.8rem;
+    box-shadow: inset 0 0 4px rgba($color: #ffffff, $alpha: 0.5);
+    cursor: pointer;
+
+    a {
+      color: black;
+      font-weight: 600;
+      font-size: 1rem;
+    }
+
+    i {
+      display: flex;
+      font-size: 1.4rem;
+    
+    } */

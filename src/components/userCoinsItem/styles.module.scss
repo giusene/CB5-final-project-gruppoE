@@ -1,25 +1,50 @@
 .main {
-  min-width: 150px;
-  height: 260px;
-  padding: 1rem 0;
-  border-radius: 0.8rem;
+  min-width: 160px;
+  height: 240px;
+  padding: 1rem;
+  border-radius: 0.5rem;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-between;
-  gap: 2px;
+  justify-content: space-around;
   background-color: var(--box-color);
   color: white;
+  cursor: pointer;
+
+  .btn {
+    @media only screen and (min-width: 768px) {
+      width: 120px;
+      background-color: var(--details-main-color);
+    }
+  }
+
+  a {
+    color: white;
+  }
+
+  @media only screen and (min-width: 768px) {
+    width: 100%;
+    height: 77px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+  }
 
   @media only screen and (min-width: 1280px) {
     width: 100%;
     height: 77px;
     display: flex;
     flex-direction: row;
-    padding-right: 10px;
   }
 
   a {
+    @media only screen and (min-width: 768px) {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
     @media only screen and (min-width: 1280px) {
       width: 100%;
       display: flex;
@@ -32,7 +57,7 @@
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      gap: 1rem;
+      gap: 0.5rem;
       width: 100%;
 
       img {
@@ -40,6 +65,14 @@
         height: 45px;
         border-radius: 50%;
       }
+
+      @media only screen and (min-width: 768px) {
+        padding-left: 1rem;
+        width: 35%;
+        flex-direction: row;
+        justify-content: flex-start;
+      }
+
       @media only screen and (min-width: 1280px) {
         padding-left: 1rem;
         width: 35%;
@@ -54,17 +87,17 @@
       align-items: center;
       gap: 0.3rem;
 
-      @media only screen and (min-width: 1280px) {
+      @media only screen and (min-width: 768px) {
         align-items: flex-start;
       }
-      .name {
-        color: white;
-        font-size: 0.85rem;
+
+      @media only screen and (min-width: 1280px) {
+        align-items: flex-start;
       }
 
       .symbol {
         font-size: 0.9rem;
-        color: rgba(165, 165, 165, 0.74);
+        color: white;
         text-transform: uppercase;
       }
     }
@@ -76,6 +109,11 @@
       gap: 1rem;
       width: 100%;
 
+      @media only screen and (min-width: 768px) {
+        flex-direction: row;
+        justify-content: space-between;
+      }
+
       @media only screen and (min-width: 1280px) {
         flex-direction: row;
         justify-content: space-between;
@@ -84,6 +122,10 @@
       p {
         font-size: 0.8rem;
         text-align: center;
+
+        @media only screen and (min-width: 768px) {
+          font-size: 1rem;
+        }
 
         @media only screen and (min-width: 1280px) {
           font-size: 1rem;
@@ -95,6 +137,11 @@
       }
 
       .price_change {
+        @media only screen and (min-width: 768px) {
+          width: 100%;
+          text-align: left;
+        }
+
         @media only screen and (min-width: 1280px) {
           width: 150px;
           text-align: left;
@@ -108,16 +155,31 @@
         color: #fb3835;
       }
 
+      @media only screen and (min-width: 768px) {
+        flex-direction: row;
+      }
+
       @media only screen and (min-width: 1280px) {
         flex-direction: row;
       }
     }
 
     .owned {
-      width: 60%;
+      width: 100%;
       display: flex;
-      flex-direction: column;
+      gap: 0.5rem;
       align-items: center;
+
+      @media only screen and (min-width: 768px) {
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-start;
+
+        p {
+          display: flex;
+          gap: 0.3rem;
+        }
+      }
 
       @media only screen and (min-width: 1280px) {
         width: 250px;
@@ -132,63 +194,4 @@
       }
     }
   }
-
-  //   @media only screen and (min-width: 1280px) {
-  //     width: 300px;
-  //     display: flex;
-  //     flex-direction: row;
-  //     justify-content: center;
-  //     gap: 3rem;
-
-  //     p {
-  //       font-size: 1rem;
-  //       letter-spacing: 0.0625rem;
-  //     }
-
-  //     div {
-  //       display: flex;
-  //       align-items: center;
-  //       width: 50%;
-  //     }
-  //   }
-
-  //   .price_up {
-  //     color: #02da26;
-  //   }
-
-  //   .price_down {
-  //     color: #fb3835;
-  //   }
-  // }
-
-  // .button_wrapper {
-  //   width: 25%;
-  //   display: flex;
-  //   align-items: center;
-  //   justify-content: center;
-  //   flex-wrap: wrap;
-  //   gap: 0.5rem;
-
-  //   button {
-  //     padding: 0.4rem 1rem;
-  //     border: none;
-  //     border-radius: 1rem;
-  //     font-weight: 600;
-  //     background-color: var(--details-main-color);
-  //     color: white;
-  //     letter-spacing: 0.1rem;
-  //     cursor: pointer;
-  //     transition: all 0.35s ease-out;
-
-  //     &:hover {
-  //       box-shadow: 0 0 10px rgba($color: #ea4b87, $alpha: 0.5);
-  //     }
-  //   }
-  // }
-
-  // i {
-  //   display: flex;
-  //   font-size: 1.4rem;
-  //   cursor: pointer;
-  // }
 }
