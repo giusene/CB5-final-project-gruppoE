@@ -1,17 +1,13 @@
 .form {
   border-radius: 2rem;
+  margin-top: 5rem;
   padding: 4rem 2rem 2rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 2rem;
   justify-content: space-between;
-  background: linear-gradient(
-    180deg,
-    rgba(56, 54, 78, 1) 0%,
-    rgba(64, 61, 91, 1) 52%,
-    rgba(56, 54, 78, 1) 100%
-  );
+  background-color: var(--box-color);
 
   .inputs {
     display: flex;
@@ -29,7 +25,7 @@
 
       &:focus {
         background-color: transparent;
-        border: 1px solid #b375ef;
+        border: 1px solid #c0fb34;
         color: white;
       }
     }
@@ -61,8 +57,8 @@
     button {
       padding: 0.6rem 1.3rem;
       font-weight: 600;
-      background-color: var(--details-secondary-color);
-      color: white;
+      background-color: var(--details-main-color);
+      color: black;
       border: none;
       border-radius: 1.6rem;
       cursor: pointer;
@@ -70,7 +66,7 @@
       font-size: 1.1rem;
 
       &:hover {
-        box-shadow: 0 0 10px rgba($color: #b375ef, $alpha: 0.5);
+        box-shadow: 0 0 10px rgba($color: #c0fb34, $alpha: 0.5);
       }
     }
   }
@@ -96,5 +92,19 @@
   40%,
   60% {
     transform: translate3d(4px, 0, 0);
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .form {
+    width: 350px;
+    margin-top: 6rem;
+  }
+}
+
+@media only screen and (min-width: 1280px) {
+  .form {
+    width: 400px;
+    margin-top: 6rem;
   }
 }
