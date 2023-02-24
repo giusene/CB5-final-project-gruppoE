@@ -108,52 +108,51 @@ const appReducer = (state, action) => {
 
     // BUY COIN
     case cartActions.BUY_COIN:
-      const coinIndex = state.currentUser.assets.coins.filter(coin => {
-        if(coin.coin.id === action.payload.coin.id){
-          const totale = coin.coin.qty + action.payload.coin.qty;
-          
-
+      const coinIndex = state.currentUser.assets.coins.filter((coin) => {
+        if (coin.coin.id === action.payload.coin.id) {
+          // const total = (coin.coin.qty += action.payload.coin.qty);
           const newCoin = {
-            
-              ...coin.coin ,
-              qty: totale 
-            
-            
-          }
-          console.log(newCoin);
+            ...coin.coin,
+            qty: (coin.coin.qty += action.payload.coin.qty / 2),
+          };
+
           return newCoin;
         }
       });
-      console.log(coinIndex)
-      if(coinIndex.length > 0){
-        const newCoins = state.currentUser.assets.coins.filter(coin => coin.coin.id !== action.payload.coin.id);
-        newCoins.push(coinIndex[0])
-        const newState = {
-          ...state,
-              currentUser: {
-                ...state.currentUser,
-                assets: {coins: newCoins},
-                cart: []
-                                  
-          }}
-          setLocalStorage(newState.currentUser)
-        return newState;
 
-      }else{
+      console.log(coinIndex);
+      if (coinIndex.length > 0) {
+        const newCoins = state.currentUser.assets.coins.filter(
+          (coin) => coin.coin.id !== action.payload.coin.id
+        );
+
+        newCoins.push(coinIndex[0]);
         const newState = {
           ...state,
-              currentUser: {
-                ...state.currentUser,
-                assets: {
-                 coins: [...state.currentUser.assets.coins, action.payload]},
-                 cart : []
-          
-        }}
-          setLocalStorage(newState.currentUser)
+          currentUser: {
+            ...state.currentUser,
+            assets: { coins: newCoins },
+            cart: [],
+          },
+        };
+        setLocalStorage(newState.currentUser);
+
         return newState;
-        
+      } else {
+        const newState = {
+          ...state,
+          currentUser: {
+            ...state.currentUser,
+            assets: {
+              coins: [...state.currentUser.assets.coins, action.payload],
+            },
+            cart: [],
+          },
+        };
+        setLocalStorage(newState.currentUser);
+        return newState;
       }
-     
+
     case cartActions.UPDATE_PRICE:
       state.currentUser.assets.coins[action.payload.index].coin.current_price =
         action.payload.new_price;
