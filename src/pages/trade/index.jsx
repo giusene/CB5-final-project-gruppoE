@@ -5,10 +5,16 @@ import { MdSearchOff } from "react-icons/md";
 import styles from "@/styles/trade.module.scss";
 import { useState, useEffect, useContext } from "react";
 import { AppCtx } from "@/store/context";
+import Loader from "@/components/loader/Loader";
 
 const Trade = ({ coins }) => {
   const [filteredCoins, setFilteredCoins] = useState(coins);
   const [searchValue, setSearchValue] = useState("");
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    setLoading(false);
+  }, []);
 
   const {
     state: { currentUser, showModal },
@@ -33,29 +39,34 @@ const Trade = ({ coins }) => {
 
   return (
     <div className={styles.main}>
-      <div className={styles.title}>
-        <h3>Coins</h3>
-      </div>
-      <SearchBar
-        searchValue={searchValue}
-        setSearchValue={setSearchValue}
-        filterHandler={filterHandler}
-      />
-      {filteredCoins.length > 0 ? (
-        <CoinsList coins={filteredCoins} />
-      ) : (
-        <div className={styles.notfound}>
-          <i>
-            <MdSearchOff />
-          </i>
-
-          <div className={styles.text}>
-            <p>No results found for "{searchValue}"</p>
-            <h3>PLEASE TRY AGAIN</h3>
+      {loading === true && <Loader />}
+      {loading === false && (
+        <>
+          <div className={styles.title}>
+            <h3>Coins</h3>
           </div>
-        </div>
+          <SearchBar
+            searchValue={searchValue}
+            setSearchValue={setSearchValue}
+            filterHandler={filterHandler}
+          />
+          {filteredCoins.length > 0 ? (
+            <CoinsList coins={filteredCoins} />
+          ) : (
+            <div className={styles.notfound}>
+              <i>
+                <MdSearchOff />
+              </i>
+
+              <div className={styles.text}>
+                <p>No results found for "{searchValue}"</p>
+                <h3>PLEASE TRY AGAIN</h3>
+              </div>
+            </div>
+          )}
+          {showModal && <Cart coins={coins} />}
+        </>
       )}
-      {showModal && <Cart coins={coins} />}
     </div>
   );
 };
