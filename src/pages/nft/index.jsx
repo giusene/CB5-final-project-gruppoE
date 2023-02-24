@@ -1,10 +1,16 @@
 import NftList from "@/components/nftList/NftList";
 import styles from "@/styles/nft.module.scss";
 import { FaChevronDown } from "react-icons/fa";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import Loader from "@/components/loader/Loader";
 
 const Nft = ({ data }) => {
   const [showDescr, setShowDescr] = useState(false);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    setLoading(false);
+  }, []);
 
   const handleClick = () => {
     setShowDescr((prev) => !prev);
@@ -12,25 +18,30 @@ const Nft = ({ data }) => {
 
   return (
     <div className={styles.main}>
-      <div className={styles.info}>
-        <div className={styles.title}>
-          <h3>{data.contract.name}</h3>
-          <i
-            className={`${styles.icon} ${showDescr ? styles.rotate : ""}`}
-            onClick={handleClick}
-          >
-            <FaChevronDown />
-          </i>
-        </div>
-        <div
-          className={`${styles.description} ${
-            showDescr ? styles.show : styles.hide
-          }`}
-        >
-          <p>{data.contract.metadata.description}</p>
-        </div>
-      </div>
-      <NftList data={data} />
+      {loading === true && <Loader />}
+      {loading === false && (
+        <>
+          <div className={styles.info}>
+            <div className={styles.title}>
+              <h3>{data.contract.name}</h3>
+              <i
+                className={`${styles.icon} ${showDescr ? styles.rotate : ""}`}
+                onClick={handleClick}
+              >
+                <FaChevronDown />
+              </i>
+            </div>
+            <div
+              className={`${styles.description} ${
+                showDescr ? styles.show : styles.hide
+              }`}
+            >
+              <p>{data.contract.metadata.description}</p>
+            </div>
+          </div>
+          <NftList data={data} />
+        </>
+      )}
     </div>
   );
 };
