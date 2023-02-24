@@ -8,6 +8,10 @@
   padding: var(--page-padding);
   overflow-x: hidden;
 
+  @media only screen and (min-width: 1280px) {
+    height: 89vh;
+  }
+
   .title {
     align-self: flex-start;
     color: white;

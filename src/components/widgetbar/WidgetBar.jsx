@@ -13,7 +13,7 @@ const WidgetBar = () => {
   const [path, setPath] = useState("");
   const { state, dispatch } = useContext(AppCtx);
 
-  const { pic, name, surname, username } = state.currentUser;
+  const { pic, name, surname, username, id } = state.currentUser;
 
   useEffect(() => {
     const currentPath = router.asPath;
@@ -30,7 +30,17 @@ const WidgetBar = () => {
   return (
     <div className={styles.main}>
       <div className={styles.user_data}>
-        <Image src={pic} alt={name} width={500} height={500} />
+        {id <= 5 ? (
+          <Image src={pic} alt={name} width={500} height={500} />
+        ) : (
+          <Image
+            src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460__340.png"
+            alt="User"
+            width={100}
+            height={100}
+          />
+        )}
+
         <div className={styles.user_name}>
           <h3>
             {name} {surname}

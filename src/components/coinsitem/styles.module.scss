@@ -20,31 +20,31 @@
       width: 45px;
       height: 45px;
       border-radius: 50%;
+    }
 
-      .coin_name {
-        width: 140px;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        gap: 0.3rem;
+    .coin_name {
+      width: 140px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 0.3rem;
 
-        .name {
-          color: white;
-          font-size: 0.85rem;
-          display: none;
+      .name {
+        color: white;
+        font-size: 0.85rem;
+        display: none;
 
-          @media only screen and (min-width: 768px) {
-            display: block;
-          }
+        @media only screen and (min-width: 768px) {
+          display: block;
         }
+      }
 
-        .symbol {
-          font-size: 0.9rem;
-          color: white;
-          text-transform: uppercase;
-          @media only screen and (min-width: 768px) {
-            color: rgba(165, 165, 165, 0.74);
-          }
+      .symbol {
+        font-size: 0.9rem;
+        color: white;
+        text-transform: uppercase;
+        @media only screen and (min-width: 768px) {
+          color: rgba(165, 165, 165, 0.74);
         }
       }
     }

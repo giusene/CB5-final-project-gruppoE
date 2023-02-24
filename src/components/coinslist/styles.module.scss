@@ -3,7 +3,7 @@
   height: calc(100vh - var(--navbar-height));
 
   .coins_container {
-    height: calc(70vh - var(--navbar-height));
+    height: 52vh;
     overflow-y: scroll;
     padding: 5px 4px;
     display: flex;
@@ -29,7 +29,8 @@
     }
 
     @media only screen and (min-width: 1280px) {
-      height: 100%;
+      height: 74vh;
+      padding-bottom: 10px;
     }
   }
 }
