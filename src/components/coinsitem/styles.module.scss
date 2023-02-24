@@ -45,8 +45,11 @@
 
         .symbol {
           font-size: 0.9rem;
-          color: rgba(165, 165, 165, 0.74);
+          color: white;
           text-transform: uppercase;
+          @media only screen and (min-width: 768px) {
+            color: rgba(165, 165, 165, 0.74);
+          }
         }
       }
     }
@@ -57,6 +60,8 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+
+    gap: 0.2rem;
 
     p {
       font-size: 0.8rem;
@@ -102,8 +107,10 @@
     button {
       padding: 0.4rem 1rem;
       border: none;
-      border-radius: 1rem;
+      border-radius: 0.6rem;
       font-weight: 600;
+      width: 75px;
+      font-size: 0.65rem;
       background-color: var(--details-main-color);
       color: black;
       letter-spacing: 0.1rem;
@@ -112,6 +119,21 @@
 
       &:hover {
         box-shadow: 0 0 10px rgba($color: #ea4b87, $alpha: 0.5);
+      }
+
+      @media only screen and (min-width: 768px) {
+        padding: 0.4rem 1rem;
+        border: none;
+        font-weight: 600;
+        background-color: var(--details-main-color);
+        color: black;
+        letter-spacing: 0.1rem;
+        cursor: pointer;
+        transition: all 0.35s ease-out;
+
+        &:hover {
+          box-shadow: 0 0 10px rgba($color: #ea4b87, $alpha: 0.5);
+        }
       }
     }
   }

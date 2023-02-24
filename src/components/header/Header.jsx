@@ -64,7 +64,7 @@ const Header = () => {
           src={state.currentUser.pic}
           alt={state.currentUser.name}
           width={100}
-          heigh={100}
+          height={100}
           onClick={() => menuHandle()}
         />
       </div>
