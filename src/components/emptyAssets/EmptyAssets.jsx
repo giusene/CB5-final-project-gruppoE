@@ -7,7 +7,7 @@ function EmptyAssets() {
     <div className={styles.main}>
       <h3>no items yet</h3>
       <button>
-        <Link href="/trade">START PLAYNG</Link>
+        <Link href="/trade">START PLAYING</Link>
         <i>
           <IoIosRocket />
         </i>
