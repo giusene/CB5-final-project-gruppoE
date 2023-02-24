@@ -1,4 +1,3 @@
-import { contacts } from "@/store/contacts";
 import styles from "@/styles/users.module.scss";
 import UserCard from "@/components/userCard/UserCard";
 import Loader from "@/components/loader/Loader";
@@ -22,6 +21,10 @@ const Contacts = () => {
           ))}
         </>
       )}
+
+      <div className={styles.copyright}>
+        <p>Copyright © 2023. All rights reserved.</p>
+      </div>
     </div>
   );
 };

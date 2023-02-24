@@ -7,15 +7,15 @@ import Pietro from "/public/teampics/pietro.jpeg";
 export const users = [
   {
     id: 1,
-    name: "Pietro",
-    surname: "Di Stefano",
-    username: "pietro23",
-    email: "pietrodistefano2306@gmail.com",
-    pic: Pietro,
+    name: "Chiara",
+    surname: "Maggio",
+    username: "magichiara",
+    email: "info.chiaramaggio@gmail.com",
+    pic: Chiara,
     password: "coding",
     social: {
-      linkedin: "https://www.linkedin.com/in/pietro-di-stefano-a92475222",
-      github: "https://github.com/pietrodistefano23",
+      linkedin: "https://www.linkedin.com/in/chiaramaggio",
+      github: "https://github.com/magichiara",
     },
     assets: {
       coins: [],
@@ -64,15 +64,15 @@ export const users = [
   },
   {
     id: 4,
-    name: "Chiara",
-    surname: "Maggio",
-    username: "magichiara",
-    email: "info.chiaramaggio@gmail.com",
-    pic: Chiara,
+    name: "Pietro",
+    surname: "Di Stefano",
+    username: "pietro23",
+    email: "pietrodistefano2306@gmail.com",
+    pic: Pietro,
     password: "coding",
     social: {
-      linkedin: "https://www.linkedin.com/in/chiaramaggio",
-      github: "https://github.com/magichiara",
+      linkedin: "https://www.linkedin.com/in/pietro-di-stefano-a92475222",
+      github: "https://github.com/pietrodistefano23",
     },
     assets: {
       coins: [],
