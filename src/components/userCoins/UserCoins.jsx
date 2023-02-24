@@ -34,9 +34,8 @@ const UserCoins = () => {
 
   return (
     <div className={styles.main}>
-      <h3>Your Assets</h3>
       <div className={styles.favorite_list}>
-        {currentUser.assets.coins.length === 0 && <EmptyAssets/>}
+        {currentUser.assets.coins.length === 0 && <EmptyAssets />}
         {currentUser.assets.coins.map((asset, index) => (
           <UserCoinsItem key={index} data={asset.coin} />
         ))}

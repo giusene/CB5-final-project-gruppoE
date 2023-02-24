@@ -17,6 +17,11 @@
       box-shadow: 0 0 10px rgba($color: #ea4b87, $alpha: 0.5);
     }
   }
+
+  @media only screen and (min-width: 768px) {
+    width: 15%;
+  }
+
   @media only screen and (min-width: 1280px) {
     width: 15%;
   }

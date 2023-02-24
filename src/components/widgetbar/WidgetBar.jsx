@@ -4,9 +4,9 @@ import { AppCtx } from "@/store/context";
 import Image from "next/image";
 import CreditCard from "../creditCard/CreditCard";
 import styles from "./styles.module.scss";
-
 import Balance from "../balance/Balance";
 import CartDesktop from "../cartDesktop/CartDesktop";
+import users from "../../store/users";
 
 const WidgetBar = ({ setCartModal }) => {
   const router = useRouter();
@@ -24,20 +24,15 @@ const WidgetBar = ({ setCartModal }) => {
   return (
     <div className={styles.main}>
       <div className={styles.user_data}>
-        <Image
-          src="https://cdn-icons-png.flaticon.com/512/21/21104.png"
-          alt={name}
-          width={200}
-          height={200}
-        />
+        {/*      {state.currentUser && (
+         
+        )} */}
+        <Image src={pic} alt={name} width={500} height={500} />
         <div className={styles.user_name}>
           <h3>
             {name} {surname}
           </h3>
           <p>@{username}</p>
-        </div>
-        <div className={styles.buttons}>
-          <button>Follow</button>
         </div>
       </div>
       <div className={styles.container}>

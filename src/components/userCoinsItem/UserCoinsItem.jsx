@@ -13,7 +13,15 @@ const UserCoinsItem = ({ data }) => {
     state: { currentUser },
     dispatch,
   } = useContext(AppCtx);
-  const { id, image, name, symbol, current_price, price_change_percentage_24h, qty } = data;
+  const {
+    id,
+    image,
+    name,
+    symbol,
+    current_price,
+    price_change_percentage_24h,
+    qty,
+  } = data;
 
   return (
     <div className={styles.main}>
@@ -21,30 +29,33 @@ const UserCoinsItem = ({ data }) => {
         <div className={styles.icon_wrapper}>
           <Image src={image} alt={name} width={100} height={100} />
           <div className={styles.coin_name}>
-            <p className={styles.name}>{name}</p>
-
             <p className={styles.symbol}>{symbol}</p>
           </div>
         </div>
         <div className={styles.price}>
-          <div>
-            <p className={styles.current_price}>Coin value: {currencyFormat(current_price)}</p>
+          <div className={styles.current_price}>
+            <p>Coin value {currencyFormat(current_price)}</p>
           </div>
           <div>
             <p
               className={`${styles.price_change} ${
-                price_change_percentage_24h < 0 ? styles.price_down : styles.price_up
+                price_change_percentage_24h < 0
+                  ? styles.price_down
+                  : styles.price_up
               }`}
             >
-              {price_change_percentage_24h < 0 ? <FiTrendingDown /> : <FiTrendingUp />}
+              {price_change_percentage_24h < 0 ? (
+                <FiTrendingDown />
+              ) : (
+                <FiTrendingUp />
+              )}
               <span> </span>
               {price_change_percentage_24h}
             </p>
           </div>
           <div className={styles.owned}>
-            <p>
-              Owned <RiCopperCoinLine /> {qty}
-            </p>
+            <p>Owned</p>
+            <p>{qty}</p>
           </div>
         </div>
       </Link>

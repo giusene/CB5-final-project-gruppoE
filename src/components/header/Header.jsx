@@ -8,7 +8,6 @@ import Calendar from "@/atoms/calendar/Calendar";
 
 const Header = () => {
   const { state, dispatch } = useContext(AppCtx);
-
   const { name } = state.currentUser;
   const router = useRouter();
 

@@ -1,9 +1,11 @@
 .main {
-  color: white;
-  padding: 5px 8px;
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: 1rem;
+
+  h3 {
+    color: white;
+  }
 
   .favorite_list {
     display: flex;

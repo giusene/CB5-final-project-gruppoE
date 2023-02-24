@@ -2,7 +2,8 @@
 
 :root {
   --navbar-height: 10vh;
-  --page-padding: 2rem 1rem;
+  --header-height: 70px;
+  --page-padding: 1.3rem 1rem;
   --bg-color: #131224;
   --box-color: #292641;
   --details-base-color: #5a5868;
