@@ -16,15 +16,10 @@
     width: 35%;
     gap: 1rem;
 
-    a {
-      display: flex;
-      gap: 1rem;
-
-      img {
-        width: 45px;
-        height: 45px;
-        border-radius: 50%;
-      }
+    img {
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
 
       .coin_name {
         width: 140px;

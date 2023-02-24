@@ -14,17 +14,15 @@ const CryptoCoins = ({ data }) => {
         {coins.map((coin) => (
           <div className={styles.coin_row} key={coin.item.id}>
             <div className={styles.icon_wrapper}>
-              <Link href={`/crypto/${coin.item.id}`}>
-                <Image
-                  src={coin.item.large}
-                  alt={coin.item.name}
-                  width={100}
-                  height={100}
-                />
-                <div className={styles.coin_name}>
-                  <p>{coin.item.symbol}</p>
-                </div>
-              </Link>
+              <Image
+                src={coin.item.large}
+                alt={coin.item.name}
+                width={100}
+                height={100}
+              />
+              <div className={styles.coin_name}>
+                <p>{coin.item.symbol}</p>
+              </div>
             </div>
             <div className={styles.price}>
               <p>MCAP</p>
