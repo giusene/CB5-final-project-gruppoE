@@ -2,7 +2,6 @@ import styles from "./styles.module.scss";
 import { navbarLinks } from "@/utils/navbarLinks";
 import Link from "next/link";
 import Image from "next/image";
-import CryptoLogoType from "/public/logo/crypto-logotype.svg";
 import CryptoLogo from "/public/logo/crypto-logo.svg";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
@@ -19,7 +18,6 @@ const Navbar = () => {
   return (
     <div className={styles.main}>
       <div className={styles.logo}>
-        {/* <Image src={CryptoLogoType} alt="logo" width={300} height={300} /> */}
         <Image src={CryptoLogo} alt="logo" width={300} height={300} />
       </div>
 

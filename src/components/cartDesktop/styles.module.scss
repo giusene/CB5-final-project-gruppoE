@@ -96,9 +96,5 @@
     letter-spacing: 0.1rem;
     background-color: var(--details-main-color);
     transition: all 0.35s ease-out;
-
-    &:hover {
-      box-shadow: 0 0 15px rgba($color: #b375ef, $alpha: 0.5);
-    }
   }
 }

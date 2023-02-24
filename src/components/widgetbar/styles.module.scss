@@ -38,6 +38,19 @@
         color: rgb(175, 175, 175);
       }
     }
+
+    button {
+      border: none;
+      border-radius: 0.6rem;
+      height: 30px;
+      padding: 0 10px;
+      font-weight: 500;
+      background-color: var(--details-main-color);
+      color: black;
+      letter-spacing: 0.1rem;
+      cursor: pointer;
+      transition: all 0.35s ease-out;
+    }
   }
 
   .container {
