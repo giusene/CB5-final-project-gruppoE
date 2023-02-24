@@ -1,5 +1,5 @@
 .main {
-  height: calc(100vh - (var(--navbar-height) + var(--header-height)));
+  height: calc(95vh - (var(--navbar-height) + var(--header-height)));
   padding: var(--page-padding);
   display: flex;
   flex-direction: column;

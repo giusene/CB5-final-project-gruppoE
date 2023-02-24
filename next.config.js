@@ -30,6 +30,11 @@ const nextConfig = {
         hostname: "cdn-icons-png.flaticon.com",
         port: "",
       },
+      {
+        protocol: "https",
+        hostname: "cdn.pixabay.com",
+        port: "",
+      },
     ],
   },
 };

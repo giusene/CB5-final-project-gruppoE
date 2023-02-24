@@ -40,7 +40,12 @@ const WidgetBar = () => {
         {state.isLogged && <button onClick={logoutHandler}>LOGOUT</button>}
       </div>
       <div className={styles.container}>
-        {path === "/" && <p>Welcome back</p>}
+        {path === "/" && (
+          <>
+            <h2>Welcome back</h2>
+            <h3>{name}!</h3>
+          </>
+        )}
         {path === "/wallet" && (
           <>
             <h2>Total Earnings</h2>
@@ -51,8 +56,6 @@ const WidgetBar = () => {
           </>
         )}
         {path === "/trade" && <CartDesktop />}
-        {path === "/nft" && <h1>nft</h1>}
-        {path === "/contacts" && <h1>contacts</h1>}
       </div>
     </div>
   );

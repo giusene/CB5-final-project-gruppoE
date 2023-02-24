@@ -27,8 +27,13 @@
     align-items: center;
     justify-content: flex-end;
     gap: 0.8rem;
-
     position: relative;
+
+    .user_icon {
+      display: flex;
+      font-size: 2.8rem;
+      color: lightgray;
+    }
 
     button {
       position: absolute;
@@ -49,6 +54,13 @@
         color: var(--details-main-color);
         font-size: 1.5rem;
       }
+
+      @media only screen and (min-width: 768px) {
+        svg {
+          font-size: 2rem;
+        }
+      }
+
       @media only screen and (min-width: 1280px) {
         display: none;
       }
@@ -72,6 +84,10 @@
     h1 {
       font-size: 1rem;
       font-weight: 600;
+
+      @media only screen and (min-width: 768px) {
+        font-size: 1.4rem;
+      }
     }
     @media only screen and (min-width: 1280px) {
       display: none;
