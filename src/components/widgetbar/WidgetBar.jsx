@@ -6,7 +6,6 @@ import CreditCard from "../creditCard/CreditCard";
 import styles from "./styles.module.scss";
 import Balance from "../balance/Balance";
 import CartDesktop from "../cartDesktop/CartDesktop";
-import users from "../../store/users";
 
 const WidgetBar = ({ setCartModal }) => {
   const router = useRouter();
