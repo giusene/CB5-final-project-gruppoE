@@ -1,52 +1,40 @@
 .main {
   height: calc(90vh - var(--navbar-height));
-  overflow-y: scroll;
   color: white;
   display: flex;
   flex-direction: column;
- 
   gap: 2rem;
   padding: var(--page-padding);
-
-
-  
-
+  overflow-y: scroll;
+  overflow-x: hidden;
+  ::-webkit-scrollbar-thumb {
+    color: transparent;
+    display: none;
+  }
 
   @media only screen and (min-width: 768px) {
     align-items: center;
-    canvas {
-      max-width: 800px;
-      max-height: 350px;
-      object-fit: contain;
-
-    }
+    justify-content: space-evenly;
   }
+
   @media only screen and (min-width: 1280px) {
     height: calc(100vh - var(--navbar-height));
   }
 
   .crypto_container {
-    align-items:center;
-    align-self: flex-start;
-    justify-content: flex-start;
     display: flex;
-    gap: 2rem;
+    justify-content: space-evenly;
+    width: 100vw;
+    max-width: 700px;
     border-radius: 8px;
     box-shadow: 0 0 12px #4d1487(0, 0, 0, 0.5);
     padding: 1rem;
-    cursor: pointer;
-
-    img:hover {
-      transform: scale(1.1);
-    }
-    
 
     @media only screen and (min-width: 768px) {
-      justify-content: space-evenly;
+      width: 700px;
     }
 
     @media only screen and (min-width: 1280px) {
-      justify-content: center;
       gap: 3rem;
     }
 
@@ -59,42 +47,41 @@
     .crypto_name {
       display: flex;
       flex-direction: column;
-      align-items:center;
+      align-items: flex-start;
       justify-content: center;
       color: var(--details-main-color);
       background-color: var(--box-color);
-      padding: 1.5rem;
+      padding: 1rem;
       border-radius: 12px;
 
       p {
-       color: aliceblue;
+        color: aliceblue;
       }
     }
   }
 
   .description {
     max-width: 1000px;
+    height: 300px;
+    overflow-x: hidden;
+    overflow-y: scroll;
     margin-top: 20px;
     background-color: var(--box-color);
-    padding: 2rem;
+    padding: 1.5rem;
     font-size: 18px;
     transition: transform 0.2s ease-in-out;
     border-radius: 0.5rem;
     position: relative;
-    font-family: "Roboto", sans-serif;
-    
-  }
+    text-overflow: ellipsis;
 
-  .description:hover {
-    transform: translateY(-5px);
-  }
-  .description::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: transparent;
+    &:hover {
+      transform: translateY(-5px);
+    }
+
+    @media only screen and (min-width: 768px) {
+      width: 500px;
+      height: 400px;
+      justify-content: space-evenly;
+    }
   }
 }
