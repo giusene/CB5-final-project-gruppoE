@@ -1,5 +1,4 @@
 .main {
-  padding: var(--page-padding);
   color: white;
   display: flex;
   flex-direction: column;
@@ -9,7 +8,7 @@
     display: flex;
     gap: 1rem;
     width: 100%;
-    border-bottom: 2px solid var(--details-secondary-color);
+    border-bottom: 1.5px solid var(--details-main-color);
     padding: 0.5rem 0.2rem;
 
     input {
@@ -28,9 +27,25 @@
       background-color: transparent;
       color: white;
       border: none;
-      font-size: 1.6rem;
+      font-size: 1.3rem;
       cursor: pointer;
       color: lightgray;
+    }
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .main {
+    form {
+      padding: 0.8rem 0.5rem;
+
+      input {
+        font-size: 1.2rem;
+      }
+
+      button {
+        font-size: 1.6rem;
+      }
     }
   }
 }
