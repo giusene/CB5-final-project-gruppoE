@@ -60,6 +60,7 @@
       border-radius: 50%;
       object-fit: cover;
       cursor: pointer;
+      z-index: 1;
 
       @media only screen and (min-width: 1280px) {
         display: none;
@@ -75,5 +76,25 @@
     @media only screen and (min-width: 1280px) {
       display: none;
     }
+  }
+
+  .motion {
+    animation: rotation 1.3s linear;
+  }
+}
+
+@keyframes rotation {
+  0% {
+    transform: translateX(0) rotate(0deg);
+    animation-timing-function: ease-out;
+  }
+  40% {
+    transform: translateX(-40px);
+  }
+  50% {
+    transform: translateX(60px);
+  }
+  100% {
+    transform: translateX(60px);
   }
 }

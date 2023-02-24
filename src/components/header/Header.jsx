@@ -8,12 +8,14 @@ import Calendar from "@/atoms/calendar/Calendar";
 import CryptoLogo from "/public/logo/crypto-logo.svg";
 import { navbarLinks } from "@/utils/navbarLinks";
 import { BiExit } from "react-icons/bi";
+import { FiUser } from "react-icons/fi";
 
 const Header = () => {
   const { state, dispatch } = useContext(AppCtx);
   const { name } = state.currentUser;
   const router = useRouter();
   const [path, setPath] = useState("");
+  const [animation, setAnimation] = useState(false);
 
   useEffect(() => {
     const currentPath = router.asPath;
@@ -25,10 +27,14 @@ const Header = () => {
   let time = today.getHours();
 
   const logoutHandler = () => {
-    dispatch({
-      type: loginActions.LOGOUT_USER,
-    });
-    router.push("/");
+    setAnimation(true);
+    setTimeout(() => {
+      dispatch({
+        type: loginActions.LOGOUT_USER,
+      });
+      router.push("/");
+      setAnimation(false);
+    }, 900);
   };
 
   return (
@@ -56,10 +62,19 @@ const Header = () => {
 
       {/* USER DATA */}
       <div className={styles.auth_data}>
-        <button>
+        <button className={animation ? styles.motion : styles.nothing}>
           <BiExit onClick={logoutHandler} />
         </button>
-        <Image src={state.currentUser.pic} alt={state.currentUser.name} width={100} height={100} />
+        {state.currentUser.id <= 5 ? (
+          <Image
+            src={state.currentUser.pic}
+            alt={state.currentUser.name}
+            width={100}
+            height={100}
+          />
+        ) : (
+          <FiUser />
+        )}
       </div>
     </div>
   );
