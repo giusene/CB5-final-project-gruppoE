@@ -14,7 +14,7 @@ export const users = [
     pic: Pietro,
     password: "coding",
     social: {
-      linkedin: "/linkedin.com/in/pietro-di-stefano-a92475222",
+      linkedin: "https://www.linkedin.com/in/pietro-di-stefano-a92475222",
       github: "https://github.com/pietrodistefano23",
     },
     assets: {
@@ -33,7 +33,7 @@ export const users = [
     pic: Cesare,
     password: "coding",
     social: {
-      linkedin: "www.linkedin.com/in/cesare-tomasello",
+      linkedin: "https://www.linkedin.com/in/cesare-tomasello",
       github: "https://github.com/Cesare-Tomasello",
     },
     assets: {
