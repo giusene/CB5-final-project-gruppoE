@@ -7,7 +7,7 @@ function SellCoins({ id }) {
   const { coins } = state.currentUser.assets;
   const sellCoinsHandler = (itemId) => {
     dispatch({ type: tradingActions.SELL_COIN, payload: itemId });
-    console.log(coins);
+    //console.log(coins);
   };
   return (
     <div className={styles.main}>

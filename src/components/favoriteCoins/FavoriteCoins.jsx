@@ -15,7 +15,7 @@ const FavoriteCoins = ({ setCartModal }) => {
     <div className={styles.main}>
       <h3>Watchlist</h3>
       <div className={styles.favorite_list}>
-        {currentUser.favorite.length === 0 && <EmptyAssets/>}
+        {currentUser.favorite.length === 0 && <EmptyAssets />}
         {currentUser.favorite.map((coin, index) => (
           <CoinsItem key={index} data={coin} setCartModal={setCartModal} />
         ))}
