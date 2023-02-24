@@ -25,43 +25,46 @@ const LoginForm = () => {
     });
   };
 
-
   return (
-     <Fragment>
+    <Fragment>
       <form className={styles.form} onSubmit={submitHandler}>
-      {state.isSignedUp && <div>Your account has been created successfully!</div>}
+        {state.isSignedUp && (
+          <div className={styles.signup_message}>
+            Your account has been created successfully!
+          </div>
+        )}
 
-    <div className={styles.inputs}>
-      <input
-        type="text"
-        name="username"
-        onInput={(e) => setUsername(e.target.value)}
-        placeholder="USERNAME"
-        required
-      />
+        <div className={styles.inputs}>
+          <input
+            type="text"
+            name="username"
+            onInput={(e) => setUsername(e.target.value)}
+            placeholder="USERNAME"
+            required
+          />
 
-      <input
-        type="password"
-        name="password"
-        onInput={(e) => setPassword(e.target.value)}
-        placeholder="PASSWORD"
-        required
-      />
-      {state.loginError && (
-        <div className={styles.error}>
-          <i>
-            <BsExclamationSquare />
-          </i>
-          <p>Invalid username or password!</p>
+          <input
+            type="password"
+            name="password"
+            onInput={(e) => setPassword(e.target.value)}
+            placeholder="PASSWORD"
+            required
+          />
+          {state.loginError && (
+            <div className={styles.error}>
+              <i>
+                <BsExclamationSquare />
+              </i>
+              <p>Invalid username or password!</p>
+            </div>
+          )}
         </div>
-      )}
-    </div>
 
-    <div className={styles.btn}>
-      <button type="submit">SIGN IN</button>
-    </div>
-  </form></Fragment> 
-    
+        <div className={styles.btn}>
+          <button type="submit">SIGN IN</button>
+        </div>
+      </form>
+    </Fragment>
   );
 };
 

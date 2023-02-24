@@ -39,14 +39,13 @@ a {
 
 /* Stile della scrollbar */
 ::-webkit-scrollbar {
-  width: 1px;
+  background-color: transparent;
+  width: 8px;
 }
 
 /* Stile del "pulgar" della scrollbar (il pulsante che si trascina) */
 ::-webkit-scrollbar-thumb {
-  background-color: var(--details-secondary-color);
-  border-radius: 4px;
-  border-top: 40px solid;
+  background-color: rgba(64, 61, 91, 1);
 }
 
 /* Stile della scrollbar quando viene trascinata */

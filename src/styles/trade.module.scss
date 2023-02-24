@@ -74,6 +74,8 @@
 
 @media only screen and (min-width: 1280px) {
   .main {
+    height: calc(95vh - var(--navbar-height));
+
     .notfound {
       margin-top: 4rem;
       width: 450px;

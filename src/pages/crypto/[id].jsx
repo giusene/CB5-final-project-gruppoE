@@ -69,7 +69,6 @@ function Crypto({ data, chartData }) {
           <p>{symbol.toUpperCase()}</p>
         </div>
       </div>
-        <canvas ref={chartRef} />
       {description && <p className={styles.description}>{description.en}</p>}
     </div>
   );

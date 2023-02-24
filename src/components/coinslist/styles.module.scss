@@ -1,9 +1,9 @@
 .main {
   width: 100%;
-  height: calc(100% - var(--navbar-height));
+  height: calc(100vh - var(--navbar-height));
 
   .coins_container {
-    height: calc(60vh - var(--navbar-height));
+    height: calc(70vh - var(--navbar-height));
     overflow-y: scroll;
     padding: 5px 4px;
     display: flex;
@@ -17,6 +17,11 @@
 
     &::-webkit-scrollbar-thumb {
       background-color: rgba(64, 61, 91, 1);
+      color: rgba(64, 61, 91, 1);
+    }
+
+    &::-webkit-scrollbar-thumb:hover {
+      background-color: var(--details-main-color);
     }
 
     @media only screen and (min-width: 768px) {
@@ -24,7 +29,7 @@
     }
 
     @media only screen and (min-width: 1280px) {
-      height: calc(70vh - var(--navbar-height));
+      height: 100%;
     }
   }
 }
