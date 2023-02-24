@@ -69,7 +69,7 @@ function Crypto({ data, chartData }) {
           <p>{symbol.toUpperCase()}</p>
         </div>
       </div>
-      <canvas ref={chartRef} />
+        <canvas ref={chartRef} />
       {description && <p className={styles.description}>{description.en}</p>}
     </div>
   );
@@ -90,7 +90,7 @@ export async function getServerSideProps({ query }) {
       {
         label: "Price",
         data: chartData.prices ? chartData.prices.map((price) => price[1]) : [],
-        borderColor: "#b375ef",
+        borderColor: "#c0fb34",
       },
     ],
   };
