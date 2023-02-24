@@ -8,7 +8,6 @@ import Calendar from "@/atoms/calendar/Calendar";
 import CryptoLogo from "/public/logo/crypto-logo.svg";
 import { navbarLinks } from "@/utils/navbarLinks";
 import { BiExit } from "react-icons/bi";
-import { FiUser } from "react-icons/fi";
 
 const Header = () => {
   const { state, dispatch } = useContext(AppCtx);
@@ -73,7 +72,12 @@ const Header = () => {
             height={100}
           />
         ) : (
-          <FiUser />
+          <Image
+            src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460__340.png"
+            alt="User"
+            width={100}
+            height={100}
+          />
         )}
       </div>
     </div>
