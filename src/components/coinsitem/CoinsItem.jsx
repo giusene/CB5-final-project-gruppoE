@@ -62,7 +62,9 @@ const CoinsItem = ({ data }) => {
         </div>
       </div>
       <div className={styles.button_wrapper}>
-        <button onClick={() => addToCartHandler()}>TRADE</button>
+        <Link href={"/trade"}>
+          <button onClick={() => addToCartHandler()}>TRADE</button>
+        </Link>
 
         {/* FAVORITE BUTTON -> DISPATCH + CONDITIONAL RENDERING */}
         {currentUser.favorite.find((fav) => fav.id === data.id) ? (
