@@ -6,11 +6,11 @@
   align-items: center;
   position: fixed;
   bottom: 0;
-
   background-color: var(--box-color);
   z-index: 999;
   border-top-left-radius: 2rem;
   border-top-right-radius: 2rem;
+  box-shadow: 0 0 4px rgba($color: #ffffff, $alpha: 0.4);
 
   @media only screen and (min-width: 1280px) {
     position: relative;
@@ -22,6 +22,7 @@
     border-bottom-right-radius: 1rem;
     justify-content: center;
     gap: 0rem;
+    box-shadow: none;
   }
 
   .logo {
@@ -32,16 +33,14 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      border-bottom: 1px solid var(--details-base-color);
       width: 100%;
-      height: 120px;
-      // padding: 1.5rem 1.3rem;
+      height: 150px;
+      padding: 0 1.2rem;
     }
 
     img {
       @media only screen and (min-width: 1280px) {
-        width: 120px;
-        height: 50px;
+        width: 230px;
       }
     }
   }

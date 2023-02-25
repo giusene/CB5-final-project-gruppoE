@@ -18,7 +18,12 @@ const Navbar = () => {
   return (
     <div className={styles.main}>
       <div className={styles.logo}>
-        <Image src={CryptoLogo} alt="logo" width={300} height={300} />
+        <Image
+          src={"/logo/crypto-logotype.svg"}
+          alt="logo"
+          width={300}
+          height={300}
+        />
       </div>
 
       <div className={styles.nav_links}>
@@ -29,7 +34,9 @@ const Navbar = () => {
             onClick={() => setActiveId(link.id)}
             className={
               activeId === link.route
-                ? `${styles.link} ${link.id === 3 ? styles.icon_big : ""} ${styles.icon_active}`
+                ? `${styles.link} ${link.id === 3 ? styles.icon_big : ""} ${
+                    styles.icon_active
+                  }`
                 : `${styles.link} ${link.id === 3 ? styles.icon_big : ""}`
             }
           >
