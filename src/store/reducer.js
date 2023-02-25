@@ -12,7 +12,8 @@ const appReducer = (state, action) => {
     case loginActions.LOGIN_USER:
       const user = state.users.find(
         (user) =>
-          user.username === action.payload.username && user.password === action.payload.password
+          user.username === action.payload.username &&
+          user.password === action.payload.password
       );
       if (user) {
         setLocalStorage(user);
@@ -39,8 +40,12 @@ const appReducer = (state, action) => {
       return { ...state, currentUser: action.payload, isLogged: true };
     // SIGNUP_USER
     case signupActions.SIGNUP_USER:
-      const existsUser = state.users.find((user) => user.username === action.payload.username);
-      const existsEmail = state.users.find((user) => user.email === action.payload.email);
+      const existsUser = state.users.find(
+        (user) => user.username === action.payload.username
+      );
+      const existsEmail = state.users.find(
+        (user) => user.email === action.payload.email
+      );
       if (existsUser) {
         return { ...state, usernameError: true };
       }
@@ -76,7 +81,9 @@ const appReducer = (state, action) => {
         ...state,
         currentUser: {
           ...state.currentUser,
-          favorite: state.currentUser.favorite.filter((fav) => fav.id !== action.payload.id),
+          favorite: state.currentUser.favorite.filter(
+            (fav) => fav.id !== action.payload.id
+          ),
         },
       };
       setLocalStorage(filteredState.currentUser);
@@ -120,7 +127,6 @@ const appReducer = (state, action) => {
         }
       });
 
-      console.log(coinIndex);
       if (coinIndex.length > 0) {
         const newCoins = state.currentUser.assets.coins.filter(
           (coin) => coin.coin.id !== action.payload.coin.id
@@ -172,7 +178,9 @@ const appReducer = (state, action) => {
         currentUser: {
           ...state.currentUser,
           assets: {
-            coins: state.currentUser.assets.coins.filter((item) => item.coin.id !== action.payload),
+            coins: state.currentUser.assets.coins.filter(
+              (item) => item.coin.id !== action.payload
+            ),
           },
         },
       };

@@ -125,7 +125,15 @@ const Cart = () => {
             </div>
             <div className={styles.btns}>
               <button onClick={() => clearCartHandler()}>CLEAR</button>
-              <button onClick={() => buyHandler()}>BUY</button>
+              <button
+                className={
+                  (inputValue == 0 || !inputValue) && `${styles.disabled}`
+                }
+                disabled={inputValue == 0 || !inputValue}
+                onClick={() => buyHandler()}
+              >
+                BUY
+              </button>
             </div>
           </>
         )}
