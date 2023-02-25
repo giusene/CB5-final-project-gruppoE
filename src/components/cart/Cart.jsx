@@ -8,7 +8,7 @@ import Image from "next/image";
 
 const Cart = () => {
   const {
-    state: { currentUser, showModal },
+    state: { currentUser },
     dispatch,
   } = useContext(AppCtx);
   const [inputValue, setInputValue] = useState(0);
@@ -33,6 +33,12 @@ const Cart = () => {
         type: cartActions.MODAL_TIMER,
       });
     }, 1_500);
+  };
+
+  const closeCartHandler = () => {
+    dispatch({
+      type: cartActions.MODAL_TIMER,
+    });
   };
 
   const inputHandler = (e) => {
@@ -73,7 +79,7 @@ const Cart = () => {
   };
 
   return (
-    <div className={styles.main}>
+    <div onClick={closeCartHandler} className={styles.main}>
       <div className={styles.cart_container}>
         {currentUser.cart.length === 0 ? (
           <div className={styles.timeout}>
