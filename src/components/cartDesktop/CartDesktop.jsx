@@ -74,12 +74,11 @@ const CartDesktop = () => {
   return (
     <div className={styles.main}>
       <div className={styles.cart_container}>
-        <h2>YOUR CART</h2>
         {currentUser.cart.length === 0 ? (
-          <>
-            <h4>{cartText.operation}</h4>
+          <div className={styles.timeout}>
+            <h3>{cartText.operation}</h3>
             <p className={styles.cart_empty}>{cartText.message}</p>
-          </>
+          </div>
         ) : (
           <>
             <form>
