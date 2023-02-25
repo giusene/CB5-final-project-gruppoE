@@ -27,6 +27,7 @@
 
       h3 {
         color: var(--details-main-color);
+        font-size: 1.1rem;
       }
     }
 
@@ -115,4 +116,8 @@
     background-color: var(--details-main-color);
     transition: all 0.35s ease-out;
   }
+}
+
+.disabled {
+  opacity: 0.4;
 }

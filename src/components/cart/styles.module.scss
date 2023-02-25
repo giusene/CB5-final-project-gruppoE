@@ -133,6 +133,10 @@
   }
 }
 
+.disabled {
+  opacity: 0.4;
+}
+
 @media only screen and (min-width: 768px) {
   .main {
     .cart_container {
