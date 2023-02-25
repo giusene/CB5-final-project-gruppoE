@@ -1,5 +1,6 @@
 import styles from "./styles.module.scss";
 import { BiDollar } from "react-icons/bi";
+import { AiOutlineCloseCircle } from "react-icons/ai";
 import { AppCtx } from "@/store/context";
 import { useContext, useState } from "react";
 import { cartActions } from "@/store/actions";
@@ -79,8 +80,11 @@ const Cart = () => {
   };
 
   return (
-    <div onClick={closeCartHandler} className={styles.main}>
+    <div className={styles.main}>
       <div className={styles.cart_container}>
+        <i className={styles.closecart} onClick={closeCartHandler}>
+          <AiOutlineCloseCircle />
+        </i>
         {currentUser.cart.length === 0 ? (
           <div className={styles.timeout}>
             <h3>{cartText.operation}</h3>
