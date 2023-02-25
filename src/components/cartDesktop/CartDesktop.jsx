@@ -31,6 +31,7 @@ const CartDesktop = () => {
       dispatch({
         type: cartActions.MODAL_TIMER,
       });
+      setCartText({ operation: "", message: "" });
     }, 1_500);
   };
 
@@ -67,6 +68,10 @@ const CartDesktop = () => {
     setTimeout(() => {
       dispatch({
         type: cartActions.MODAL_TIMER,
+      });
+      setCartText({
+        operation: "",
+        message: "",
       });
     }, 1_500);
   };
