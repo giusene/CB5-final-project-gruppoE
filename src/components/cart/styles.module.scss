@@ -35,13 +35,13 @@
   color: white;
 
   .closecart {
-    margin-right: 2rem;
-    align-self: flex-end;
-
+    position: fixed;
+    top: 1.5rem;
+    right: 1.5rem;
     font-size: 2rem;
 
     * {
-      color: white !important;
+      color: var(--details-main-color) !important;
     }
   }
 
