@@ -61,6 +61,7 @@ const UserCoinsItem = ({ data }) => {
           <p>{roundedQty}</p>
         </div>
       </div>
+
       <SellCoins id={id} />
     </div>
   );
