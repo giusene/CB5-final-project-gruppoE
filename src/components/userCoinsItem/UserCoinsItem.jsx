@@ -1,9 +1,7 @@
 import { currencyFormat } from "@/utils/currencyFormat";
 import { FiTrendingUp, FiTrendingDown } from "react-icons/fi";
-import { RiCopperCoinLine } from "react-icons/ri";
 import { AppCtx } from "@/store/context";
 import { useContext } from "react";
-import Link from "next/link";
 import Image from "next/image";
 import styles from "./styles.module.scss";
 import SellCoins from "../sellCoins/SellCoins";
@@ -22,6 +20,12 @@ const UserCoinsItem = ({ data }) => {
     price_change_percentage_24h,
     qty,
   } = data;
+
+  function roundToThreeDecimalPlaces(num) {
+    const power = Math.pow(10, 3);
+    return Math.round(num * power) / power;
+  }
+  const roundedQty = roundToThreeDecimalPlaces(qty);
 
   return (
     <div className={styles.main}>
@@ -54,7 +58,7 @@ const UserCoinsItem = ({ data }) => {
         </div>
         <div className={styles.owned}>
           <p>Owned</p>
-          <p>{qty}</p>
+          <p>{roundedQty}</p>
         </div>
       </div>
 
